@@ -38,6 +38,11 @@ export default function Page() {
                   </Button>
                 </Link>
               ))}
+            <Link href={`/lessons/${lesson?.id}/edit`}>
+              <Button variant="subtle" color="gray">
+                Изменить
+              </Button>
+            </Link>
           </nav>
           <Divider orientation="vertical" />
           <section className="grow p-4">
