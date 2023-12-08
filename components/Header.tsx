@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { useSignOut } from "@/lib/auth";
+import { useUser } from "@/lib/user";
 import {
   ActionIcon,
   Button,
@@ -7,10 +8,11 @@ import {
   useMantineColorScheme,
 } from "@mantine/core";
 import { IconMoon, IconSun } from "@tabler/icons-react";
-import { useSignOut } from "@/lib/auth";
-import { useUser } from "@/lib/user";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Header() {
+  const router = useRouter();
   const { loggedIn, user } = useUser();
   const signOut = useSignOut();
   const { toggleColorScheme } = useMantineColorScheme();
@@ -23,12 +25,20 @@ export default function Header() {
             Кибер.База
           </Link>
           <Link href="/lessons">
-            <Button variant="subtle" color="gray">
+            <Button
+              variant={
+                router.pathname.startsWith("/lessons") ? "light" : "subtle"
+              }
+              color={router.pathname.startsWith("/lessons") ? "green" : "gray"}
+            >
               Уроки
             </Button>
           </Link>
           <Link href="/feed">
-            <Button variant="subtle" color="gray">
+            <Button
+              variant={router.pathname.startsWith("/feed") ? "light" : "subtle"}
+              color={router.pathname.startsWith("/feed") ? "green" : "gray"}
+            >
               Новости
             </Button>
           </Link>
