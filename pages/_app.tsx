@@ -1,16 +1,20 @@
 import "@/styles/globals.css";
 import { queryClient } from "@/lib/api";
-import { useUser } from "@/lib/user";
+import { createTheme, MantineProvider } from "@mantine/core";
 import { QueryClientProvider } from "@tanstack/react-query";
 import type { AppProps } from "next/app";
+import "@mantine/core/styles.css";
+
+const theme = createTheme({
+  /** Put your mantine theme override here */
+});
 
 export default function App({ Component, pageProps }: AppProps) {
-  // Prefetch data
-  const _ = useUser();
-
   return (
     <QueryClientProvider client={queryClient}>
-      <Component {...pageProps} />
+      <MantineProvider theme={theme}>
+        <Component {...pageProps} />
+      </MantineProvider>
     </QueryClientProvider>
   );
 }
