@@ -15,18 +15,10 @@ export default function Page() {
     fetch("/api/rss", { signal: abortController.signal })
       .then((res) => res.text())
       .then((str) => new Parser().parseString(str))
-      .then(async (feed) => {
-        await sleep(1000);
-        return feed;
-      })
       .then((feed) => {
         setNewsItems(feed.items ?? []);
       })
-      .then(() => {
-        setItemsLoading(false);
-      })
       .catch((err) => {
-        setItemsLoading(false);
         if (err.name === "AbortError") {
           console.log("Fetch aborted");
         } else {
@@ -36,6 +28,7 @@ export default function Page() {
 
     return () => {
       abortController.abort();
+      setItemsLoading(false);
     };
   }, []);
 
@@ -67,8 +60,4 @@ export default function Page() {
       </Container>
     </Layout>
   );
-}
-
-async function sleep(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
 }
