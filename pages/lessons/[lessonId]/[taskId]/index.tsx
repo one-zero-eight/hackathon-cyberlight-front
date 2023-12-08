@@ -1,3 +1,4 @@
+import Layout from "@/components/Layout";
 import TaskContent from "@/components/TaskContent";
 import TaskInput from "@/components/TaskInput";
 import { Lesson } from "@/lib/lesson";
@@ -21,20 +22,22 @@ export default function Page() {
   const task = lesson?.tasks[Number(taskId)];
 
   return (
-    <Container className="flex flex-col gap-2 p-4">
-      <h1>
-        Урок: {lessonId}, задание: {taskId}
-      </h1>
-      {task && (
-        <>
-          <TaskContent content={task.content} />
-          {task.type === "input" ? (
-            <TaskInput task={task} />
-          ) : (
-            "Неизвестный тип задания"
-          )}
-        </>
-      )}
-    </Container>
+    <Layout>
+      <Container className="flex flex-col gap-2 p-4">
+        <h1>
+          Урок: {lessonId}, задание: {taskId}
+        </h1>
+        {task && (
+          <>
+            <TaskContent content={task.content} />
+            {task.type === "input" ? (
+              <TaskInput task={task} />
+            ) : (
+              "Неизвестный тип задания"
+            )}
+          </>
+        )}
+      </Container>
+    </Layout>
   );
 }
