@@ -12,7 +12,6 @@ export const AUTH_TOKEN_KEY = "token";
 
 export function getAuthToken() {
   const value = localStorage.getItem(AUTH_TOKEN_KEY);
-  if (value === "undefined") return undefined;
   return value ? JSON.parse(value) : undefined;
 }
 
@@ -29,9 +28,10 @@ export function useSignOut() {
   const [_, setToken] = useAuthToken();
   const queryClient = useQueryClient();
   return useCallback(() => {
-    setToken(undefined);
+    localStorage.removeItem(AUTH_TOKEN_KEY);
+    window.dispatchEvent(new Event("local-storage"));
     queryClient.clear();
-  }, [setToken, queryClient]);
+  }, [queryClient]);
 }
 
 export type SignInByCredentialsVariables = {
