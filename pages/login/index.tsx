@@ -1,3 +1,4 @@
+import Layout from "@/components/Layout";
 import { useSignInByCredentials } from "@/lib/auth";
 import { Button, TextInput } from "@mantine/core";
 import Link from "next/link";
@@ -9,40 +10,42 @@ export default function Page() {
   const mutation = useSignInByCredentials();
 
   return (
-    <main className="flex w-full justify-center p-4">
-      <div className="border-dark-100 dark:border-dark-900 flex h-fit w-fit flex-col gap-2 self-center rounded-lg border-2 p-6">
-        <h1 className="text-center text-2xl">Войдите</h1>
-        {mutation.isError && (
-          <p className="text-red-500">Неверный логин или пароль.</p>
-        )}
-        <TextInput
-          size="md"
-          label="Логин"
-          placeholder="Введите логин"
-          value={login}
-          onChange={(event) => setLogin(event.currentTarget.value)}
-          disabled={mutation.isPending}
-        />
-        <TextInput
-          size="md"
-          label="Пароль"
-          placeholder="Введите пароль"
-          type="password"
-          value={password}
-          onChange={(event) => setPassword(event.currentTarget.value)}
-          disabled={mutation.isPending}
-        />
-        <Button
-          onClick={() => {
-            mutation.mutate({ login, password });
-          }}
-        >
-          Ок
-        </Button>
-        <Link href="/" className="text-center text-xs text-gray-500">
-          На главную
-        </Link>
+    <Layout>
+      <div className="flex w-full justify-center p-4">
+        <div className="border-dark-100 dark:border-dark-900 flex h-fit w-fit flex-col gap-2 self-center rounded-lg border-2 p-6">
+          <h1 className="text-center text-2xl">Войдите</h1>
+          {mutation.isError && (
+            <p className="text-red-500">Неверный логин или пароль.</p>
+          )}
+          <TextInput
+            size="md"
+            label="Логин"
+            placeholder="Введите логин"
+            value={login}
+            onChange={(event) => setLogin(event.currentTarget.value)}
+            disabled={mutation.isPending}
+          />
+          <TextInput
+            size="md"
+            label="Пароль"
+            placeholder="Введите пароль"
+            type="password"
+            value={password}
+            onChange={(event) => setPassword(event.currentTarget.value)}
+            disabled={mutation.isPending}
+          />
+          <Button
+            onClick={() => {
+              mutation.mutate({ login, password });
+            }}
+          >
+            Ок
+          </Button>
+          <Link href="/" className="text-center text-xs text-gray-500">
+            На главную
+          </Link>
+        </div>
       </div>
-    </main>
+    </Layout>
   );
 }
