@@ -6,9 +6,7 @@ import { useIsClient, useLocalStorage, useReadLocalStorage } from "usehooks-ts";
 export type User = {
   id: number;
   login: string;
-  first_name: string | null;
-  middle_name: string | null;
-  last_name: string | null;
+  name: string;
   role: "default" | "admin";
 };
 
