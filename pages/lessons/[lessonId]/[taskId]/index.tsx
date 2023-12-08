@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import TaskContent from "@/components/TaskContent";
-import TaskInput from "@/components/TaskInput";
+import TaskSubmit from "@/components/TaskSubmit";
 import { Lesson } from "@/lib/lesson";
 import { Container } from "@mantine/core";
 import { useQuery } from "@tanstack/react-query";
@@ -16,10 +16,10 @@ export default function Page() {
     router.query.taskId !== undefined ? Number(router.query.taskId) : undefined;
 
   const { data: lesson } = useQuery<Lesson>({
-    queryKey: [`/tests/${lessonId}`],
+    queryKey: [`/lessons/${lessonId}`],
     enabled: lessonId !== undefined,
   });
-  const task = lesson?.tasks[Number(taskId)];
+  const task = taskId !== undefined ? lesson?.tasks[taskId] : undefined;
 
   return (
     <Layout>
@@ -30,11 +30,7 @@ export default function Page() {
         {task && (
           <>
             <TaskContent content={task.content} />
-            {task.type === "input" ? (
-              <TaskInput task={task} />
-            ) : (
-              "Неизвестный тип задания"
-            )}
+            <TaskSubmit task={task} />
           </>
         )}
       </Container>

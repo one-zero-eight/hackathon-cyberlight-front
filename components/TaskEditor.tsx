@@ -19,7 +19,7 @@ export default function TaskEditor({
   taskId: number;
 }) {
   const { data: lesson } = useQuery<Lesson>({
-    queryKey: [`/tests/${lessonId}`],
+    queryKey: [`/lessons/${lessonId}`],
   });
   const task = lesson?.tasks[taskId];
 
