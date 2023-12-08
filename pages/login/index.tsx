@@ -1,7 +1,7 @@
-import { Button, Paper, TextInput, Title, em } from "@mantine/core";
-import { useForm } from "@mantine/form";
-import { useSignInByCredentials } from "@/lib/auth";
 import Layout from "@/components/Layout";
+import { useSignInByCredentials } from "@/lib/auth";
+import { Button, Paper, TextInput } from "@mantine/core";
+import { useForm } from "@mantine/form";
 
 export default function Page() {
   const form = useForm({
@@ -49,7 +49,13 @@ export default function Page() {
           {signIn.isError && (
             <p className="text-red-500">Неверный логин или пароль.</p>
           )}
-          <Button type="submit">Войти</Button>
+          <Button
+            type="submit"
+            loading={signIn.isPending}
+            loaderProps={{ type: "dots" }}
+          >
+            Войти
+          </Button>
         </form>
       </Paper>
     </Layout>
