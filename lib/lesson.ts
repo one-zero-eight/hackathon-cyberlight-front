@@ -1,12 +1,16 @@
 export type Lesson = {
   id: number;
   difficulty: number;
+  alias: string;
+  title?: string;
   tasks: Task[];
 };
 
 export type Task = {
   id: number;
   reward?: number;
+  title?: string;
+  alias: string;
   content: string;
   type: "empty" | "instant" | "radio" | "multichoice" | "input";
   choices?: string[];
