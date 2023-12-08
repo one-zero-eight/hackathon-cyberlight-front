@@ -1,7 +1,7 @@
 import { AUTH_TOKEN_KEY, getAuthToken } from "@/lib/auth";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
-import { useLocalStorage, useReadLocalStorage } from "usehooks-ts";
+import { useIsClient, useLocalStorage, useReadLocalStorage } from "usehooks-ts";
 
 export type User = {
   id: number;
@@ -19,6 +19,7 @@ export function useUser() {
     "user",
     undefined,
   );
+  const isClient = useIsClient();
 
   useEffect(() => {
     if (user) {
@@ -30,8 +31,9 @@ export function useUser() {
 
   return {
     loggedIn:
+      isClient &&
       authToken !== undefined &&
       (user !== undefined || storedUser !== undefined),
-    user: user || storedUser,
+    user: isClient ? user || storedUser : undefined,
   };
 }
