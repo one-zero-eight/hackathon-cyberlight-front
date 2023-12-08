@@ -1,9 +1,9 @@
 import Layout from "@/components/Layout";
 import { Lesson } from "@/lib/lesson";
-import { Container } from "@mantine/core";
+import { Container, Paper, Skeleton } from "@mantine/core";
 import { useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 
 export default function Page() {
   const router = useRouter();
@@ -27,7 +27,15 @@ export default function Page() {
   return (
     <Layout>
       <Container className="flex flex-col gap-2">
-        <h1 className="text-2xl">{lesson?.title}</h1>
+        <Skeleton>
+          <Paper className="h-10 w-full"></Paper>
+        </Skeleton>
+        <Skeleton>
+          <Paper className="h-[300px] w-full"></Paper>
+        </Skeleton>
+        <Skeleton>
+          <Paper className="h-[200px] w-full"></Paper>
+        </Skeleton>
       </Container>
     </Layout>
   );

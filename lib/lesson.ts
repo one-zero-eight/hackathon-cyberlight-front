@@ -3,6 +3,7 @@ export type Lesson = {
   difficulty: number;
   alias: string;
   title?: string;
+  content?: string;
   tasks: Task[];
 };
 

@@ -77,15 +77,17 @@ export default function TaskSubmit({
             (task.type === "input" && textAnswer === "") ||
             (task.type === "radio" && radioAnswer === "-")
           }
+          loading={mutation.isPending}
+          loaderProps={{ type: "dots" }}
         >
           Отправить
         </Button>
       </div>
       {mutation.data &&
         (mutation.data.success ? (
-          <p>Верно! Получено баллов: {mutation.data.rewards}</p>
+          <p>Верно! Награда: {mutation.data.rewards.join(", ")}</p>
         ) : (
-          <p>Неверно! Получено баллов: {mutation.data.rewards}</p>
+          <p>Неверно!</p>
         ))}
     </div>
   );

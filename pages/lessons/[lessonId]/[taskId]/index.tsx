@@ -3,6 +3,7 @@ import TaskContent from "@/components/TaskContent";
 import TaskSubmit from "@/components/TaskSubmit";
 import { Lesson } from "@/lib/lesson";
 import { Button, Container, Divider, Paper, Skeleton } from "@mantine/core";
+import { IconEdit } from "@tabler/icons-react";
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -21,28 +22,42 @@ export default function Page() {
     queryKey: [`/lessons/${lessonId}`],
     enabled: lessonId !== undefined,
   });
-  const task = taskId !== undefined ? lesson?.tasks[taskId] : undefined;
+  const task =
+    taskId !== undefined
+      ? lesson?.tasks.filter((task) => task.id === taskId)[0]
+      : undefined;
 
   return (
     <Layout>
       <Container className="flex flex-col">
-        <h1 className="mb-2 text-2xl font-bold">{lesson?.title}</h1>
-        <Divider />
+        <div className="flex flex-row justify-between">
+          <div className="flex flex-col gap-1">
+            <h1 className="text-2xl font-bold">{lesson?.title}</h1>
+            <p className="text-gray-800 dark:text-gray-600">
+              {lesson?.content}
+            </p>
+          </div>
+          <Link href={`/lessons/${lesson?.id}/${task?.id}/edit`}>
+            <Button
+              variant="subtle"
+              color="gray"
+              leftSection={<IconEdit size={14} />}
+            >
+              Изменить
+            </Button>
+          </Link>
+        </div>
+        <Divider className="mt-2" />
         <div className="flex">
           <nav className="flex max-w-[200px] shrink-0 flex-col py-4 pr-4">
             {lesson &&
-              lesson.tasks.map((task, index) => (
-                <Link href={`/lessons/${lesson.id}/${index}`} key={task.id}>
-                  <Button variant={taskId === index ? "light" : "subtle"}>
+              lesson.tasks.map((task) => (
+                <Link href={`/lessons/${lesson.id}/${task.id}`} key={task.id}>
+                  <Button variant={taskId === task.id ? "light" : "subtle"}>
                     {task.title}
                   </Button>
                 </Link>
               ))}
-            <Link href={`/lessons/${lesson?.id}/edit`}>
-              <Button variant="subtle" color="gray">
-                Изменить
-              </Button>
-            </Link>
           </nav>
           <Divider orientation="vertical" />
           <section className="grow p-4">
