@@ -24,6 +24,9 @@ export default function Page() {
         } else {
           console.error(err);
         }
+      })
+      .finally(() => {
+        setItemsLoading(false);
       });
 
     return () => {
@@ -46,7 +49,7 @@ export default function Page() {
           </>
         )}
         {newsItems.map((item, i) => (
-          <Paper shadow="xs" className="p-4" key={i}>
+          <Paper withBorder shadow="xs" className="p-4" key={i}>
             {item.title && (
               <h3 className="text-lg font-bold">
                 <Link href={item.link ?? "#"}>{item.title}</Link>
