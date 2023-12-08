@@ -17,11 +17,11 @@ export default function Page() {
   });
 
   useEffect(() => {
-    if (lesson === undefined) {
+    if (lesson === undefined || lesson.tasks.length === 0) {
       return;
     }
 
-    router.push(`/lessons/${lesson.id}/0/edit`);
+    router.push(`/lessons/${lesson.id}/${lesson.tasks[0].id}/edit`);
   }, [lesson, router]);
 
   return (
