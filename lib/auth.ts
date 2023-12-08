@@ -12,6 +12,7 @@ export const AUTH_TOKEN_KEY = "token";
 
 export function getAuthToken() {
   const value = localStorage.getItem(AUTH_TOKEN_KEY);
+  if (value === "undefined") return undefined;
   return value ? JSON.parse(value) : undefined;
 }
 
