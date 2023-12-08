@@ -68,7 +68,7 @@ export function useSignInByCredentials() {
     },
     onSuccess: (data) => {
       setToken(data.token);
-      queryClient.invalidateQueries();
+      queryClient.clear();
       router.replace("/");
     },
   });
