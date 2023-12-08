@@ -4,6 +4,7 @@ import { createTheme, MantineProvider } from "@mantine/core";
 import { QueryClientProvider } from "@tanstack/react-query";
 import type { AppProps } from "next/app";
 import "@mantine/core/styles.css";
+import "@mantine/tiptap/styles.css";
 
 const theme = createTheme({
   /** Put your mantine theme override here */
