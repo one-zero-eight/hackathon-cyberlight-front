@@ -1,4 +1,5 @@
 import { Link, RichTextEditor } from "@mantine/tiptap";
+import { Content } from "@tiptap/core";
 import Highlight from "@tiptap/extension-highlight";
 import SubScript from "@tiptap/extension-subscript";
 import Superscript from "@tiptap/extension-subscript";
@@ -8,7 +9,7 @@ import { useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import { useEffect } from "react";
 
-export default function TaskContent({ content }: { content: string }) {
+export default function TaskContent({ content }: { content: Content }) {
   const editor = useEditor({
     extensions: [
       StarterKit,
