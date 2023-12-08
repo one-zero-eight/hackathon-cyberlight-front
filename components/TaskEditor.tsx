@@ -44,7 +44,8 @@ export default function TaskEditor({
 
   const buildTaskToSend = () => {
     if (editor) {
-      const content = editor.getHTML();
+      const content = editor.getJSON();
+      console.log(content);
     }
   };
 
@@ -94,7 +95,13 @@ export default function TaskEditor({
         <RichTextEditor.Content />
       </RichTextEditor>
       <div className="w-fit">
-        <Button onClick={() => {}}>Сохранить</Button>
+        <Button
+          onClick={() => {
+            buildTaskToSend();
+          }}
+        >
+          Сохранить
+        </Button>
       </div>
     </div>
   );
