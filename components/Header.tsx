@@ -20,8 +20,8 @@ export default function Header() {
   return (
     <Container component="header" className="w-full">
       <div className="mt-4 flex items-center justify-between rounded-md border border-gray-200 p-4 dark:border-gray-900">
-        <div className="flex items-center justify-start">
-          <Link href="/" className="mr-6 text-lg font-bold">
+        <div className="flex items-center justify-start gap-2">
+          <Link href="/" className="mr-4 text-lg font-bold">
             Кибер.База
           </Link>
           <Link href="/lessons">
