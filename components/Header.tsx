@@ -29,7 +29,7 @@ export default function Header() {
               variant={
                 router.pathname.startsWith("/lessons") ? "light" : "subtle"
               }
-              color={router.pathname.startsWith("/lessons") ? "green" : "gray"}
+              color={router.pathname.startsWith("/lessons") ? "blue" : "gray"}
             >
               Уроки
             </Button>
@@ -37,7 +37,7 @@ export default function Header() {
           <Link href="/feed">
             <Button
               variant={router.pathname.startsWith("/feed") ? "light" : "subtle"}
-              color={router.pathname.startsWith("/feed") ? "green" : "gray"}
+              color={router.pathname.startsWith("/feed") ? "blue" : "gray"}
             >
               Новости
             </Button>
