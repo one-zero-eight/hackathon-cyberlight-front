@@ -16,8 +16,8 @@ export default function Header() {
   const { toggleColorScheme } = useMantineColorScheme();
 
   return (
-    <header className="w-full">
-      <Container className="mt-4 flex items-center justify-between rounded-md border border-gray-200 p-4 dark:border-gray-900">
+    <Container component="header" className="w-full" px={undefined}>
+      <div className="mt-4 flex items-center justify-between rounded-md border border-gray-200 p-4 dark:border-gray-900">
         <div className="flex items-center justify-start">
           <Link href="/" className="text-lg font-bold">
             Кибер.База
@@ -75,7 +75,7 @@ export default function Header() {
             </Menu>
           )}
         </div>
-      </Container>
-    </header>
+      </div>
+    </Container>
   );
 }

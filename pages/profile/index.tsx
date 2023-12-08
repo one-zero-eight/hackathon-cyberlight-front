@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Layout from "@/components/Layout";
-import { Button, Container, Paper, Skeleton, Text, Title } from "@mantine/core";
+import { Container, Title } from "@mantine/core";
 
 export default function Page() {
   return (
     <Layout>
-      <Container className="block pt-4">
+      <Container className="block">
         <Title order={1}>Профиль</Title>
       </Container>
     </Layout>

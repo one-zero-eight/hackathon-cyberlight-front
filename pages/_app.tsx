@@ -4,7 +4,7 @@ import "@mantine/tiptap/styles.css";
 
 import type { AppProps } from "next/app";
 import { QueryClientProvider } from "@tanstack/react-query";
-import { createTheme, MantineProvider } from "@mantine/core";
+import { Container, createTheme, MantineProvider } from "@mantine/core";
 import { queryClient } from "@/lib/api";
 
 const theme = createTheme({
@@ -178,6 +178,13 @@ const theme = createTheme({
       "#e8590c",
       "#d9480f",
     ],
+  },
+  components: {
+    Container: Container.extend({
+      defaultProps: {
+        px: 0,
+      },
+    }),
   },
 });
 

@@ -25,7 +25,7 @@ export default function Page() {
 
   return (
     <Layout>
-      <Container className="mt-4 flex flex-col" px={0}>
+      <Container className="flex flex-col">
         <h1 className="mb-2 text-2xl font-bold">{lesson?.title}</h1>
         <Divider />
         <div className="flex">

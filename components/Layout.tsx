@@ -13,7 +13,7 @@ export default function Layout({
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      <main className={clsx("grow", className)}>{children}</main>
+      <main className={clsx("grow pt-4", className)}>{children}</main>
       <Footer />
     </div>
   );
