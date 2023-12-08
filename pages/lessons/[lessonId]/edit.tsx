@@ -7,6 +7,7 @@ import {
   useQuery,
   useQueryClient,
 } from "@tanstack/react-query";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
@@ -96,22 +97,23 @@ export default function Page() {
         />
         <NumberInput
           label="Сложность"
-          description="Значение от 1 до 10"
+          description="Значение от 0 до 10"
           placeholder="5"
           className="w-96"
+          min={0}
+          max={10}
           value={difficulty}
           onChange={(event) => setDifficulty(Number(event))}
         />
 
         <div className="flex flex-col gap-2">
           <div className="text-xl">Шаги</div>
-          <div>
-            <Button onClick={() => handleNewTask()}>Добавить</Button>
-          </div>
           {lesson?.tasks.map((task) => (
-            <div key={task.id} className="flex flex-col gap-2">
+            <div key={task.id} className="flex flex-row gap-2">
+              <div className="flex h-6 w-6 items-center justify-center self-center rounded-full border-[1px]">
+                {task.id}
+              </div>
               <TextInput
-                label="Название"
                 placeholder="Введите заголовок шага"
                 className="w-96"
                 value={task.title}
@@ -128,48 +130,21 @@ export default function Page() {
                   })
                 }
               />
-              <TextInput
-                label="Содержание"
-                placeholder="Введите содержание шага"
-                className="w-96"
-                value={task.content}
-                onChange={(event) =>
-                  mutationNewTask.mutate({
-                    url: `/lessons/${lesson.id}/tasks/${task.id}`,
-                    method: "POST",
-                    body: {
-                      title: task.title,
-                      alias: task.alias,
-                      content: event.currentTarget.value,
-                      type: task.type,
-                    },
-                  })
-                }
-              />
-              <TextInput
-                label="Тип"
-                placeholder="Введите тип шага"
-                className="w-96"
-                value={task.type}
-                onChange={(event) =>
-                  mutationNewTask.mutate({
-                    url: `/lessons/${lesson.id}/tasks/${task.id}`,
-                    method: "POST",
-                    body: {
-                      title: task.title,
-                      alias: task.alias,
-                      content: task.content,
-                      type: event.currentTarget.value,
-                    },
-                  })
-                }
-              />
+              <Link
+                href={`/lessons/${lessonId}/${task.id}/edit`}
+                className="flex self-center text-sm"
+              >
+                Редактировать
+              </Link>
             </div>
           ))}
+          <div>
+            <Button onClick={() => handleNewTask()}>Добавить шаг</Button>
+          </div>
         </div>
 
         <div className="w-fit">
-          <Button onClick={handleSave}>Создать</Button>
+          <Button onClick={handleSave}>Сохранить</Button>
         </div>
       </Container>
     </Layout>
