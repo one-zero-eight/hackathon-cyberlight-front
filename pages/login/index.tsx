@@ -9,8 +9,8 @@ export default function Page() {
   const mutation = useSignInByCredentials();
 
   return (
-    <main className="flex h-screen w-full justify-center bg-gradient-to-br from-green-50 to-green-300 p-4">
-      <div className="flex h-fit w-fit flex-col gap-2 self-center rounded-lg border-2 bg-white p-6">
+    <main className="flex w-full justify-center p-4">
+      <div className="border-dark-100 dark:border-dark-900 flex h-fit w-fit flex-col gap-2 self-center rounded-lg border-2 p-6">
         <h1 className="text-center text-2xl">Войдите</h1>
         {mutation.isError && (
           <p className="text-red-500">Неверный логин или пароль.</p>

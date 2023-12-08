@@ -1,3 +1,9 @@
+import { Container } from "@mantine/core";
+
 export default function Footer() {
-  return <footer>Copyright</footer>;
+  return (
+    <footer>
+      <Container>Copyright</Container>
+    </footer>
+  );
 }
