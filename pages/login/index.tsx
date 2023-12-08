@@ -1,51 +1,55 @@
-import Layout from "@/components/Layout";
+import { Button, Paper, TextInput, Title, em } from "@mantine/core";
+import { useForm } from "@mantine/form";
 import { useSignInByCredentials } from "@/lib/auth";
-import { Button, TextInput } from "@mantine/core";
-import Link from "next/link";
-import { useState } from "react";
+import Layout from "@/components/Layout";
 
 export default function Page() {
-  const [login, setLogin] = useState("");
-  const [password, setPassword] = useState("");
-  const mutation = useSignInByCredentials();
+  const form = useForm({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    validate: {
+      email: (val) => {
+        if (!val.includes("@")) {
+          return "Email должен содержать @";
+        }
+      },
+      password: (val) => {
+        if (val.length < 6) {
+          return "Пароль должен быть длиннее 4 символов";
+        }
+      },
+    },
+  });
+  const signIn = useSignInByCredentials();
 
   return (
-    <Layout>
-      <div className="flex w-full justify-center p-4">
-        <div className="border-dark-100 dark:border-dark-900 flex h-fit w-fit flex-col gap-2 self-center rounded-lg border-2 p-6">
-          <h1 className="text-center text-2xl">Войдите</h1>
-          {mutation.isError && (
+    <Layout className="flex items-center justify-center">
+      <Paper withBorder shadow="sm" className="w-full max-w-[300px] p-4">
+        <form
+          className="flex flex-col gap-4"
+          onSubmit={form.onSubmit(({ email, password }) =>
+            signIn.mutate({ login: email, password }),
+          )}
+        >
+          <h1 className="text-center text-2xl font-medium">Вход</h1>
+          {signIn.isError && (
             <p className="text-red-500">Неверный логин или пароль.</p>
           )}
           <TextInput
             size="md"
-            label="Логин"
-            placeholder="Введите логин"
-            value={login}
-            onChange={(event) => setLogin(event.currentTarget.value)}
-            disabled={mutation.isPending}
+            placeholder="E-mail"
+            {...form.getInputProps("email")}
           />
           <TextInput
             size="md"
-            label="Пароль"
-            placeholder="Введите пароль"
-            type="password"
-            value={password}
-            onChange={(event) => setPassword(event.currentTarget.value)}
-            disabled={mutation.isPending}
+            placeholder="Пароль"
+            {...form.getInputProps("password")}
           />
-          <Button
-            onClick={() => {
-              mutation.mutate({ login, password });
-            }}
-          >
-            Ок
-          </Button>
-          <Link href="/" className="text-center text-xs text-gray-500">
-            На главную
-          </Link>
-        </div>
-      </div>
+          <Button type="submit">Войти</Button>
+        </form>
+      </Paper>
     </Layout>
   );
 }

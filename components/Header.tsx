@@ -1,8 +1,18 @@
 import Link from "next/link";
-import { ActionIcon, Container, useMantineColorScheme } from "@mantine/core";
+import {
+  ActionIcon,
+  Button,
+  Container,
+  Menu,
+  useMantineColorScheme,
+} from "@mantine/core";
 import { IconMoon, IconSun } from "@tabler/icons-react";
+import { useSignOut } from "@/lib/auth";
+import { useUser } from "@/lib/user";
 
 export default function Header() {
+  const { loggedIn, user } = useUser();
+  const signOut = useSignOut();
   const { toggleColorScheme } = useMantineColorScheme();
 
   return (
@@ -22,6 +32,48 @@ export default function Header() {
             <IconSun className="hidden dark:block" stroke={1.5} />
             <IconMoon className="dark:hidden" stroke={1.5} />
           </ActionIcon>
+          {!loggedIn || user == null ? (
+            <Link href="/login">
+              <Button
+                className="ml-4"
+                variant="outline"
+                leftSection={<span className="icon-[mdi--login]" />}
+              >
+                Войти
+              </Button>
+            </Link>
+          ) : (
+            <Menu position="bottom-end">
+              <Menu.Target>
+                <Button
+                  className="ml-4"
+                  variant="outline"
+                  rightSection={<span className="icon-[mdi--chevron-down]" />}
+                >
+                  {user.name}
+                </Button>
+              </Menu.Target>
+              <Menu.Dropdown>
+                <Link href="/profile">
+                  <Menu.Item
+                    leftSection={
+                      <span className="icon-[mdi--account-circle]" />
+                    }
+                  >
+                    Профиль
+                  </Menu.Item>
+                </Link>
+                <Menu.Divider />
+                <Menu.Item
+                  color="red"
+                  leftSection={<span className="icon-[mdi--logout]" />}
+                  onClick={signOut}
+                >
+                  Выйти
+                </Menu.Item>
+              </Menu.Dropdown>
+            </Menu>
+          )}
         </div>
       </Container>
     </header>

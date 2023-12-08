@@ -1,22 +1,31 @@
+import Image from "next/image";
+import Link from "next/link";
+import { Button, Container } from "@mantine/core";
 import Layout from "@/components/Layout";
-import { useUser } from "@/lib/user";
-import { Button } from "@mantine/core";
+
+import cyberbaseImg from "@/assets/cyberbase.webp";
 
 export default function Page() {
-  const { user, loggedIn } = useUser();
-
   return (
     <Layout>
-      <div className="p-4">
-        Cyber world!
-        <Button>Click me</Button>
-        {loggedIn && (
-          <p>
-            Logged in as {user?.id} {user?.first_name} {user?.last_name}
-            {user?.login}
-          </p>
-        )}
-      </div>
+      <Container>
+        <section className="relative mt-8 pt-[60px]">
+          <Image
+            src={cyberbaseImg}
+            alt="Кибер.База"
+            className="absolute right-0 top-0 h-[300px] w-auto"
+          />
+          <h1 className="mb-2 text-5xl font-bold text-black dark:text-white ">
+            Кибер.База
+          </h1>
+          <h2 className="text-xl text-gray-600">
+            Преврати свои навыки в киберщит.
+          </h2>
+          <Link href="/checkup">
+            <Button className="mt-6">Пройти чекап</Button>
+          </Link>
+        </section>
+      </Container>
     </Layout>
   );
 }
