@@ -2,8 +2,9 @@ import Layout from "@/components/Layout";
 import TaskContent from "@/components/TaskContent";
 import TaskSubmit from "@/components/TaskSubmit";
 import { Lesson } from "@/lib/lesson";
-import { Container, Paper, Skeleton } from "@mantine/core";
+import { Button, Container, Divider, Paper, Skeleton } from "@mantine/core";
 import { useQuery } from "@tanstack/react-query";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 
@@ -24,10 +25,30 @@ export default function Page() {
 
   return (
     <Layout>
-      <Container className="flex flex-col gap-2 p-4">
-        <h1>
-          Урок: {lessonId}, задание: {taskId}
-        </h1>
+      <Container className="mt-4 flex flex-col" px={0}>
+        <h1 className="mb-2 text-2xl font-bold">{lesson?.title}</h1>
+        <Divider />
+        <div className="flex">
+          <nav className="flex max-w-[200px] shrink-0 flex-col py-4 pr-4">
+            {lesson &&
+              lesson.tasks.map((task, index) => (
+                <Link href={`/lessons/${lesson.id}/${index}`} key={task.id}>
+                  <Button variant="subtle">{task.title}</Button>
+                </Link>
+              ))}
+          </nav>
+          <Divider orientation="vertical" />
+          <section className="grow p-4">
+            <h2 className="mb-4 text-xl font-medium">{task?.title}</h2>
+
+            {task && (
+              <>
+                <TaskContent content={task.content} />
+                <TaskSubmit task={task} />
+              </>
+            )}
+          </section>
+        </div>
         {isLoading && (
           <>
             <Skeleton>
@@ -39,12 +60,6 @@ export default function Page() {
             <Skeleton>
               <Paper className="h-[200px] w-full"></Paper>
             </Skeleton>
-          </>
-        )}
-        {task && (
-          <>
-            <TaskContent content={task.content} />
-            <TaskSubmit task={task} />
           </>
         )}
       </Container>
