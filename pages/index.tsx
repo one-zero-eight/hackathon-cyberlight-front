@@ -13,7 +13,7 @@ export default function Page() {
           <Image
             src={cyberbaseImg}
             alt="Кибер.База"
-            className="absolute right-0 top-0 h-[300px] w-auto"
+            className="absolute right-0 top-0 h-[350px] w-auto"
           />
           <h1 className="mb-2 text-5xl font-bold text-black dark:text-white ">
             Кибер.База
