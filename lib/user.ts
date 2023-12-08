@@ -1,3 +1,4 @@
+import { MyFetchError } from "@/lib/api";
 import { AUTH_TOKEN_KEY, getAuthToken } from "@/lib/auth";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
@@ -11,7 +12,9 @@ export type User = {
 };
 
 export function useUser() {
-  const { data: user } = useQuery<User>({ queryKey: ["/users/me"] });
+  const { data: user, error } = useQuery<User, MyFetchError>({
+    queryKey: ["/users/me"],
+  });
   const authToken = useReadLocalStorage(AUTH_TOKEN_KEY);
   const [storedUser, setStoredUser] = useLocalStorage<User | undefined>(
     "user",
@@ -26,6 +29,15 @@ export function useUser() {
       setStoredUser(undefined);
     }
   }, [user, setStoredUser]);
+
+  useEffect(() => {
+    if (error) {
+      console.log("Error while fetching user", error);
+      if (error.status === 401) {
+        setStoredUser(undefined);
+      }
+    }
+  }, [error, setStoredUser]);
 
   return {
     loggedIn:

@@ -68,6 +68,8 @@ export function useSignInByCredentials() {
     },
     onSuccess: (data) => {
       setToken(data.token);
+      localStorage.removeItem("user");
+      window.dispatchEvent(new Event("local-storage"));
       queryClient.clear();
       router.replace("/");
     },

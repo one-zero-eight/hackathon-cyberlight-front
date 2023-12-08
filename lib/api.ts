@@ -7,6 +7,12 @@ import {
 
 export const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
+// Custom error
+export class MyFetchError extends Error {
+  status?: number;
+  info: any;
+}
+
 const defaultQueryFn: QueryFunction = async ({ queryKey }) => {
   const [url] = queryKey as string[];
   const res = await fetch(API_URL + url, {
@@ -18,11 +24,11 @@ const defaultQueryFn: QueryFunction = async ({ queryKey }) => {
   });
 
   if (!res.ok) {
-    const error = new Error("An error occurred while fetching the data.");
+    const error = new MyFetchError(
+      "An error occurred while fetching the data.",
+    );
     // Attach extra info to the error object.
-    // @ts-ignore
     error.info = await res.json();
-    // @ts-ignore
     error.status = res.status;
     throw error;
   }
