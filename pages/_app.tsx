@@ -7,7 +7,7 @@ import "@mantine/core/styles.css";
 import "@mantine/tiptap/styles.css";
 
 const theme = createTheme({
-  /** Put your mantine theme override here */
+  primaryColor: "green",
 });
 
 export default function App({ Component, pageProps }: AppProps) {
