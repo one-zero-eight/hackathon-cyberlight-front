@@ -7,10 +7,10 @@ export default function Layout({
   children,
 }: React.PropsWithChildren<LayoutProps>) {
   return (
-    <>
+    <div className="flex min-h-screen flex-col">
       <Header />
-      <main>{children}</main>
+      <main className="grow">{children}</main>
       <Footer />
-    </>
+    </div>
   );
 }
