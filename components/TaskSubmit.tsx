@@ -1,26 +1,40 @@
-import { Task } from "@/lib/lesson";
-import { Button, TextInput } from "@mantine/core";
+import { Lesson, Task } from "@/lib/lesson";
+import { Button, Radio, TextInput } from "@mantine/core";
 import { DefaultError, useMutation } from "@tanstack/react-query";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type SolveResponse = {
-  is_success: boolean;
-  reward: number;
+  success: boolean;
+  rewards: number[];
 };
 
-export default function TaskSubmit({ task }: { task: Task }) {
+export default function TaskSubmit({
+  lesson,
+  task,
+}: {
+  lesson: Lesson;
+  task: Task;
+}) {
   const [textAnswer, setTextAnswer] = useState<string>("");
   const mutation = useMutation<SolveResponse, DefaultError, any>({});
+  const [radioAnswer, setRadioAnswer] = useState<string>("-");
+
+  useEffect(() => {
+    setTextAnswer("");
+    setRadioAnswer("-");
+  }, [task]);
 
   const handleSubmit = () => {
     const body: { [key: string]: any } = {
+      lesson_id: lesson.id,
+      task_id: task.id,
       task_type: task.type,
     };
 
     if (task.type === "input") {
       body.input_answer = textAnswer;
     } else if (task.type === "radio" || task.type === "instant") {
-      body.choices = [];
+      body.choices = [radioAnswer];
     } else if (task.type === "multichoice") {
       body.choices = [];
     } else {
@@ -28,7 +42,7 @@ export default function TaskSubmit({ task }: { task: Task }) {
     }
 
     mutation.mutate({
-      url: `/lessons/tasks/${task.id}/solve`,
+      url: `/lessons/solve`,
       body: body,
     });
   };
@@ -42,17 +56,36 @@ export default function TaskSubmit({ task }: { task: Task }) {
           value={textAnswer}
           onChange={(event) => setTextAnswer(event.currentTarget.value)}
         />
-      ) : task.type === "radio" ? (
-        <></>
+      ) : task.type === "radio" && task.choices ? (
+        <Radio.Group value={radioAnswer} onChange={setRadioAnswer}>
+          {task.choices.map((choice, i) => (
+            <Radio
+              key={i}
+              label={choice}
+              value={i.toString()}
+              className="my-2"
+            />
+          ))}
+        </Radio.Group>
       ) : (
         <></>
       )}
-      <Button onClick={() => handleSubmit()}>Отправить</Button>
+      <div>
+        <Button
+          onClick={() => handleSubmit()}
+          disabled={
+            (task.type === "input" && textAnswer === "") ||
+            (task.type === "radio" && radioAnswer === "-")
+          }
+        >
+          Отправить
+        </Button>
+      </div>
       {mutation.data &&
-        (mutation.data.is_success ? (
-          <p>Верно! Получено: {mutation.data.reward} баллов</p>
+        (mutation.data.success ? (
+          <p>Верно! Получено баллов: {mutation.data.rewards}</p>
         ) : (
-          <p>Неверно! Получено: {mutation.data.reward} баллов</p>
+          <p>Неверно! Получено баллов: {mutation.data.rewards}</p>
         ))}
     </div>
   );

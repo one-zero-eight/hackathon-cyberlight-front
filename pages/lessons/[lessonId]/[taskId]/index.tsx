@@ -33,7 +33,9 @@ export default function Page() {
             {lesson &&
               lesson.tasks.map((task, index) => (
                 <Link href={`/lessons/${lesson.id}/${index}`} key={task.id}>
-                  <Button variant="subtle">{task.title}</Button>
+                  <Button variant={taskId === index ? "light" : "subtle"}>
+                    {task.title}
+                  </Button>
                 </Link>
               ))}
           </nav>
@@ -41,10 +43,10 @@ export default function Page() {
           <section className="grow p-4">
             <h2 className="mb-4 text-xl font-medium">{task?.title}</h2>
 
-            {task && (
+            {lesson && task && (
               <>
                 <TaskContent content={task.content} />
-                <TaskSubmit task={task} />
+                <TaskSubmit lesson={lesson} task={task} />
               </>
             )}
           </section>
