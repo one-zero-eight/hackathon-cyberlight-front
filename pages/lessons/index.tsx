@@ -15,7 +15,7 @@ export default function Page() {
         <h1 className="text-2xl">Уроки</h1>
         {lessons?.map((lesson) => (
           <Paper key={lesson.id}>
-            <Link href={`/lessons/${lesson.id}`}>Урок</Link>
+            <Link href={`/lessons/${lesson.id}`}>{lesson.title}</Link>
           </Paper>
         ))}
       </Container>
