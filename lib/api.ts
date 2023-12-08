@@ -20,9 +20,10 @@ const defaultQueryFn: QueryFunction = async ({ queryKey }) => {
 };
 
 const defaultMutationFn: MutationFunction = async (variables) => {
-  const { url, method } = variables as {
+  const { url, method, body } = variables as {
     url: string;
-    method: string;
+    method?: string;
+    body: any;
   };
 
   const res = await fetch(API_URL + url, {
@@ -31,7 +32,7 @@ const defaultMutationFn: MutationFunction = async (variables) => {
       "Content-Type": "application/json",
       Authorization: getAuthorizationHeader(),
     },
-    body: JSON.stringify(variables),
+    body: JSON.stringify(body),
   });
 
   return (await res.json()) as any;
