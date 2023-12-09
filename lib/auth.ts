@@ -1,4 +1,5 @@
 import { API_URL } from "@/lib/api";
+import { useUser } from "@/lib/user";
 import {
   DefaultError,
   useMutation,
@@ -92,7 +93,7 @@ export function useRequireAuth() {
 export function useRequireAdmin() {
   const router = useRouter();
   const [token] = useAuthToken();
-  const user = JSON.parse(localStorage.getItem("user") || "{}");
+  const { user } = useUser();
 
   useEffect(() => {
     if (!getAuthToken()) {
