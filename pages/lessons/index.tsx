@@ -12,9 +12,9 @@ export default function Page() {
 
   return (
     <Layout>
-      <Container className="flex flex-col gap-2">
-        <h1 className="text-3xl font-bold">Рекомендуем пройти:</h1>
-        <div className="my-2 flex flex-wrap items-start gap-3">
+      <Container className="flex flex-col gap-4">
+        <Title order={1}>Рекомендуем пройти:</Title>
+        <div className="flex flex-wrap items-start gap-3">
           {lessons?.map((lesson) => (
             <Link href={`/lessons/${lesson.id}`} key={lesson.id}>
               <Card

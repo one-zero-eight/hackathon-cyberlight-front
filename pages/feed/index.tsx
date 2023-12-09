@@ -59,7 +59,7 @@ export default function Page() {
   return (
     <Layout>
       <Container>
-        <h1 className="text-3xl font-bold">Интересно почитать:</h1>
+        <Title order={1}>Интересно почитать:</Title>
       </Container>
       <Container className="my-4 flex gap-2" ref={ref}>
         {error && (
