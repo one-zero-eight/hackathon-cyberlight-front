@@ -9,6 +9,7 @@ export type User = {
   login: string;
   name: string;
   role: "default" | "admin";
+  email: string;
 };
 
 export function useUser() {

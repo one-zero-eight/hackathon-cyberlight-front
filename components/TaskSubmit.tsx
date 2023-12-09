@@ -139,13 +139,7 @@ export default function TaskSubmit({
       {showSuccess
         ? mutation.data &&
           mutation.variables.body.task_id === task.id &&
-          (mutation.data.success ? (
-            <>
-              <p>Отлично!</p>
-            </>
-          ) : (
-            <p>Неверно!</p>
-          ))
+          (mutation.data.success ? <p>Отлично!</p> : <p>Неверно!</p>)
         : null}
       <Modal
         opened={currentRewardModal !== undefined}
