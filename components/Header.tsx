@@ -34,6 +34,16 @@ export default function Header() {
               Уроки
             </Button>
           </Link>
+          <Link href="/consult">
+            <Button
+              variant={
+                router.pathname.startsWith("/consult") ? "light" : "subtle"
+              }
+              color={router.pathname.startsWith("/consult") ? "blue" : "gray"}
+            >
+              Консультации
+            </Button>
+          </Link>
           <Link href="/feed">
             <Button
               variant={router.pathname.startsWith("/feed") ? "light" : "subtle"}
@@ -70,7 +80,7 @@ export default function Header() {
                   variant="outline"
                   rightSection={<span className="icon-[mdi--chevron-down]" />}
                 >
-                  {user.name}
+                  {user.name || "Аноним"}
                 </Button>
               </Menu.Target>
               <Menu.Dropdown>
