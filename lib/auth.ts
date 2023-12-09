@@ -1,5 +1,5 @@
 import { API_URL } from "@/lib/api";
-import { useUser } from "@/lib/user";
+import { User } from "@/lib/user";
 import {
   DefaultError,
   useMutation,
@@ -93,14 +93,14 @@ export function useRequireAuth() {
 export function useRequireAdmin() {
   const router = useRouter();
   const [token] = useAuthToken();
-  const { user } = useUser();
+  const [storedUser] = useLocalStorage<User | undefined>("user", undefined);
 
   useEffect(() => {
     if (!getAuthToken()) {
       router.replace("/login");
-    } else if (!user) {
-    } else if (user.role !== "admin") {
+    } else if (!storedUser) {
+    } else if (storedUser.role !== "admin") {
       router.replace("/");
     }
-  }, [token, user]);
+  }, [token, storedUser]);
 }
