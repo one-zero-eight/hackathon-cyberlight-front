@@ -51,6 +51,7 @@ export default function Page() {
   const modalConsultant = consultants?.find(
     (consultant) => consultant.id === modalConsultantId,
   );
+  const [modalOk, setModalOk] = useState(false);
 
   return (
     <Layout>
@@ -113,7 +114,8 @@ export default function Page() {
                       variant="outline"
                       fullWidth
                       onClick={() => {
-                        console.log(timeslot);
+                        setModalOk(true);
+                        setModalConsultantId(undefined);
                       }}
                     >
                       {timeslot.start}
@@ -122,6 +124,16 @@ export default function Page() {
                 </Card>
               ))}
           </div>
+        </Modal>
+        <Modal
+          title={`Заявка отправлена!`}
+          opened={modalOk}
+          onClose={() => setModalOk(false)}
+          size="sm"
+        >
+          <Text>
+            Эксперт уведомлен о вашей записи. Ожидайте подтверждения на почте.
+          </Text>
         </Modal>
       </Container>
     </Layout>
