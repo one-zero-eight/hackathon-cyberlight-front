@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import Section from "@/components/Section";
 import { useElementWidth } from "@/hooks/useElementWidth";
 import {
   Button,
@@ -108,149 +109,149 @@ export default function Page() {
   return (
     <Layout>
       <Container>
-        <h1 className="mb-4 text-4xl font-bold">Новости из кибер-мира</h1>
-
-        <div className="mb-4 flex flex-col gap-2">
-          <div className="flex items-center gap-2">
-            <p>Сортировать по:</p>
-            <Chip
-              checked={orderBy === "date-asc" || orderBy === "date-desc"}
-              icon={
-                <span
-                  className={clsx(
-                    "text-[16px]",
-                    orderBy === "date-asc"
-                      ? "icon-[mdi--sort-clock-ascending]"
-                      : "icon-[mdi--sort-clock-descending]",
-                  )}
-                ></span>
-              }
-              onChange={() => {
-                if (orderBy === "date-asc") {
-                  setOrderBy("date-desc");
-                } else {
-                  setOrderBy("date-asc");
+        <Section title="Новости из кибер-мира">
+          <div className="mb-4 flex flex-col gap-2">
+            <div className="flex items-center gap-2">
+              <p>Сортировать по:</p>
+              <Chip
+                checked={orderBy === "date-asc" || orderBy === "date-desc"}
+                icon={
+                  <span
+                    className={clsx(
+                      "text-[16px]",
+                      orderBy === "date-asc"
+                        ? "icon-[mdi--sort-clock-ascending]"
+                        : "icon-[mdi--sort-clock-descending]",
+                    )}
+                  ></span>
                 }
-              }}
-            >
-              Дате публикации
-            </Chip>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <p>Сложность:</p>
-            <Rating
-              count={3}
-              color="blue"
-              size="lg"
-              value={difficulty ?? 0}
-              onChange={(value) => {
-                if (value === difficulty) {
-                  setDifficulty(null);
-                } else {
-                  setDifficulty(value);
-                }
-              }}
-            />
-          </div>
-        </div>
-
-        <div className="my-4 flex gap-2" ref={ref}>
-          {error && (
-            <Card shadow="sm" padding="lg">
-              <Title order={3}>Ошибка</Title>
-              <Text>{error.message}</Text>
-            </Card>
-          )}
-          {!error &&
-            columns.map((column, i) => (
-              <div
-                key={`${i}/${columnCount}`}
-                className={clsx(
-                  "flex flex-col gap-2",
-                  columnCount === 1
-                    ? "basis-full"
-                    : columnCount === 2
-                      ? "basis-1/2"
-                      : "basis-1/3",
-                )}
+                onChange={() => {
+                  if (orderBy === "date-asc") {
+                    setOrderBy("date-desc");
+                  } else {
+                    setOrderBy("date-asc");
+                  }
+                }}
               >
-                {column.map((item, j) => (
-                  <Card
-                    key={`${i}/${j}`}
-                    className="flex flex-col gap-4"
-                    shadow="sm"
-                    padding="lg"
-                  >
-                    <Skeleton
-                      visible={item.loading}
-                      className="w-full"
-                      height={isLoading ? randint(20, 40) : undefined}
+                Дате публикации
+              </Chip>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <p>Сложность:</p>
+              <Rating
+                count={3}
+                color="blue"
+                size="lg"
+                value={difficulty ?? 0}
+                onChange={(value) => {
+                  if (value === difficulty) {
+                    setDifficulty(null);
+                  } else {
+                    setDifficulty(value);
+                  }
+                }}
+              />
+            </div>
+          </div>
+
+          <div className="my-4 flex gap-2" ref={ref}>
+            {error && (
+              <Card shadow="sm" padding="lg">
+                <Title order={3}>Ошибка</Title>
+                <Text>{error.message}</Text>
+              </Card>
+            )}
+            {!error &&
+              columns.map((column, i) => (
+                <div
+                  key={`${i}/${columnCount}`}
+                  className={clsx(
+                    "flex flex-col gap-2",
+                    columnCount === 1
+                      ? "basis-full"
+                      : columnCount === 2
+                        ? "basis-1/2"
+                        : "basis-1/3",
+                  )}
+                >
+                  {column.map((item, j) => (
+                    <Card
+                      key={`${i}/${j}`}
+                      className="flex flex-col gap-4"
+                      shadow="sm"
+                      padding="lg"
                     >
-                      <Title order={3}>
-                        {item.loading ? "Загрузка..." : item.title}
-                      </Title>
-                    </Skeleton>
-
-                    <Skeleton
-                      visible={item.loading}
-                      className="w-full"
-                      height={isLoading ? randint(100, 200) : undefined}
-                    >
-                      <Text>
-                        {item.loading
-                          ? "Загрузка..."
-                          : truncateWords(item.content, 20)}
-                      </Text>
-                    </Skeleton>
-
-                    <div className="flex flex-col gap-2">
-                      <Skeleton visible={item.loading} className="w-full">
-                        <div className="flex items-center gap-2 text-sm">
-                          <p className="font-medium">Сложность:</p>
-                          <Rating
-                            value={item.loading ? 0 : item.difficulty}
-                            color="blue"
-                            size="sm"
-                            count={3}
-                            readOnly={true}
-                          />
-                        </div>
-                      </Skeleton>
-
-                      <Skeleton visible={item.loading} className="w-full">
-                        <div className="flex items-center gap-2 text-sm">
-                          <p className="font-medium">Дата публикации:</p>
-                          <time>
-                            {item.loading
-                              ? "xx.xx.xxxx xx:xx:xx"
-                              : item.publishDate.toLocaleDateString("ru-RU", {
-                                  year: "numeric",
-                                  month: "long",
-                                  day: "numeric",
-                                })}
-                          </time>
-                        </div>
-                      </Skeleton>
-                    </div>
-
-                    <Skeleton visible={item.loading} className="w-full">
-                      <Button
-                        variant="outline"
-                        fullWidth
-                        component={Link}
-                        href={item.loading ? "#" : item.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <Skeleton
+                        visible={item.loading}
+                        className="w-full"
+                        height={isLoading ? randint(20, 40) : undefined}
                       >
-                        Читать
-                      </Button>
-                    </Skeleton>
-                  </Card>
-                ))}
-              </div>
-            ))}
-        </div>
+                        <Title order={3}>
+                          {item.loading ? "Загрузка..." : item.title}
+                        </Title>
+                      </Skeleton>
+
+                      <Skeleton
+                        visible={item.loading}
+                        className="w-full"
+                        height={isLoading ? randint(100, 200) : undefined}
+                      >
+                        <Text>
+                          {item.loading
+                            ? "Загрузка..."
+                            : truncateWords(item.content, 20)}
+                        </Text>
+                      </Skeleton>
+
+                      <div className="flex flex-col gap-2">
+                        <Skeleton visible={item.loading} className="w-full">
+                          <div className="flex items-center gap-2 text-sm">
+                            <p className="font-medium">Сложность:</p>
+                            <Rating
+                              value={item.loading ? 0 : item.difficulty}
+                              color="blue"
+                              size="sm"
+                              count={3}
+                              readOnly={true}
+                            />
+                          </div>
+                        </Skeleton>
+
+                        <Skeleton visible={item.loading} className="w-full">
+                          <div className="flex items-center gap-2 text-sm">
+                            <p className="font-medium">Дата публикации:</p>
+                            <time>
+                              {item.loading
+                                ? "xx.xx.xxxx xx:xx:xx"
+                                : item.publishDate.toLocaleDateString("ru-RU", {
+                                    year: "numeric",
+                                    month: "long",
+                                    day: "numeric",
+                                  })}
+                            </time>
+                          </div>
+                        </Skeleton>
+                      </div>
+
+                      <Skeleton visible={item.loading} className="w-full">
+                        <Button
+                          variant="outline"
+                          fullWidth
+                          component={Link}
+                          href={item.loading ? "#" : item.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Читать
+                        </Button>
+                      </Skeleton>
+                    </Card>
+                  ))}
+                </div>
+              ))}
+          </div>
+        </Section>
       </Container>
     </Layout>
   );

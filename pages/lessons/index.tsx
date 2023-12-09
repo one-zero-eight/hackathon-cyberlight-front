@@ -1,10 +1,12 @@
 import { useAccountInfo } from "@/api/hooks/useAccountInfo";
 import Layout from "@/components/Layout";
 import LessonDifficulty from "@/components/LessonDifficulty";
+import Section from "@/components/Section";
 import { isAvailable, Lesson } from "@/lib/lesson";
 import { Button, Card, Container, Text, Title, Tooltip } from "@mantine/core";
 import { IconLock } from "@tabler/icons-react";
 import { useQuery } from "@tanstack/react-query";
+import clsx from "clsx";
 import Link from "next/link";
 import React from "react";
 
@@ -16,13 +18,16 @@ export default function Page() {
 
   return (
     <Layout>
-      <Container className="flex flex-col gap-4">
-        <Title order={1}>Рекомендуем пройти:</Title>
+      <Container>
+        <Section title="Рекомендуемые уроки"></Section>
         <div className="flex flex-wrap items-start gap-3">
           {lessons?.map((lesson) => (
             <div
               key={lesson.id}
-              className={isAvailable(lesson, account) ? "" : "grayscale"}
+              className={clsx(
+                isAvailable(lesson, account) ? "" : "grayscale",
+                "w-full",
+              )}
             >
               <Tooltip
                 label="Урок не доступен для вас. Требуется больше опыта"
@@ -31,11 +36,12 @@ export default function Page() {
                 disabled={isAvailable(lesson, account)}
               >
                 <Card shadow="sm" padding="lg">
-                  <h3 className="mb-3 text-2xl font-medium">{lesson.title}</h3>
+                  <h3 className="mb-2 text-2xl font-medium">{lesson.title}</h3>
                   <LessonDifficulty
                     maximumDifficulty={10}
                     difficulty={lesson.difficulty + 1}
                     withTooltip
+                    className="mb-2"
                   />
                   <Text>{lesson.content}</Text>
                   <Button

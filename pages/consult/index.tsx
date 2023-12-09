@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import Section from "@/components/Section";
 import { API_URL } from "@/lib/api";
 import { Button, Card, Container, Modal, Text, Title } from "@mantine/core";
 import { useQuery } from "@tanstack/react-query";
@@ -54,31 +55,32 @@ export default function Page() {
   return (
     <Layout>
       <Container className="flex flex-col gap-4">
-        <Title order={1}>Найдите профессионала:</Title>
-        <div className="flex flex-wrap items-start gap-3">
-          {consultants?.map((consultant) => (
-            <Card
-              key={consultant.id}
-              shadow="sm"
-              padding="lg"
-              className="flex max-w-lg flex-col gap-4"
-            >
-              <img
-                src={API_URL + "/" + consultant.image}
-                className="max-h-32 max-w-xs object-cover"
-              />
-              <Title order={3}>{consultant.name}</Title>
-              <Text>{consultant.description}</Text>
-              <Button
-                variant="outline"
-                fullWidth
-                onClick={() => setModalConsultantId(consultant.id)}
+        <Section title="Выберите эксперта">
+          <div className="flex flex-wrap items-start gap-3">
+            {consultants?.map((consultant) => (
+              <Card
+                key={consultant.id}
+                shadow="sm"
+                padding="lg"
+                className="flex max-w-lg flex-col gap-4"
               >
-                Записаться
-              </Button>
-            </Card>
-          ))}
-        </div>
+                <img
+                  src={API_URL + "/" + consultant.image}
+                  className="max-h-32 max-w-xs object-cover"
+                />
+                <Title order={3}>{consultant.name}</Title>
+                <Text>{consultant.description}</Text>
+                <Button
+                  variant="outline"
+                  fullWidth
+                  onClick={() => setModalConsultantId(consultant.id)}
+                >
+                  Записаться
+                </Button>
+              </Card>
+            ))}
+          </div>
+        </Section>
         <Modal
           title={`${modalConsultant?.name}, ${modalConsultant?.description}`}
           opened={modalConsultant !== undefined}
