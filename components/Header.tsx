@@ -100,6 +100,15 @@ export default function Header() {
                     Достижения
                   </Menu.Item>
                 </Link>
+                <Link href="/profile/leaderboard">
+                  <Menu.Item
+                    leftSection={
+                      <span className="icon-[ic--round-leaderboard]" />
+                    }
+                  >
+                    Рейтинг
+                  </Menu.Item>
+                </Link>
                 <Link href="/profile/cyber-pass">
                   <Menu.Item
                     leftSection={<span className="icon-[mdi--ticket]" />}
