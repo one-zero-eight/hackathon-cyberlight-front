@@ -1,4 +1,3 @@
-import CyberPassProgress from "@/components/CyberPassProgress";
 import { useSignOut } from "@/lib/auth";
 import { useUser } from "@/lib/user";
 import {
@@ -59,7 +58,6 @@ export default function Header() {
           </Link>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <CyberPassProgress />
           <ActionIcon
             component="button"
             variant="subtle"
