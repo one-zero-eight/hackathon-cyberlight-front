@@ -17,11 +17,9 @@ export default function Page() {
           <h1 className="mb-2 text-5xl font-bold text-black dark:text-white ">
             Кибер.База
           </h1>
-          <h2 className="text-xl text-gray-600">
-            Преврати свои навыки в киберщит.
-          </h2>
+          <h2 className="text-xl text-gray-600">Учись, играй, защищай!</h2>
           <Link href="/register">
-            <Button className="mt-6">Пройти чекап</Button>
+            <Button className="mt-6">Пройти бесплатный чекап</Button>
           </Link>
         </section>
       </Container>

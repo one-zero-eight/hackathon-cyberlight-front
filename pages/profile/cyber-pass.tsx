@@ -56,7 +56,7 @@ export default function Page() {
 
           {currentCyberPass && (
             <div className="flex items-center gap-2 text-3xl font-medium">
-              <h3>До конца:</h3>
+              <h3>До конца события:</h3>
               <Countdown deadline={new Date(currentCyberPass?.date_end)} />
             </div>
           )}
