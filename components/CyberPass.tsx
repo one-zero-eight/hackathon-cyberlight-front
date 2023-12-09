@@ -1,16 +1,12 @@
-import Countdown from "@/components/Countdown";
-import Layout from "@/components/Layout";
-import Section from "@/components/Section";
-import { useRequireAuth } from "@/lib/auth";
-import { CyberPassReward, useCyberPass } from "@/lib/cyberPass";
-import { Carousel, Embla } from "@mantine/carousel";
-import { Container, Divider, Loader } from "@mantine/core";
-import { notifications } from "@mantine/notifications";
-import clsx from "clsx";
 import React, { useEffect, useState } from "react";
+import clsx from "clsx";
+import Countdown from "@/components/Countdown";
+import { CyberPassReward, useCyberPass } from "@/lib/cyberPass";
+import { Loader } from "@mantine/core";
+import { Carousel, Embla } from "@mantine/carousel";
+import { notifications } from "@mantine/notifications";
 
-export default function Page() {
-  useRequireAuth();
+export default function CyberPass() {
   const {
     cyberPassError,
     cyberPassLoading,
@@ -36,65 +32,54 @@ export default function Page() {
     }
   }, [cyberPassError]);
 
-  const present = Boolean(!cyberPassLoading && currentCyberPass);
-
   return (
-    <Layout>
-      <Container>
-        <Section
-          title={
-            currentCyberPass
-              ? `Кибер.Пропуск — ${currentCyberPass.name}`
-              : "Кибер.Пропуск загружается..."
-          }
-        >
-          {(cyberPassLoading || !currentCyberPass) && (
-            <div className="mt-8 flex items-center justify-center">
-              <Loader size="xl" />
-            </div>
-          )}
+    <>
+      {(cyberPassLoading || !currentCyberPass) && (
+        <div className="mt-8 flex items-center justify-center">
+          <Loader size="xl" />
+        </div>
+      )}
 
-          {present && <Divider mb={16} />}
+      {currentCyberPass && (
+        <div className="flex items-center justify-between">
+          <h3 className="text-2xl">{currentCyberPass.name}</h3>
+          <div className="flex items-center gap-2">
+            <h4 className="text-xl">До конца события:</h4>
+            <Countdown deadline={new Date(currentCyberPass?.date_end)} />
+          </div>
+        </div>
+      )}
 
-          {currentCyberPass && (
-            <div className="flex items-center gap-2 text-3xl font-medium">
-              <h3>До конца события:</h3>
-              <Countdown deadline={new Date(currentCyberPass?.date_end)} />
-            </div>
-          )}
-
-          {currentCyberPass && (
-            <div className="mt-8">
-              <Carousel
-                slideSize="33.33%"
-                slideGap={12}
-                slidesToScroll={1}
-                initialSlide={currentLevelIdx}
-                align="center"
-                getEmblaApi={setEmbla}
-              >
-                {currentCyberPass.levels.map((lvl, i) => (
-                  <Carousel.Slide key={lvl.id}>
-                    <Level
-                      order={lvl.value}
-                      progress={
-                        i < currentLevelIdx
-                          ? 1
-                          : i > currentLevelIdx
-                            ? 0
-                            : currentLevelProgress
-                      }
-                      current={i === currentLevelIdx}
-                      rewards={lvl.rewards}
-                    />
-                  </Carousel.Slide>
-                ))}
-              </Carousel>
-            </div>
-          )}
-        </Section>
-      </Container>
-    </Layout>
+      {currentCyberPass && (
+        <div className="mt-8">
+          <Carousel
+            slideSize="33.33%"
+            slideGap={12}
+            slidesToScroll={1}
+            initialSlide={currentLevelIdx}
+            align="center"
+            getEmblaApi={setEmbla}
+          >
+            {currentCyberPass.levels.map((lvl, i) => (
+              <Carousel.Slide key={lvl.id}>
+                <Level
+                  order={lvl.value}
+                  progress={
+                    i < currentLevelIdx
+                      ? 1
+                      : i > currentLevelIdx
+                        ? 0
+                        : currentLevelProgress
+                  }
+                  current={i === currentLevelIdx}
+                  rewards={lvl.rewards}
+                />
+              </Carousel.Slide>
+            ))}
+          </Carousel>
+        </div>
+      )}
+    </>
   );
 }
 

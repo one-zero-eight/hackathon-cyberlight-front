@@ -56,6 +56,18 @@ export default function Header() {
               Новости
             </Button>
           </Link>
+          <Link href="/leaderboard">
+            <Button
+              variant={
+                router.pathname.startsWith("/leaderboard") ? "light" : "subtle"
+              }
+              color={
+                router.pathname.startsWith("/leaderboard") ? "blue" : "gray"
+              }
+            >
+              Рейтинг
+            </Button>
+          </Link>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-4">
           <ActionIcon
@@ -89,26 +101,10 @@ export default function Header() {
                 <Link href="/profile">
                   <Menu.Item
                     leftSection={
-                      <span className="icon-[mdi--account-circle]" />
+                      <span className="icon-[mdi--view-dashboard-outline]" />
                     }
                   >
-                    Профиль
-                  </Menu.Item>
-                </Link>
-                <Link href="/profile/leaderboard">
-                  <Menu.Item
-                    leftSection={
-                      <span className="icon-[ic--round-leaderboard]" />
-                    }
-                  >
-                    Рейтинг
-                  </Menu.Item>
-                </Link>
-                <Link href="/profile/cyber-pass">
-                  <Menu.Item
-                    leftSection={<span className="icon-[mdi--ticket]" />}
-                  >
-                    Кибер.Пропуск
+                    Дашборд
                   </Menu.Item>
                 </Link>
                 {user.role === "admin" && (

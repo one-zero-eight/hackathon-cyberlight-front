@@ -59,10 +59,23 @@ export default function Page() {
                 </>
               ) : (
                 <>
-                  <Title order={1}>Ваш уровень определен</Title>
-                  <Text>Статус: новичок</Text>
-                  <Text>Баллы xp: {account?.total_exp}</Text>
-                  <Button onClick={() => router.replace("/")}>Отлично!</Button>
+                  <Title order={1}>
+                    Ваш уровень определен:{" "}
+                    {(account?.total_exp ?? 0) < 20
+                      ? "новичок"
+                      : (account?.total_exp ?? 0) < 50
+                        ? "продвинутый"
+                        : "эксперт"}
+                  </Title>
+                  <p className="my-2">
+                    Поздравляем! Вы успешно завершили наш чекап по
+                    Кибербезопасности. Ваши результаты отражают ваш уровень
+                    знаний в этой важной области. Нажимай на кнопку ниже и
+                    переходи на нашу платформу!
+                  </p>
+                  <Button onClick={() => router.replace("/profile")}>
+                    Отлично!
+                  </Button>
                 </>
               )}
             </>
