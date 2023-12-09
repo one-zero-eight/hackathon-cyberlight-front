@@ -9,12 +9,15 @@ export type PersonalCyberPass = {
 
 export type CyberPass = {
   id: number;
+  name: string;
+  date_start: string;
   is_active: boolean;
   levels: CyberPassLevel[];
 };
 
 export type CyberPassLevel = {
   id: number;
+  battle_pass_id: number;
   experience: number;
   value: number;
   rewards: CyberPassReward[];
@@ -31,7 +34,7 @@ export type CyberPassReward = {
 export function useCyberPass() {
   const { account } = useAccountInfo();
   const { data } = useQuery<PersonalCyberPass>({
-    queryKey: ["/personal_account/battle-passes/"],
+    queryKey: ["/personal_account/battle-pass"],
   });
   const { data: cyberPasses } = useQuery<CyberPass[]>({
     queryKey: ["/battle-passes/"],
@@ -44,6 +47,7 @@ export function useCyberPass() {
     return {
       currentCyberPass: undefined,
       currentLevel: undefined,
+      currentLevelValue: undefined,
       progress: undefined,
     };
   }
@@ -56,7 +60,8 @@ export function useCyberPass() {
     return {
       currentCyberPass,
       currentLevel: undefined,
-      progress: undefined,
+      currentLevelValue: 0,
+      progress: 0,
     };
   }
 
@@ -68,6 +73,7 @@ export function useCyberPass() {
   return {
     currentCyberPass,
     currentLevel,
+    currentLevelValue: currentLevel.value,
     progress,
   };
 }
