@@ -3,7 +3,7 @@ import LessonDifficulty from "@/components/LessonDifficulty";
 import TaskContent from "@/components/TaskContent";
 import TaskSubmit from "@/components/TaskSubmit";
 import { Lesson } from "@/lib/lesson";
-import { pluralizeRu } from "@/utils/words";
+import { pluralizeRu } from "@/lib/utils/words";
 import { Button, Container, Divider, Paper, Skeleton } from "@mantine/core";
 import { IconEdit } from "@tabler/icons-react";
 import { useQuery } from "@tanstack/react-query";

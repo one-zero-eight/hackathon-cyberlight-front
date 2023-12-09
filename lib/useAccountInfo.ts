@@ -1,6 +1,6 @@
 import { API_URL } from "@/lib/api";
 import { useQuery } from "@tanstack/react-query";
-import { AccountInfo } from "../types";
+import { AccountInfo } from "./types";
 
 export function useAccountInfo() {
   const { data, isLoading, error } = useQuery<AccountInfo>({

@@ -1,6 +1,6 @@
+import { getDatesDiff } from "@/lib/utils/dates";
+import { pluralizeRu } from "@/lib/utils/words";
 import { useEffect, useState } from "react";
-import { getDatesDiff } from "@/utils/dates";
-import { pluralizeRu } from "@/utils/words";
 
 export type CountdownProps = {
   deadline: Date;

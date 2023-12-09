@@ -1,4 +1,4 @@
-import { useAccountInfo } from "@/api/hooks/useAccountInfo";
+import { useAccountInfo } from "@/lib/useAccountInfo";
 import { useQuery } from "@tanstack/react-query";
 
 export type PersonalCyberPass = {

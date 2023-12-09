@@ -1,9 +1,9 @@
-import { useAccountInfo } from "@/api/hooks/useAccountInfo";
 import Layout from "@/components/Layout";
 import Steps from "@/components/Steps";
 import TaskContent from "@/components/TaskContent";
 import TaskSubmit from "@/components/TaskSubmit";
 import { Lesson } from "@/lib/lesson";
+import { useAccountInfo } from "@/lib/useAccountInfo";
 import { Button, Paper, Skeleton, Text, Title } from "@mantine/core";
 import { useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/router";

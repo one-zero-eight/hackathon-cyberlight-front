@@ -1,9 +1,9 @@
-import { useAccountInfo } from "@/api/hooks/useAccountInfo";
 import Layout from "@/components/Layout";
 import LessonDifficulty from "@/components/LessonDifficulty";
 import Section from "@/components/Section";
 import { isAvailable, Lesson } from "@/lib/lesson";
-import { Button, Card, Container, Text, Title, Tooltip } from "@mantine/core";
+import { useAccountInfo } from "@/lib/useAccountInfo";
+import { Button, Card, Container, Text, Tooltip } from "@mantine/core";
 import { IconLock } from "@tabler/icons-react";
 import { useQuery } from "@tanstack/react-query";
 import clsx from "clsx";

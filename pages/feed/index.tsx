@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import Section from "@/components/Section";
-import { useElementWidth } from "@/hooks/useElementWidth";
+import { useElementWidth } from "@/lib/useElementWidth";
 import {
   Button,
   Card,

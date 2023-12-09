@@ -1,4 +1,4 @@
-import { AccountInfo } from "@/api/types";
+import { AccountInfo } from "@/lib/types";
 
 export type Lesson = {
   id: number;

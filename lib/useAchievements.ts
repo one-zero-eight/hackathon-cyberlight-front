@@ -1,6 +1,6 @@
-import { useQuery } from "@tanstack/react-query";
-import { AchievementDetailed } from "../types";
 import { API_URL } from "@/lib/api";
+import { useQuery } from "@tanstack/react-query";
+import { AchievementDetailed } from "./types";
 
 export function useAchievements() {
   const { data, isLoading, error } = useQuery<AchievementDetailed[]>({

@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
-import clsx from "clsx";
+import { AchievementDetailed } from "@/lib/types";
+import { useAccountInfo } from "@/lib/useAccountInfo";
+import { useAchievements } from "@/lib/useAchievements";
 import { Skeleton, Tooltip } from "@mantine/core";
 import { notifications } from "@mantine/notifications";
-import { useAchievements } from "@/api/hooks/useAchievements";
-import { useAccountInfo } from "@/api/hooks/useAccountInfo";
-import { AchievementDetailed } from "@/api/types";
+import clsx from "clsx";
+import React, { useEffect } from "react";
 
 type Item =
   | {
