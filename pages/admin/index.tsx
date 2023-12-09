@@ -1,11 +1,41 @@
 import Layout from "@/components/Layout";
+import { API_URL } from "@/lib/api";
+import { getAuthorizationHeader } from "@/lib/auth";
 import { Button, Container, Title } from "@mantine/core";
 import { DateInput } from "@mantine/dates";
+import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 
 export default function Page() {
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
+
+  const { data: report } = useQuery<any>({
+    queryKey: ["/report/"],
+    queryFn: async () => {
+      const response = await fetch(API_URL + "/report/", {
+        headers: {
+          Authorization: getAuthorizationHeader(),
+        },
+      });
+      return response.text();
+    },
+  });
+
+  const download = () => {
+    if (!report) return;
+
+    const blob = new Blob([report], { type: "text/csv" });
+    const url = window.URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+
+    link.href = url;
+    link.setAttribute("download", "report.csv");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <Layout>
@@ -28,7 +58,7 @@ export default function Page() {
             />
           </div>
           <div>
-            <Button>Скачать</Button>
+            <Button onClick={download}>Скачать</Button>
           </div>
         </div>
       </Container>
