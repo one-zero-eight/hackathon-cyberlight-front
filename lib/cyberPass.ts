@@ -34,15 +34,27 @@ export type CyberPassReward = {
 
 export function useCyberPass() {
   const { account } = useAccountInfo();
-  const { data: myCyberPass } = useQuery<PersonalCyberPass>({
+  const {
+    data: myCyberPass,
+    isLoading: myCyberPassLoading,
+    error: myCyberPassError,
+  } = useQuery<PersonalCyberPass>({
     queryKey: ["/personal_account/battle-pass"],
   });
-  const { data: cyberPasses } = useQuery<CyberPass[]>({
+  const {
+    data: cyberPasses,
+    isLoading: cyberPassesLoading,
+    error: cyberPassesError,
+  } = useQuery<CyberPass[]>({
     queryKey: ["/battle-passes/"],
   });
+
   const currentCyberPass = cyberPasses?.find(
     (pass) => pass.id === myCyberPass?.battle_pass_id,
   );
+
+  const cyberPassLoading = myCyberPassLoading || cyberPassesLoading;
+  const cyberPassError = cyberPassesError || myCyberPassError;
 
   if (
     !account ||
@@ -51,6 +63,8 @@ export function useCyberPass() {
     currentCyberPass.levels.length < 1
   ) {
     return {
+      cyberPassLoading,
+      cyberPassError,
       currentCyberPass: undefined,
       currentLevelIdx: undefined,
       currentLevel: undefined,
@@ -87,6 +101,8 @@ export function useCyberPass() {
     (currentLevel.experience - currentLevelProgressStart);
 
   return {
+    cyberPassLoading,
+    cyberPassError,
     currentCyberPass,
     currentLevelIdx,
     currentLevel,
