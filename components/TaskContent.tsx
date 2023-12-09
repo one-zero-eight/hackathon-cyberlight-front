@@ -9,7 +9,11 @@ import { useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import { useEffect } from "react";
 
-export default function TaskContent({ content }: { content: Content }) {
+export default function TaskContent({
+  content,
+}: {
+  content: Content | string;
+}) {
   const editor = useEditor({
     extensions: [
       StarterKit,
@@ -26,7 +30,16 @@ export default function TaskContent({ content }: { content: Content }) {
 
   useEffect(() => {
     if (editor) {
-      editor.commands.setContent(content);
+      try {
+        if (typeof content === "string") {
+          const json = JSON.parse(content);
+          editor.commands.setContent(json);
+        } else {
+          editor.commands.setContent(content);
+        }
+      } catch (Error) {
+        editor.commands.setContent(content);
+      }
     }
   }, [editor, content]);
 

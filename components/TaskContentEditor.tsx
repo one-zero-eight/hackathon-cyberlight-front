@@ -20,7 +20,16 @@ export default function TaskContentEditor({
 
   useEffect(() => {
     if (editor && task) {
-      editor.commands.setContent(task.content);
+      try {
+        if (typeof task.content === "string") {
+          const json = JSON.parse(task.content);
+          editor.commands.setContent(json);
+        } else {
+          editor.commands.setContent(task.content);
+        }
+      } catch (Error) {
+        editor.commands.setContent(task.content);
+      }
     }
   }, [editor, task]);
 

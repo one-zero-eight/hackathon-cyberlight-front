@@ -6,9 +6,10 @@ import {
   Button,
   Container,
   Divider,
-  NumberInput,
   Paper,
+  Rating,
   Skeleton,
+  Text,
   TextInput,
 } from "@mantine/core";
 import { IconCheck, IconPlus } from "@tabler/icons-react";
@@ -39,6 +40,8 @@ export default function Page() {
   const [description, setDescription] = useState("");
   const [difficulty, setDifficulty] = useState(5);
 
+  const [taskTitle, setTaskTitle] = useState("");
+
   const mutationLesson = useMutation<any, DefaultError, any>({});
   const mutationUpdateTask = useMutation<any, DefaultError, any>({});
   const mutationNewTask = useMutation<any, DefaultError, any>({});
@@ -55,6 +58,14 @@ export default function Page() {
     setDescription(lesson.content ?? "");
     setDifficulty(lesson.difficulty);
   }, [lesson]);
+
+  useEffect(() => {
+    if (task === undefined) {
+      return;
+    }
+
+    setTaskTitle(task.title || "");
+  }, [task]);
 
   const handleSave = () => {
     if (lesson === undefined) {
@@ -107,7 +118,18 @@ export default function Page() {
     );
   };
 
-  const handleTaskSave = () => {};
+  const handleTaskSave = () => {
+    if (!editor) return;
+    const content = editor.getJSON();
+    mutationUpdateTask.mutate({
+      url: `/lessons/tasks/${taskId}`,
+      method: "PUT",
+      body: {
+        title: taskTitle,
+        content: JSON.stringify(content),
+      },
+    });
+  };
 
   return (
     <Layout>
@@ -128,14 +150,13 @@ export default function Page() {
               value={description}
               onChange={(event) => setDescription(event.currentTarget.value)}
             />
-            <NumberInput
-              label="Сложность"
-              placeholder="От 0 до 10"
-              className="w-96"
-              min={0}
-              max={10}
-              value={difficulty}
-              onChange={(event) => setDifficulty(Number(event))}
+            <Text size="sm">Сложность</Text>
+            <Rating
+              value={difficulty + 1}
+              onChange={(v) => setDifficulty(v - 1)}
+              color="grape"
+              size="lg"
+              count={10}
             />
           </div>
           <Button
@@ -159,7 +180,7 @@ export default function Page() {
                   key={task.id}
                 >
                   <Button variant={taskId === task.id ? "light" : "subtle"}>
-                    {task.title}
+                    {task.title || "Без названия"}
                   </Button>
                 </Link>
               ))}
@@ -174,13 +195,31 @@ export default function Page() {
             </Button>
           </nav>
           <Divider orientation="vertical" />
-          <section className="grow p-4">
+          <section className="flex grow flex-col gap-4 p-4">
             {(lessonId !== undefined && taskId !== undefined && editor && (
-              <TaskContentEditor
-                lessonId={Number(lessonId)}
-                taskId={Number(taskId)}
-                editor={editor}
-              />
+              <>
+                <TextInput
+                  value={taskTitle}
+                  onChange={(event) => setTaskTitle(event.currentTarget.value)}
+                />
+                <TaskContentEditor
+                  lessonId={Number(lessonId)}
+                  taskId={Number(taskId)}
+                  editor={editor}
+                />
+                <div>
+                  <Button
+                    variant="filled"
+                    color="green"
+                    leftSection={<IconCheck size={14} />}
+                    onClick={handleTaskSave}
+                    loading={mutationUpdateTask.isPending}
+                    loaderProps={{ type: "dots" }}
+                  >
+                    Сохранить
+                  </Button>
+                </div>
+              </>
             )) || (
               <Skeleton>
                 <Paper className="h-[100px] w-full"></Paper>

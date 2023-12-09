@@ -2,7 +2,14 @@ import Layout from "@/components/Layout";
 import TaskContent from "@/components/TaskContent";
 import TaskSubmit from "@/components/TaskSubmit";
 import { Lesson } from "@/lib/lesson";
-import { Button, Container, Divider, Paper, Skeleton } from "@mantine/core";
+import {
+  Button,
+  Container,
+  Divider,
+  Paper,
+  Rating,
+  Skeleton,
+} from "@mantine/core";
 import { IconEdit } from "@tabler/icons-react";
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
@@ -36,6 +43,15 @@ export default function Page() {
             <p className="text-gray-800 dark:text-gray-600">
               {lesson?.content}
             </p>
+            {lesson && (
+              <Rating
+                value={lesson.difficulty + 1}
+                color="grape"
+                size="sm"
+                count={10}
+                readOnly={true}
+              />
+            )}
           </div>
           <Link href={`/lessons/${lesson?.id}/${task?.id}/edit`}>
             <Button
@@ -54,7 +70,7 @@ export default function Page() {
               lesson.tasks.map((task) => (
                 <Link href={`/lessons/${lesson.id}/${task.id}`} key={task.id}>
                   <Button variant={taskId === task.id ? "light" : "subtle"}>
-                    {task.title}
+                    {task.title || "Без названия"}
                   </Button>
                 </Link>
               ))}
