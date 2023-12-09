@@ -1,9 +1,8 @@
+import cyberbaseImg from "@/assets/cyberbase.webp";
+import Layout from "@/components/Layout";
+import { Button, Container } from "@mantine/core";
 import Image from "next/image";
 import Link from "next/link";
-import { Button, Container } from "@mantine/core";
-import Layout from "@/components/Layout";
-
-import cyberbaseImg from "@/assets/cyberbase.webp";
 
 export default function Page() {
   return (
@@ -21,7 +20,7 @@ export default function Page() {
           <h2 className="text-xl text-gray-600">
             Преврати свои навыки в киберщит.
           </h2>
-          <Link href="/checkup">
+          <Link href="/register">
             <Button className="mt-6">Пройти чекап</Button>
           </Link>
         </section>
