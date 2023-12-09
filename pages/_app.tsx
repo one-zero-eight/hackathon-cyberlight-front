@@ -2,12 +2,16 @@ import "@/styles/globals.css";
 import "@mantine/core/styles.css";
 import "@mantine/tiptap/styles.css";
 import "@mantine/notifications/styles.css";
+import "@mantine/dates/styles.css";
+
+import "dayjs/locale/ru";
+import { queryClient } from "@/lib/api";
+import { Container, createTheme, MantineProvider } from "@mantine/core";
+import { DatesProvider } from "@mantine/dates";
+import { Notifications } from "@mantine/notifications";
+import { QueryClientProvider } from "@tanstack/react-query";
 
 import type { AppProps } from "next/app";
-import { QueryClientProvider } from "@tanstack/react-query";
-import { Container, createTheme, MantineProvider } from "@mantine/core";
-import { Notifications } from "@mantine/notifications";
-import { queryClient } from "@/lib/api";
 
 const theme = createTheme({
   primaryColor: "green",
@@ -194,8 +198,10 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <MantineProvider theme={theme}>
-        <Notifications />
-        <Component {...pageProps} />
+        <DatesProvider settings={{ locale: "ru" }}>
+          <Notifications />
+          <Component {...pageProps} />
+        </DatesProvider>
       </MantineProvider>
     </QueryClientProvider>
   );
