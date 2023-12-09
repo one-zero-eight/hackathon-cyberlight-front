@@ -108,7 +108,7 @@ export default function Page() {
   return (
     <Layout>
       <Container>
-        <h1 className="mb-4 text-4xl font-bold">Интересно почитать:</h1>
+        <h1 className="mb-4 text-4xl font-bold">Новости из кибер-мира</h1>
 
         <div className="mb-4 flex flex-col gap-2">
           <div className="flex items-center gap-2">
