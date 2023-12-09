@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="py-4">
       <Container>
         <p className="text-center text-gray-700">
-          Все права защищены &copy; {new Date().getFullYear()}
+          Кибер.База &copy; {new Date().getFullYear()}
         </p>
       </Container>
     </footer>
