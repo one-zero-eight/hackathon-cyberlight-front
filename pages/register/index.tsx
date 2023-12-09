@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import { Button, Paper, TextInput } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { DefaultError, useMutation } from "@tanstack/react-query";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 export default function Page() {
@@ -89,6 +90,9 @@ export default function Page() {
             loaderProps={{ type: "dots" }}
           >
             Зарегистрироваться
+          </Button>
+          <Button variant="transparent" component={Link} href="/login">
+            Войти
           </Button>
         </form>
       </Paper>

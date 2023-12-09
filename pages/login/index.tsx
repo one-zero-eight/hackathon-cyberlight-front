@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import { useSignInByCredentials } from "@/lib/auth";
 import { Button, Paper, TextInput } from "@mantine/core";
 import { useForm } from "@mantine/form";
+import Link from "next/link";
 
 export default function Page() {
   const form = useForm({
@@ -55,6 +56,9 @@ export default function Page() {
             loaderProps={{ type: "dots" }}
           >
             Войти
+          </Button>
+          <Button variant="transparent" component={Link} href="/register">
+            Зарегистрироваться
           </Button>
         </form>
       </Paper>
