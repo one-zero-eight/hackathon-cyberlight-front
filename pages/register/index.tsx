@@ -55,17 +55,10 @@ export default function Page() {
           <h1 className="text-center text-2xl font-medium">Регистрация</h1>
           <TextInput
             size="md"
-            placeholder="Никнейм"
+            placeholder="Логин"
             type="text"
             required
             {...form.getInputProps("login")}
-          />
-          <TextInput
-            size="md"
-            placeholder="Пароль"
-            type="password"
-            required
-            {...form.getInputProps("password")}
           />
           <TextInput
             size="md"
@@ -79,6 +72,13 @@ export default function Page() {
             placeholder="Имя"
             type="text"
             {...form.getInputProps("name")}
+          />
+          <TextInput
+            size="md"
+            placeholder="Пароль"
+            type="password"
+            required
+            {...form.getInputProps("password")}
           />
           {register.isError && (
             <p className="text-red-500">Неверный логин или пароль.</p>
