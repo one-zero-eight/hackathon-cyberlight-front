@@ -92,12 +92,14 @@ export function useRequireAuth() {
 export function useRequireAdmin() {
   const router = useRouter();
   const [token] = useAuthToken();
+  const user = JSON.parse(localStorage.getItem("user") || "{}");
 
   useEffect(() => {
     if (!getAuthToken()) {
       router.replace("/login");
-    } else {
+    } else if (!user) {
+    } else if (user.role !== "admin") {
       router.replace("/");
     }
-  }, [token]);
+  }, [token, user]);
 }

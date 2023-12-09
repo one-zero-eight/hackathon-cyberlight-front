@@ -3,8 +3,9 @@ import LessonDifficulty from "@/components/LessonDifficulty";
 import Section from "@/components/Section";
 import { isAvailable, Lesson } from "@/lib/lesson";
 import { useAccountInfo } from "@/lib/useAccountInfo";
+import { useUser } from "@/lib/user";
 import { Button, Card, Container, Text, Tooltip } from "@mantine/core";
-import { IconLock } from "@tabler/icons-react";
+import { IconLock, IconPlus } from "@tabler/icons-react";
 import { useQuery } from "@tanstack/react-query";
 import clsx from "clsx";
 import Link from "next/link";
@@ -15,11 +16,25 @@ export default function Page() {
     queryKey: ["/lessons/"],
   });
   const { account } = useAccountInfo();
+  const { user } = useUser();
 
   return (
     <Layout>
       <Container>
-        <Section title="Рекомендуемые уроки"></Section>
+        <div className="flex flex-row justify-between">
+          <Section title="Рекомендуемые уроки"></Section>
+          {user?.role === "admin" && (
+            <Link href={`/lessons/create`}>
+              <Button
+                variant="subtle"
+                color="green"
+                leftSection={<IconPlus size={14} />}
+              >
+                Создать урок
+              </Button>
+            </Link>
+          )}
+        </div>
         <div className="flex flex-wrap items-start gap-3">
           {lessons?.map((lesson) => (
             <div
