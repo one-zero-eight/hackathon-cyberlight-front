@@ -63,7 +63,7 @@ export default function Page() {
                 key={consultant.id}
                 shadow="sm"
                 padding="lg"
-                className="flex max-w-lg flex-col gap-4"
+                className="flex flex-col gap-4"
               >
                 <img
                   src={API_URL + "/" + consultant.image}
