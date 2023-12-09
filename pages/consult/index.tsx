@@ -1,42 +1,53 @@
 import Layout from "@/components/Layout";
+import { API_URL } from "@/lib/api";
 import { Button, Card, Container, Modal, Text, Title } from "@mantine/core";
+import { useQuery } from "@tanstack/react-query";
 import React, { useState } from "react";
 
+export type Consultant = {
+  id: number;
+  name: string;
+  description: string;
+  image?: string;
+  timeslots?: ConsultantTimeslot[];
+  appointments?: ConsultantAppointment[];
+};
+
+export type ConsultantTimeslot = {
+  id: number;
+  consultant_id: number;
+  day: number;
+  start: string;
+  end: string;
+};
+
+export type ConsultantAppointment = {
+  date: string;
+  consultant_id: number;
+  user_id: number;
+  timeslot: ConsultantTimeslot;
+  comment?: string;
+};
+
+const days: { [key: number]: string } = {
+  0: "Понедельник",
+  1: "Вторник",
+  2: "Среда",
+  3: "Четверг",
+  4: "Пятница",
+  5: "Суббота",
+  6: "Воскресенье",
+};
+
 export default function Page() {
-  const consultants = [
-    {
-      id: 1,
-      name: "Антон",
-      description: "Специалист по киберугрозам",
-      image: "/spec.jpg",
-      timeslots: {
-        "2021-10-01": [
-          { id: 1, time: "10:00" },
-          { id: 2, time: "11:00" },
-          { id: 3, time: "12:00" },
-        ],
-        "2021-10-02": [
-          { id: 4, time: "10:00" },
-          { id: 5, time: "11:00" },
-          { id: 6, time: "12:00" },
-        ],
-        "2021-10-03": [
-          { id: 4, time: "10:00" },
-          { id: 5, time: "11:00" },
-          { id: 6, time: "12:00" },
-        ],
-        "2021-10-04": [
-          { id: 4, time: "10:00" },
-          { id: 5, time: "11:00" },
-          { id: 6, time: "12:00" },
-        ],
-      },
-    },
-  ];
+  const { data: consultants } = useQuery<Consultant[]>({
+    queryKey: ["/consultation/consultants/"],
+  });
+
   const [modalConsultantId, setModalConsultantId] = useState<
     number | undefined
   >(undefined);
-  const modalConsultant = consultants.find(
+  const modalConsultant = consultants?.find(
     (consultant) => consultant.id === modalConsultantId,
   );
 
@@ -53,7 +64,7 @@ export default function Page() {
               className="flex max-w-lg flex-col gap-4"
             >
               <img
-                src={consultant.image}
+                src={API_URL + "/" + consultant.image}
                 className="max-h-32 max-w-xs object-cover"
               />
               <Title order={3}>{consultant.name}</Title>
@@ -76,30 +87,40 @@ export default function Page() {
           size="auto"
         >
           <Text>Выберите дату и время:</Text>
-          <div className="flex w-fit max-w-lg flex-wrap items-start gap-3">
-            {Object.entries(modalConsultant?.timeslots ?? {}).map(
-              ([date, timeslots]) => (
+          <div className="mt-4 flex w-fit max-w-lg flex-wrap items-start gap-3">
+            {modalConsultant?.timeslots &&
+              Object.entries(
+                modalConsultant.timeslots.reduce(
+                  (prev, ts) => {
+                    prev[ts.day] = prev[ts.day] || [];
+                    prev[ts.day].push(ts);
+                    return prev;
+                  },
+                  {} as { [key: number]: ConsultantTimeslot[] },
+                ),
+              ).map(([day, timeslots]) => (
                 <Card
-                  key={date}
+                  key={day}
                   shadow="sm"
                   padding="lg"
                   className="flex max-w-lg flex-col gap-4"
                 >
-                  <Title order={3}>{date}</Title>
+                  <Title order={3}>{days[Number(day)]}</Title>
                   {timeslots.map((timeslot) => (
                     <Button
                       key={timeslot.id}
                       variant="outline"
                       fullWidth
                       color="blue"
-                      onClick={() => {}}
+                      onClick={() => {
+                        console.log(timeslot);
+                      }}
                     >
-                      {timeslot.time}
+                      {timeslot.start}
                     </Button>
                   ))}
                 </Card>
-              ),
-            )}
+              ))}
           </div>
         </Modal>
       </Container>
