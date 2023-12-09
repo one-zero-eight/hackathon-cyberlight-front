@@ -1,11 +1,11 @@
-import React from "react";
-import clsx from "clsx";
-import Parser from "rss-parser";
 import Layout from "@/components/Layout";
-import { Button, Card, Container, Skeleton, Text, Title } from "@mantine/core";
-import Link from "next/link";
-import { useQuery } from "@tanstack/react-query";
 import { useElementWidth } from "@/hooks/useElementWidth";
+import { Button, Card, Container, Skeleton, Text, Title } from "@mantine/core";
+import { useQuery } from "@tanstack/react-query";
+import clsx from "clsx";
+import Link from "next/link";
+import React from "react";
+import Parser from "rss-parser";
 
 type FeedItem =
   | {
@@ -58,6 +58,9 @@ export default function Page() {
 
   return (
     <Layout>
+      <Container>
+        <h1 className="text-3xl font-bold">Интересно почитать:</h1>
+      </Container>
       <Container className="my-4 flex gap-2" ref={ref}>
         {error && (
           <Card shadow="sm" padding="lg">

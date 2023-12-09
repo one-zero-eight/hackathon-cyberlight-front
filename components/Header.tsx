@@ -19,9 +19,9 @@ export default function Header() {
 
   return (
     <Container component="header" className="w-full">
-      <div className="mt-4 flex items-center justify-between rounded-md border border-gray-200 p-4 dark:border-gray-900">
-        <div className="flex items-center justify-start gap-2">
-          <Link href="/" className="mr-4 text-lg font-bold">
+      <div className="mt-4 flex flex-col items-center justify-between gap-2 rounded-md border border-gray-200 p-4 dark:border-gray-900 lg:flex-row">
+        <div className="flex flex-col items-center justify-start gap-2 lg:flex-row">
+          <Link href="/" className="text-lg font-bold lg:mr-4">
             Кибер.База
           </Link>
           <Link href="/lessons">
