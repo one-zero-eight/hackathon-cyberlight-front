@@ -120,18 +120,17 @@ export default function Page() {
                     </Text>
                   </Skeleton>
 
-                  <Skeleton
-                    visible={item.loading}
-                    className="w-full"
-                    height={isLoading ? randint(100, 200) : undefined}
-                  >
-                    <Rating
-                      value={item.loading ? 0 : item.difficulty}
-                      color="grape"
-                      size="sm"
-                      count={3}
-                      readOnly={true}
-                    />
+                  <Skeleton visible={item.loading} className="w-full">
+                    <div className="flex items-center gap-2">
+                      <p className="font-medium">Сложность:</p>
+                      <Rating
+                        value={item.loading ? 0 : item.difficulty}
+                        color="grape"
+                        size="sm"
+                        count={3}
+                        readOnly={true}
+                      />
+                    </div>
                   </Skeleton>
 
                   <Skeleton visible={item.loading} className="w-full">
