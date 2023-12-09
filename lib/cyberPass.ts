@@ -11,6 +11,7 @@ export type CyberPass = {
   id: number;
   name: string;
   date_start: string;
+  date_end: string;
   is_active: boolean;
   levels: CyberPassLevel[];
 };
@@ -33,47 +34,62 @@ export type CyberPassReward = {
 
 export function useCyberPass() {
   const { account } = useAccountInfo();
-  const { data } = useQuery<PersonalCyberPass>({
+  const { data: myCyberPass } = useQuery<PersonalCyberPass>({
     queryKey: ["/personal_account/battle-pass"],
   });
   const { data: cyberPasses } = useQuery<CyberPass[]>({
     queryKey: ["/battle-passes/"],
   });
   const currentCyberPass = cyberPasses?.find(
-    (pass) => pass.id === data?.battle_pass_id,
+    (pass) => pass.id === myCyberPass?.battle_pass_id,
   );
 
-  if (!account || !data || !currentCyberPass) {
+  if (
+    !account ||
+    !myCyberPass ||
+    !currentCyberPass ||
+    currentCyberPass.levels.length < 1
+  ) {
     return {
       currentCyberPass: undefined,
+      currentLevelIdx: undefined,
       currentLevel: undefined,
-      currentLevelValue: undefined,
-      progress: undefined,
+      currentLevelProgress: undefined,
     };
   }
 
-  const currentLevel = currentCyberPass.levels.find(
-    (level) => level.experience <= data.experience,
-  );
+  const levelsTotal = currentCyberPass.levels.length;
+  let currentLevelIdx = 0;
+  for (let i = 0; i < levelsTotal; i++) {
+    if (myCyberPass.experience < currentCyberPass.levels[i].experience) {
+      currentLevelIdx = i;
+      break;
+    }
+  }
+  const currentLevel = currentCyberPass.levels[currentLevelIdx];
 
-  if (!currentLevel) {
+  if (myCyberPass.experience >= currentLevel.experience) {
+    currentLevelIdx = levelsTotal - 1;
     return {
       currentCyberPass,
-      currentLevel: undefined,
-      currentLevelValue: 0,
-      progress: 0,
+      currentLevelIdx,
+      currentLevel,
+      currentLevelProgress: 1,
     };
   }
 
-  const progress =
-    (data.experience - currentLevel.experience) /
-    (currentLevel.experience -
-      currentCyberPass.levels[currentCyberPass.levels.length - 1].experience);
+  const currentLevelProgressStart =
+    currentLevelIdx === 0
+      ? 0
+      : currentCyberPass.levels[currentLevelIdx - 1].experience;
+  const currentLevelProgress =
+    (myCyberPass.experience - currentLevelProgressStart) /
+    (currentLevel.experience - currentLevelProgressStart);
 
   return {
     currentCyberPass,
+    currentLevelIdx,
     currentLevel,
-    currentLevelValue: currentLevel.value,
-    progress,
+    currentLevelProgress,
   };
 }

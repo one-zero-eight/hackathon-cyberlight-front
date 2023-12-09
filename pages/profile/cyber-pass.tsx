@@ -1,49 +1,98 @@
+import React, { useEffect, useMemo, useState } from "react";
+import clsx from "clsx";
+import Countdown from "@/components/Countdown";
 import Layout from "@/components/Layout";
+import Section from "@/components/Section";
 import { useCyberPass } from "@/lib/cyberPass";
-import { Container, Title } from "@mantine/core";
-import React, { useMemo } from "react";
+import { Card, Container } from "@mantine/core";
+import { Carousel, Embla } from "@mantine/carousel";
 
 export default function Page() {
-  const { currentCyberPass, currentLevelValue, progress } = useCyberPass();
-  const date_end = useMemo(() => new Date("2023-12-11"), []);
-  const [timeLeft, setTimeLeft] = React.useState<number>(0);
+  const {
+    currentCyberPass,
+    currentLevel,
+    currentLevelProgress,
+    currentLevelIdx,
+  } = useCyberPass();
+  const [embla, setEmbla] = useState<Embla | null>(null);
 
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      const now = new Date();
-      const diff = date_end.getTime() - now.getTime();
-      setTimeLeft(diff);
-    }, 1000);
-    return () => clearInterval(interval);
-  }, [date_end]);
+  useEffect(() => {
+    if (embla && currentLevelIdx !== undefined) {
+      embla.scrollTo(currentLevelIdx);
+    }
+  }, [embla, currentLevelIdx]);
+
+  console.log("lvl", currentLevelIdx, currentLevel, currentLevelProgress);
 
   return (
     <Layout>
-      <Container className="block">
-        <Title order={1}>Кибер.Пропуск</Title>
-        <p>Уровень: {currentLevelValue}</p>
-        <p>Прогресс: {progress}</p>
-        <p>
-          Текущий пропуск: {currentCyberPass?.name} (до {date_end.toISOString()}
-          )
-        </p>
-        <p>
-          До конца пропуска: {Math.floor(timeLeft / (1000 * 60 * 60 * 24))}{" "}
-          дней, {Math.floor((timeLeft / (1000 * 60 * 60)) % 24)} часов,{" "}
-          {Math.floor((timeLeft / (1000 * 60)) % 60)} минут,{" "}
-          {Math.floor((timeLeft / 1000) % 60)} секунд
-        </p>
-        <div>
-          <p>Уровни:</p>
-          {currentCyberPass?.levels.map((level) => (
-            <div key={level.id}>
-              <p>
-                {level.value} - требуется: {level.experience} xp
-              </p>
-            </div>
-          ))}
-        </div>
+      <Container>
+        <Section title={`Кибер.Пропуск — ${currentCyberPass?.name ?? "..."}`}>
+          <div className="flex items-center gap-2 text-3xl font-medium">
+            <h3>До конца осталось:</h3>
+            {currentCyberPass?.date_end ? (
+              <Countdown deadline={new Date(currentCyberPass?.date_end)} />
+            ) : null}
+          </div>
+
+          <div className="mt-8">
+            <Carousel
+              slideSize="25%"
+              slideGap={12}
+              slidesToScroll={1}
+              initialSlide={currentLevelIdx}
+              align="center"
+              getEmblaApi={setEmbla}
+            >
+              {currentCyberPass?.levels.map((lvl, i) => (
+                <Carousel.Slide key={lvl.id}>
+                  <Level
+                    order={lvl.value}
+                    progress={
+                      i < currentLevelIdx
+                        ? 1
+                        : i > currentLevelIdx
+                          ? 0
+                          : currentLevelProgress
+                    }
+                    current={i === currentLevelIdx}
+                  />
+                </Carousel.Slide>
+              ))}
+            </Carousel>
+          </div>
+        </Section>
       </Container>
     </Layout>
+  );
+}
+
+export type LevelProps = {
+  order: number;
+  progress: number;
+  current?: boolean;
+};
+
+function Level({ order, progress, current }: LevelProps) {
+  console.log(order, progress, current);
+  return (
+    <Card p={0} shadow="sm" withBorder>
+      <h3 className="mb-4 text-center text-xl font-medium">Уровень {order}</h3>
+      <div className="h-[24px] w-full">
+        <div
+          className={clsx(
+            "h-full bg-emerald-400",
+            current
+              ? "w-[calc(max(var(--progress),8px))]"
+              : "w-[var(--progress)]",
+          )}
+          style={
+            {
+              "--progress": `${progress * 100}%`,
+            } as React.CSSProperties
+          }
+        ></div>
+      </div>
+    </Card>
   );
 }
