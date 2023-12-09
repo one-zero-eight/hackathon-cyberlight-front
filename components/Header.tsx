@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <Container component="header" className="w-full">
       <div className="mt-4 flex flex-col items-center justify-between gap-2 rounded-md border border-gray-200 p-4 dark:border-gray-900 lg:flex-row">
-        <div className="flex flex-col items-center justify-start gap-2 lg:flex-row">
+        <div className="flex flex-col items-center justify-start gap-2 sm:flex-row">
           <Link href="/" className="text-lg font-bold lg:mr-4">
             Кибер.База
           </Link>
@@ -53,7 +53,7 @@ export default function Header() {
             </Button>
           </Link>
         </div>
-        <div className="flex items-center justify-end">
+        <div className="flex flex-wrap items-center justify-center gap-4">
           <ActionIcon
             component="button"
             variant="subtle"
@@ -65,7 +65,6 @@ export default function Header() {
           {!loggedIn || user == null ? (
             <Link href="/login">
               <Button
-                className="ml-4"
                 variant="outline"
                 leftSection={<span className="icon-[mdi--login]" />}
               >
@@ -76,7 +75,6 @@ export default function Header() {
             <Menu position="bottom-end">
               <Menu.Target>
                 <Button
-                  className="ml-4"
                   variant="outline"
                   rightSection={<span className="icon-[mdi--chevron-down]" />}
                 >
@@ -100,6 +98,18 @@ export default function Header() {
                     Достижения
                   </Menu.Item>
                 </Link>
+                {user.role === "admin" && (
+                  <>
+                    <Menu.Divider />
+                    <Link href="/admin">
+                      <Menu.Item
+                        leftSection={<span className="icon-[mdi--settings]" />}
+                      >
+                        Админка
+                      </Menu.Item>
+                    </Link>
+                  </>
+                )}
                 <Menu.Divider />
                 <Menu.Item
                   color="red"
