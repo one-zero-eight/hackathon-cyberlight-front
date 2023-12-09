@@ -185,7 +185,6 @@ export default function Page() {
               ))}
             <Button
               variant="subtle"
-              color="blue"
               onClick={handleNewTask}
               rightSection={<IconPlus size={14} />}
               loading={mutationNewTask.isPending || mutationSetTasks.isPending}

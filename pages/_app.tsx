@@ -15,7 +15,7 @@ import { Notifications } from "@mantine/notifications";
 import { QueryClientProvider } from "@tanstack/react-query";
 
 const theme = createTheme({
-  primaryColor: "green",
+  primaryColor: "blue",
   colors: {
     dark: [
       "#C9C9C9",

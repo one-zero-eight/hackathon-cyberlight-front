@@ -72,7 +72,6 @@ export default function Page() {
               <Button
                 variant="outline"
                 fullWidth
-                color="blue"
                 onClick={() => setModalConsultantId(consultant.id)}
               >
                 Записаться
@@ -111,7 +110,6 @@ export default function Page() {
                       key={timeslot.id}
                       variant="outline"
                       fullWidth
-                      color="blue"
                       onClick={() => {
                         console.log(timeslot);
                       }}

@@ -33,7 +33,6 @@ export default function Page() {
               <Button
                 variant="outline"
                 fullWidth
-                color="blue"
                 component={Link}
                 href={`/lessons/${lesson.id}`}
               >
