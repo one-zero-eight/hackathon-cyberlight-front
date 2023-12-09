@@ -30,7 +30,11 @@ export default function LessonDifficulty({
 
   if (withTooltip) {
     return (
-      <Tooltip label="Сложность урока" position="bottom" withArrow>
+      <Tooltip
+        label="Сложность урока по 10-ти бальной шкале"
+        position="bottom"
+        withArrow
+      >
         {rating}
       </Tooltip>
     );
@@ -41,10 +45,12 @@ export default function LessonDifficulty({
 
 function getRatingEmptyIcon() {
   return (
-    <span className="icon-[mdi--asterisk] text-lg text-dark-200 dark:text-dark-400" />
+    <span className="icon-[mdi--asterisk] mt-[6px] text-lg text-dark-200 dark:text-dark-400" />
   );
 }
 
 function getRatingFullIcon() {
-  return <span className="icon-[mdi--asterisk] text-lg text-yellow-800" />;
+  return (
+    <span className="icon-[mdi--asterisk] mt-[6px] text-lg text-yellow-800" />
+  );
 }

@@ -112,7 +112,7 @@ export default function TaskSubmit({
           loading={mutation.isPending}
           loaderProps={{ type: "dots" }}
         >
-          Отправить
+          {task.type === "empty" ? "Прочитал" : "Ответить"}
         </Button>
       </div>
       {showSuccess
