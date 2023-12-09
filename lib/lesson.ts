@@ -22,8 +22,9 @@ export type Task = {
   content: string;
   type: "empty" | "instant" | "radio" | "multichoice" | "input";
   choices?: string[];
-  correct_choices?: string[];
+  correct_choices?: number[];
   input_answers?: string[];
+  exp?: number;
 };
 
 export function isAvailable(lesson: Lesson, account?: AccountInfo) {

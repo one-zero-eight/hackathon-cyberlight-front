@@ -4,14 +4,7 @@ import TaskContent from "@/components/TaskContent";
 import TaskSubmit from "@/components/TaskSubmit";
 import { Lesson } from "@/lib/lesson";
 import { pluralizeRu } from "@/utils/words";
-import {
-  Button,
-  Container,
-  Divider,
-  Paper,
-  Skeleton,
-  Text,
-} from "@mantine/core";
+import { Button, Container, Divider, Paper, Skeleton } from "@mantine/core";
 import { IconEdit } from "@tabler/icons-react";
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
@@ -86,7 +79,7 @@ export default function Page() {
         </div>
         <Divider className="mt-2" />
         <div className="flex">
-          <nav className="flex max-w-[250px] shrink-0 flex-col gap-2 py-4 pr-4">
+          <nav className="flex max-w-[250px] shrink-0 flex-col gap-2 overflow-clip py-4 pr-4">
             {lesson &&
               lesson.tasks.map((task) => (
                 <Link href={`/lessons/${lesson.id}/${task.id}`} key={task.id}>
@@ -134,6 +127,6 @@ export default function Page() {
   );
 }
 
-function truncate(str: string, n: number) {
+export function truncate(str: string, n: number) {
   return str.length > n ? str.slice(0, n - 1) + "…" : str;
 }

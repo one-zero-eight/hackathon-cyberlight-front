@@ -2,7 +2,9 @@ import { useCustomEditor } from "@/components/CustomEditor";
 import Layout from "@/components/Layout";
 import LessonDifficulty from "@/components/LessonDifficulty";
 import TaskContentEditor from "@/components/TaskContentEditor";
+import TaskQuestionEditor from "@/components/TaskQuestionEditor";
 import { Lesson } from "@/lib/lesson";
+import { truncate } from "@/pages/lessons/[lessonId]/[taskId]/index";
 import {
   Button,
   Container,
@@ -13,7 +15,12 @@ import {
   TextInput,
 } from "@mantine/core";
 import { IconCheck, IconPlus } from "@tabler/icons-react";
-import { DefaultError, useMutation, useQuery } from "@tanstack/react-query";
+import {
+  DefaultError,
+  useMutation,
+  useQuery,
+  useQueryClient,
+} from "@tanstack/react-query";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
@@ -42,10 +49,16 @@ export default function Page() {
 
   const [taskTitle, setTaskTitle] = useState("");
 
+  const queryClient = useQueryClient();
   const mutationLesson = useMutation<any, DefaultError, any>({});
   const mutationUpdateTask = useMutation<any, DefaultError, any>({});
   const mutationNewTask = useMutation<any, DefaultError, any>({});
   const mutationSetTasks = useMutation<any, DefaultError, any>({});
+
+  const [taskType, setTaskType] = useState<string | null>(null);
+  const [choices, setChoices] = useState<string[]>([]);
+  const [correctChoices, setCorrectChoices] = useState<number[]>([]);
+  const [exp, setExp] = useState<number>(0);
 
   const editor = useCustomEditor({});
 
@@ -81,6 +94,8 @@ export default function Page() {
         difficulty: difficulty,
       },
     });
+
+    handleTaskSave();
   };
 
   const handleNewTask = () => {
@@ -109,6 +124,9 @@ export default function Page() {
             },
             {
               onSuccess: () => {
+                queryClient.invalidateQueries({
+                  queryKey: [`/lessons/${lesson.id}`],
+                });
                 router.push(`/lessons/${lesson.id}/${data.id}/edit`);
               },
             },
@@ -121,14 +139,28 @@ export default function Page() {
   const handleTaskSave = () => {
     if (!editor) return;
     const content = editor.getJSON();
-    mutationUpdateTask.mutate({
-      url: `/lessons/tasks/${taskId}`,
-      method: "PUT",
-      body: {
-        title: taskTitle,
-        content: JSON.stringify(content),
+    mutationUpdateTask.mutate(
+      {
+        url: `/lessons/tasks/${taskId}`,
+        method: "PUT",
+        body: {
+          title: taskTitle,
+          content: JSON.stringify(content),
+          type: taskType,
+          choices: taskType === "radio" ? choices : undefined,
+          correct_choices: taskType === "radio" ? correctChoices : undefined,
+          input_answers: taskType === "input" ? choices : undefined,
+          exp: exp,
+        },
       },
-    });
+      {
+        onSuccess: () => {
+          queryClient.invalidateQueries({
+            queryKey: [`/lessons/${lessonId}`],
+          });
+        },
+      },
+    );
   };
 
   return (
@@ -158,28 +190,44 @@ export default function Page() {
               onChange={(v) => setDifficulty(v - 1)}
             />
           </div>
-          <Button
-            variant="filled"
-            color="green"
-            leftSection={<IconCheck size={14} />}
-            onClick={handleSave}
-            loading={mutationLesson.isPending}
-            loaderProps={{ type: "dots" }}
-          >
-            Сохранить
-          </Button>
+          <div className="flex flex-col gap-2">
+            <Button
+              variant="filled"
+              color="green"
+              leftSection={<IconCheck size={14} />}
+              onClick={handleSave}
+              loading={mutationLesson.isPending}
+              loaderProps={{ type: "dots" }}
+            >
+              Сохранить
+            </Button>
+            <Button
+              variant="subtle"
+              component={Link}
+              href={`/lessons/${lessonId}/${taskId}`}
+            >
+              К уроку
+            </Button>
+          </div>
         </div>
         <Divider className="mt-2" />
         <div className="flex">
-          <nav className="flex max-w-[200px] shrink-0 flex-col py-4 pr-4">
+          <nav className="flex max-w-[250px] shrink-0 flex-col gap-2 overflow-clip py-4 pr-4">
             {lesson &&
               lesson.tasks.map((task) => (
                 <Link
                   href={`/lessons/${lesson.id}/${task.id}/edit`}
                   key={task.id}
                 >
-                  <Button variant={taskId === task.id ? "light" : "subtle"}>
-                    {task.title || "Без названия"}
+                  <Button
+                    variant={taskId === task.id ? "light" : "subtle"}
+                    styles={{
+                      inner: {
+                        justifyContent: "flex-start",
+                      },
+                    }}
+                  >
+                    {truncate(task.title || "Без названия", 18)}
                   </Button>
                 </Link>
               ))}
@@ -205,18 +253,18 @@ export default function Page() {
                   taskId={Number(taskId)}
                   editor={editor}
                 />
-                <div>
-                  <Button
-                    variant="filled"
-                    color="green"
-                    leftSection={<IconCheck size={14} />}
-                    onClick={handleTaskSave}
-                    loading={mutationUpdateTask.isPending}
-                    loaderProps={{ type: "dots" }}
-                  >
-                    Сохранить
-                  </Button>
-                </div>
+                <TaskQuestionEditor
+                  lessonId={Number(lessonId)}
+                  taskId={Number(taskId)}
+                  taskType={taskType}
+                  setTaskType={setTaskType}
+                  choices={choices}
+                  setChoices={setChoices}
+                  correctChoices={correctChoices}
+                  setCorrectChoices={setCorrectChoices}
+                  exp={exp}
+                  setExp={setExp}
+                />
               </>
             )) || (
               <Skeleton>

@@ -82,45 +82,66 @@ export default function TaskSubmit({
   return (
     <div className="flex w-fit flex-col gap-2">
       {task.type === "input" ? (
-        <TextInput
-          label="Ответ"
-          placeholder="Введите ваш ответ"
-          value={textAnswer}
-          onChange={(event) => setTextAnswer(event.currentTarget.value)}
-        />
+        <>
+          <TextInput
+            label="Ответ"
+            placeholder="Введите ваш ответ"
+            value={textAnswer}
+            onChange={(event) => setTextAnswer(event.currentTarget.value)}
+          />
+          <div>
+            <Button
+              onClick={() => handleSubmit()}
+              disabled={task.type === "input" && textAnswer === ""}
+              loading={mutation.isPending}
+              loaderProps={{ type: "dots" }}
+            >
+              Отправить
+            </Button>
+          </div>
+        </>
       ) : task.type === "radio" && task.choices ? (
-        <Radio.Group value={radioAnswer} onChange={setRadioAnswer}>
-          {task.choices.map((choice, i) => (
-            <Radio
-              key={i}
-              label={choice}
-              value={i.toString()}
-              className="my-2"
-            />
-          ))}
-        </Radio.Group>
+        <>
+          <Radio.Group value={radioAnswer} onChange={setRadioAnswer}>
+            {task.choices.map((choice, i) => (
+              <Radio
+                key={i}
+                label={choice}
+                value={i.toString()}
+                className="my-2"
+              />
+            ))}
+            <div>
+              <Button
+                onClick={() => handleSubmit()}
+                disabled={task.type === "radio" && radioAnswer === "-"}
+                loading={mutation.isPending}
+                loaderProps={{ type: "dots" }}
+              >
+                Отправить
+              </Button>
+            </div>
+          </Radio.Group>
+        </>
       ) : (
-        <></>
+        <>
+          <div className="mt-4">
+            <Button
+              onClick={() => handleSubmit()}
+              loading={mutation.isPending}
+              loaderProps={{ type: "dots" }}
+            >
+              Прочитал
+            </Button>
+          </div>
+        </>
       )}
-      <div>
-        <Button
-          onClick={() => handleSubmit()}
-          disabled={
-            (task.type === "input" && textAnswer === "") ||
-            (task.type === "radio" && radioAnswer === "-")
-          }
-          loading={mutation.isPending}
-          loaderProps={{ type: "dots" }}
-        >
-          {task.type === "empty" ? "Прочитал" : "Ответить"}
-        </Button>
-      </div>
       {showSuccess
         ? mutation.data &&
           mutation.variables.body.task_id === task.id &&
           (mutation.data.success ? (
             <>
-              <p>Верно!</p>
+              <p>Отлично!</p>
             </>
           ) : (
             <p>Неверно!</p>
