@@ -1,5 +1,6 @@
 import { useCustomEditor } from "@/components/CustomEditor";
 import Layout from "@/components/Layout";
+import LessonDifficulty from "@/components/LessonDifficulty";
 import TaskContentEditor from "@/components/TaskContentEditor";
 import { Lesson } from "@/lib/lesson";
 import {
@@ -7,7 +8,6 @@ import {
   Container,
   Divider,
   Paper,
-  Rating,
   Skeleton,
   Text,
   TextInput,
@@ -151,12 +151,11 @@ export default function Page() {
               onChange={(event) => setDescription(event.currentTarget.value)}
             />
             <Text size="sm">Сложность</Text>
-            <Rating
-              value={difficulty + 1}
+            <LessonDifficulty
+              maximumDifficulty={10}
+              difficulty={difficulty + 1}
+              editable
               onChange={(v) => setDifficulty(v - 1)}
-              color="grape"
-              size="lg"
-              count={10}
             />
           </div>
           <Button

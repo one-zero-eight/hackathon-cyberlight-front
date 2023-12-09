@@ -1,9 +1,10 @@
-import Layout from "@/components/Layout";
-import { Lesson } from "@/lib/lesson";
-import { Button, Card, Container, Rating, Text, Title } from "@mantine/core";
-import { useQuery } from "@tanstack/react-query";
-import Link from "next/link";
 import React from "react";
+import Link from "next/link";
+import { useQuery } from "@tanstack/react-query";
+import { Button, Card, Container, Text, Title } from "@mantine/core";
+import LessonDifficulty from "@/components/LessonDifficulty";
+import { Lesson } from "@/lib/lesson";
+import Layout from "@/components/Layout";
 
 export default function Page() {
   const { data: lessons } = useQuery<Lesson[]>({
@@ -17,17 +18,16 @@ export default function Page() {
         <div className="flex flex-wrap items-start gap-3">
           {lessons?.map((lesson) => (
             <Card
+              key={lesson.id}
               shadow="sm"
               padding="lg"
               className="flex max-w-lg flex-col gap-4 hover:bg-gray-100 dark:hover:bg-gray-900"
             >
               <Title order={3}>{lesson.title}</Title>
-              <Rating
-                value={lesson.difficulty + 1}
-                color="grape"
-                size="sm"
-                count={10}
-                readOnly={true}
+              <LessonDifficulty
+                maximumDifficulty={10}
+                difficulty={lesson.difficulty + 1}
+                withTooltip
               />
               <Text>{lesson.content}</Text>
               <Button

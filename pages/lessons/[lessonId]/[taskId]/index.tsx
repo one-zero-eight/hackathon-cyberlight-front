@@ -1,15 +1,9 @@
 import Layout from "@/components/Layout";
+import LessonDifficulty from "@/components/LessonDifficulty";
 import TaskContent from "@/components/TaskContent";
 import TaskSubmit from "@/components/TaskSubmit";
 import { Lesson } from "@/lib/lesson";
-import {
-  Button,
-  Container,
-  Divider,
-  Paper,
-  Rating,
-  Skeleton,
-} from "@mantine/core";
+import { Button, Container, Divider, Paper, Skeleton } from "@mantine/core";
 import { IconEdit } from "@tabler/icons-react";
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
@@ -44,12 +38,10 @@ export default function Page() {
               {lesson?.content}
             </p>
             {lesson && (
-              <Rating
-                value={lesson.difficulty + 1}
-                color="grape"
-                size="sm"
-                count={10}
-                readOnly={true}
+              <LessonDifficulty
+                maximumDifficulty={10}
+                difficulty={lesson.difficulty + 1}
+                withTooltip
               />
             )}
           </div>
