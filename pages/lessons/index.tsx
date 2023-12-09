@@ -31,7 +31,7 @@ export default function Page() {
                 disabled={isAvailable(lesson, account)}
               >
                 <Card shadow="sm" padding="lg">
-                  <Title order={3}>{lesson.title}</Title>
+                  <h3 className="mb-3 text-2xl font-medium">{lesson.title}</h3>
                   <LessonDifficulty
                     maximumDifficulty={10}
                     difficulty={lesson.difficulty + 1}
@@ -39,6 +39,7 @@ export default function Page() {
                   />
                   <Text>{lesson.content}</Text>
                   <Button
+                    className="mt-4"
                     variant="outline"
                     fullWidth
                     component={Link}
