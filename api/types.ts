@@ -9,3 +9,8 @@ export type Achievement = {
   description: string;
   image: string;
 };
+
+export type AchievementDetailed = {
+  achievement: Achievement;
+  percent: number;
+};

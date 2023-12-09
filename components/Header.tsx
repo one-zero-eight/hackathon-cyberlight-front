@@ -93,6 +93,13 @@ export default function Header() {
                     Профиль
                   </Menu.Item>
                 </Link>
+                <Link href="/profile/achievements">
+                  <Menu.Item
+                    leftSection={<span className="icon-[mdi--star]" />}
+                  >
+                    Достижения
+                  </Menu.Item>
+                </Link>
                 <Menu.Divider />
                 <Menu.Item
                   color="red"
