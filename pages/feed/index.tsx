@@ -1,6 +1,14 @@
 import Layout from "@/components/Layout";
 import { useElementWidth } from "@/hooks/useElementWidth";
-import { Button, Card, Container, Skeleton, Text, Title } from "@mantine/core";
+import {
+  Button,
+  Card,
+  Container,
+  Rating,
+  Skeleton,
+  Text,
+  Title,
+} from "@mantine/core";
 import { useQuery } from "@tanstack/react-query";
 import clsx from "clsx";
 import Link from "next/link";
@@ -13,6 +21,7 @@ type FeedItem =
       title: string;
       link: string;
       content: string;
+      difficulty: number;
     }
   | {
       loading: true;
@@ -22,8 +31,8 @@ export default function Page() {
   const { isLoading, data, error } = useQuery({
     queryKey: ["rss"],
     queryFn: async () => {
-      const parser = new Parser();
-      const res = await fetch("/api/rss");
+      const parser = new Parser({ customFields: { item: ["difficulty"] } });
+      const res = await fetch("/rss.xml");
       const text = await res.text();
       const feed = await parser.parseString(text);
       return feed;
@@ -45,12 +54,13 @@ export default function Page() {
   } else {
     for (let i = 0; i < items.length; i++) {
       const item = items[i];
-      if (item.contentSnippet && item.link && item.title) {
+      if (item.contentSnippet && item.link && item.title && item.difficulty) {
         columns[i % columnCount].push({
           loading: false,
           title: item.title,
           link: item.link,
           content: item.contentSnippet,
+          difficulty: item.difficulty,
         });
       }
     }
@@ -108,6 +118,20 @@ export default function Page() {
                         ? "Загрузка..."
                         : truncateWords(item.content, 20)}
                     </Text>
+                  </Skeleton>
+
+                  <Skeleton
+                    visible={item.loading}
+                    className="w-full"
+                    height={isLoading ? randint(100, 200) : undefined}
+                  >
+                    <Rating
+                      value={item.loading ? 0 : item.difficulty}
+                      color="grape"
+                      size="sm"
+                      count={3}
+                      readOnly={true}
+                    />
                   </Skeleton>
 
                   <Skeleton visible={item.loading} className="w-full">

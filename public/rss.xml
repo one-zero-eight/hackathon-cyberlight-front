@@ -1,0 +1,1316 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>Все статьи подряд / Информационная безопасность / Хабр</title>
+    <link>https://habr.com/ru/hubs/infosecurity/articles/</link>
+    <description>
+      <![CDATA[ Информационная безопасность – защита данных ]]>
+    </description>
+    <language>ru</language>
+    <managingEditor>editor@habr.com</managingEditor>
+    <generator>habr.com</generator>
+    <pubDate>Sat, 09 Dec 2023 06:29:41 GMT</pubDate>
+    <image>
+      <link>https://habr.com/ru/</link>
+      <url>https://habrastorage.org/webt/ym/el/wk/ymelwk3zy1gawz4nkejl_-ammtc.png</url>
+      <title>Хабр</title>
+    </image>
+    <item>
+      <title>
+        <![CDATA[ Безопасность DevOps. Стратегическое планирование ]]>
+      </title>
+      <guid>https://habr.com/ru/companies/globalsign/articles/779308/</guid>
+      <link>https://habr.com/ru/companies/globalsign/articles/779308/?utm_campaign=779308&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <img src="https://habrastorage.org/webt/gz/cp/hl/gzcphlahkanbubqzoodqpykjahi.png"><br><i><font color="gray">Интеграция инструментов оценки рисков в рабочий процесс DevOps. Источник: Gartner</font></i><br><br> Почти двадцать лет индустрия IT всё активнее переходит к внедрению практик <a href="https://en.wikipedia.org/wiki/DevOps" rel="nofollow noopener noreferrer">DevOps</a>. Автоматизация технологических процессов сборки, настройки и развёртывания ПО со взаимной интеграцией этих процессов — всё это помогает в разработке высококачественных приложений на высокой скорости и с большей эффективностью благодаря использованию конвейеров CI/CD (Continuous Integration/Continuous Delivery).<br><br> Хотя внедрение практик DevOps повышает эффективность и скорость выпуска приложений, оно не лишено недостатков. Сам конвейер работает на непрерывной основе, включая тестирование и исправление багов. Но когда речь заходит о безопасности, то проверка уязвимостей и мониторинг безопасности, как правило, стоят <i>в конце</i> цикла, перед развёртыванием продукта.<br><br> Это не самый лучший подход, считают специалисты по безопасноcти.<br><a href="https://habr.com/ru/articles/779308/?utm_campaign=779308&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать дальше &rarr;</a> ]]>
+      </description>
+      <pubDate>Fri, 08 Dec 2023 10:07:39 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ DevSecOps ]]>
+      </category>
+      <category>
+        <![CDATA[ стратегическое планирование ]]>
+      </category>
+      <category>
+        <![CDATA[ оценка рисков ]]>
+      </category>
+      <category>
+        <![CDATA[ Shift-Left ]]>
+      </category>
+      <category>
+        <![CDATA[ Shift-Right ]]>
+      </category>
+      <difficulty>2</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Безопасность web приложений с использованием Identity Provider ]]>
+      </title>
+      <guid>https://habr.com/ru/articles/779170/</guid>
+      <link>https://habr.com/ru/articles/779170/?utm_campaign=779170&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>В современном цифровом мире, где взаимодействие с онлайн-ресурсами и web&nbsp;приложениями стало неотъемлемой частью нашей повседневной жизни, безопасность и управление личной идентификацией стали ключевыми аспектами. Именно в этом контексте становится крайне важным понятие “Identity Provider”&nbsp;или, сокращённо, IdP.</p><p>Identity Provider представляет собой централизованный сервис, который играет решающую роль в процессе аутентификации пользователей в сети. Это технологическое решение позволяет пользователям идентифицироваться и получать доступ к различным ресурсам и сервисам, используя единый набор учётных данных или методов аутентификации.</p><p>IdP обеспечивает не только процесс аутентификации, но и авторизации, что делает его краеугольным камнем в управлении идентификацией в цифровом мире. Он предоставляет удобный и безопасный механизм для учета пользователей, определения их ролей и разграничения доступа к ресурсам и данным на основе этих ролей. Таким образом, IdP способствует усилению безопасности и контролю над доступом, одновременно облегчая пользовательский опыт. </p><p>В этой статье мы рассмотрим более подробно, как происходит взаимодействие с Identity Provider, его преимущества и роль в обеспечении безопасности данных и доступа в цифровой эпохе.</p><p></p><a href="https://habr.com/ru/articles/779170/?utm_campaign=779170&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Thu, 07 Dec 2023 16:15:54 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ oauth ]]>
+      </category>
+      <category>
+        <![CDATA[ oauth 2.0 ]]>
+      </category>
+      <category>
+        <![CDATA[ oauth2 ]]>
+      </category>
+      <category>
+        <![CDATA[ security ]]>
+      </category>
+      <category>
+        <![CDATA[ identity ]]>
+      </category>
+      <category>
+        <![CDATA[ provider ]]>
+      </category>
+      <category>
+        <![CDATA[ keycloak ]]>
+      </category>
+      <difficulty>2</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Визуализация: лучшие практики ]]>
+      </title>
+      <guid>https://habr.com/ru/companies/securityvison/articles/779032/</guid>
+      <link>https://habr.com/ru/companies/securityvison/articles/779032/?utm_campaign=779032&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>В случае, когда требуется оперативно (и вдумчиво) оценить ситуацию в целом и ответить на сложные комплексные вопросы, на помощь приходит визуализация. В нашем случае речь пойдет о метриках эффективности по большей части в области ИБ, но на самом деле все нижесказанное применимо и к бизнес-сегменту, так как логика настройки BI-решений схожая.</p><p>Визуализация результатов работы позволяет как дать оценку работы систем или людей, так и проиллюстрировать необходимость запроса, к примеру, потребность отдела в новых вакансиях или отказ от того или иного средства защиты.</p><p></p><a href="https://habr.com/ru/articles/779032/?utm_campaign=779032&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Thu, 07 Dec 2023 11:21:50 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ визуализация ]]>
+      </category>
+      <category>
+        <![CDATA[ отчеты ]]>
+      </category>
+      <category>
+        <![CDATA[ дашборды ]]>
+      </category>
+      <category>
+        <![CDATA[ аналитика ]]>
+      </category>
+      <category>
+        <![CDATA[ SV ]]>
+      </category>
+      <category>
+        <![CDATA[ security vision ]]>
+      </category>
+      <category>
+        <![CDATA[ метрики ]]>
+      </category>
+      <category>
+        <![CDATA[ best practices ]]>
+      </category>
+      <category>
+        <![CDATA[ иб ]]>
+      </category>
+      <category>
+        <![CDATA[ информационная безопасность ]]>
+      </category>
+      <difficulty>1</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ [Перевод] Мессенжеру Signal угрожает коллапс после прекращения финансирования со стороны ЦРУ ]]>
+      </title>
+      <guid>https://habr.com/ru/articles/779102/</guid>
+      <link>https://habr.com/ru/articles/779102/?utm_campaign=779102&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>16 ноября Мередит Уиттакер, президент Signal впервые опубликовал подробный анализ эксплуатационных расходов популярного приложения для обмена зашифрованными сообщениями. Причина беспрецедентного раскрытия информации проста: у платформы быстро заканчиваются деньги, и она остро нуждается в пожертвованиях, чтобы оставаться на плаву. Уиттакер не сообщил, что этот дефицит бюджета является, в значительной степени, результатом прекращения поддержки со стороны разведывательного сообщества США, которое щедро финансировало создание и поддержку Signal в течение нескольких лет,</p><p></p><a href="https://habr.com/ru/articles/779102/?utm_campaign=779102&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Thu, 07 Dec 2023 10:56:39 GMT</pubDate>
+      <creator></creator>
+      <category>signal</category>
+      <category>tor</category>
+      <difficulty>1</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Как оценить эффективность WAF и зачем вообще это все нужно. Часть 1 ]]>
+      </title>
+      <guid>https://habr.com/ru/companies/webmonitorx/articles/778406/</guid>
+      <link>https://habr.com/ru/companies/webmonitorx/articles/778406/?utm_campaign=778406&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>Привет! Меня зовут Лев Палей, и я собаку съел на всяких сравнениях, технико-экономических обоснованиях и всей этой истории с выбором каких-либо решений. Теперь я работаю по другую сторону сделки. Поэтому, после некоторого времени, проведенного в компании-производителе, решил рассказать о тяготах выбора WAF, как историю из тех времен, когда сам был заказчиком и с учетом всякого нового, что начал понимать теперь. Раньше я не мог много об этом рассказывать (не было времени), а сейчас готов поделиться своим двусторонним опытом. Если перед вами стоит задача ........ велком под кат за подробностями. &nbsp; </p><p></p><a href="https://habr.com/ru/articles/778406/?utm_campaign=778406&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Thu, 07 Dec 2023 10:16:08 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ waf ]]>
+      </category>
+      <category>
+        <![CDATA[ информационная безопасность ]]>
+      </category>
+      <category>
+        <![CDATA[ уязвимости ]]>
+      </category>
+      <category>
+        <![CDATA[ кибербезопасность ]]>
+      </category>
+      <category>
+        <![CDATA[ тестирование веб-приложений ]]>
+      </category>
+      <category>
+        <![CDATA[ it-компании ]]>
+      </category>
+      <category>
+        <![CDATA[ автоматизация тестирования ]]>
+      </category>
+      <category>
+        <![CDATA[ взлом ]]>
+      </category>
+      <category>
+        <![CDATA[ атаки ]]>
+      </category>
+      <category>
+        <![CDATA[ экономическая эффективность ]]>
+      </category>
+      <difficulty>2</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Обзор telegram-бота N.E.T.C.A.L.C. – сетевого мульти-инструмента для ИТ и ИБ-специалистов, созданного с помощью ChatGPT ]]>
+      </title>
+      <guid>https://habr.com/ru/companies/step_logic/articles/778800/</guid>
+      <link>https://habr.com/ru/companies/step_logic/articles/778800/?utm_campaign=778800&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>Всем привет! В <a href="https://habr.com/ru/companies/step_logic/articles/775422/">первой части</a> своего повествования я рассказал об опыте создания при помощи ChatGPT telegram-бота с функцией продвинутого калькулятора IP-сетей и набором полезных сетевых инструментов.</p><p>В этой статье я подробнее объясню и наглядно продемонстрирую каждую из его текущих возможностей, а также поделюсь дальнейшими планами по совершенствованию сетевого мультитула. </p><p></p><a href="https://habr.com/ru/articles/778800/?utm_campaign=778800&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Thu, 07 Dec 2023 10:04:23 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ chatgpt ]]>
+      </category>
+      <category>
+        <![CDATA[ сетевое администрирование ]]>
+      </category>
+      <category>
+        <![CDATA[ cisco ]]>
+      </category>
+      <category>
+        <![CDATA[ fortinet ]]>
+      </category>
+      <category>
+        <![CDATA[ континент 4 ]]>
+      </category>
+      <category>
+        <![CDATA[ checkpoint ]]>
+      </category>
+      <category>
+        <![CDATA[ нейросеть ]]>
+      </category>
+      <category>
+        <![CDATA[ network ]]>
+      </category>
+      <category>
+        <![CDATA[ калькулятор ]]>
+      </category>
+      <category>
+        <![CDATA[ ip-адрес ]]>
+      </category>
+      <difficulty>1</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ [Перевод] Как устроен протокол iMessage ]]>
+      </title>
+      <guid>https://habr.com/ru/articles/779064/</guid>
+      <link>https://habr.com/ru/articles/779064/?utm_campaign=779064&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>В этом посте я вкратце расскажу о внутреннем устройстве iMessage, изученном мной в процессе работы над <code>pypush</code> — опенсорсным проектом воссоздания реализации iMessage.</p><p>Ради краткости и понятности я не буду вдаваться в технические подробности. Если вы хотите узнать, как конкретно всё реализовано, то изучите <a href="https://github.com/JJTech0130/pypush" rel="noopener noreferrer nofollow">репозиторий</a><code>pypush</code>. </p><p></p><a href="https://habr.com/ru/articles/779064/?utm_campaign=779064&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Thu, 07 Dec 2023 09:06:57 GMT</pubDate>
+      <creator></creator>
+      <category>imessage</category>
+      <category>iphone</category>
+      <category>протоколы передачи данных</category>
+      <category>apple</category>
+      <category>ios</category>
+      <difficulty>2</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Почему рукописную подпись считают надёжным способом аутентификации (и так ли это на самом деле) ]]>
+      </title>
+      <guid>https://habr.com/ru/companies/gazprombank/articles/778360/</guid>
+      <link>https://habr.com/ru/companies/gazprombank/articles/778360/?utm_campaign=778360&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <img src="https://habrastorage.org/webt/kh/b6/xn/khb6xnt90kbhklo-xreuhnz7bto.png" alt="image"><br><br> Подпись — один из основных методов идентификации личности. Не самый надёжный, но часто самый простой и доступный для бумажного документооборота. <br><br> Автограф должен подтверждать подлинность документа. Например, в банках сотрудники по-прежнему сравнивают подписи в документах и в паспорте.<br><br> Подписи не уникальны и не обладают общей надёжностью, но при этом достаточно надёжны в определённых задачах. <br><br><b>Подделка подписи обычно дороже ожидаемой выгоды от мошенничества</b>, и на этом допущении держится очень многое. <br><br> Разумеется, когда встаёт вопрос крупной сделки, нужны дополнительные верифицирующие факторы. <br><br> И, кажется, подписи уже отживают своё. <a href="https://habr.com/ru/articles/778360/?utm_campaign=778360&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать дальше &rarr;</a> ]]>
+      </description>
+      <pubDate>Thu, 07 Dec 2023 08:22:55 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ подпись ]]>
+      </category>
+      <category>
+        <![CDATA[ электронная подпись ]]>
+      </category>
+      <category>
+        <![CDATA[ биометрия ]]>
+      </category>
+      <category>
+        <![CDATA[ дактилоскопия ]]>
+      </category>
+      <category>
+        <![CDATA[ банк ]]>
+      </category>
+      <difficulty>1</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Как Wazuh помог наладить круглосуточный мониторинг и реагирование на ИБ-события ]]>
+      </title>
+      <guid>https://habr.com/ru/companies/nubes/articles/778990/</guid>
+      <link>https://habr.com/ru/companies/nubes/articles/778990/?utm_campaign=778990&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>Представим ситуацию. Вы хотите выстроить процесс реагирования на&nbsp;ИБ‑инциденты в&nbsp;компании. Для&nbsp;этого нужно вовремя фиксировать атаки на&nbsp;вашу инфраструктуру. Вы решаете собирать логи и мониторить все, до&nbsp;чего можете дотянуться: хосты, межсетевые экраны, антивирусы, пользовательские устройства. Логов много, они разные. В&nbsp;таком объеме данных сложно вычленить что‑то полезное даже самому опытному ИБ‑специалисту. А&nbsp;вам нужно, чтобы в&nbsp;нем могли разобраться дежурные администраторы (первая&nbsp;линия техподдержки), которые знают только базу, но&nbsp;зато на&nbsp;посту 24&nbsp;на 7. Они должны фиксировать аномалии, реагировать на&nbsp;типовые угрозы по&nbsp;регламенту, а&nbsp;сложные кейсы дальше передавать профильным ИБ‑инженерам для&nbsp;купирования и расследования атак.</p><p>Именно с&nbsp;такой задачей мы имели дело, когда решили выстроить такую систему реагирования на&nbsp;ИБ‑угрозы в&nbsp;нашем облаке NGcloud. Меня зовут Иван, я занимаюсь защитой облачной инфраструктуры. Сегодня я расскажу, как&nbsp;мы организовали все вышеперечисленное при&nbsp;помощи Wazuh. </p><p><strong>Почему выбрали Wazuh?</strong></p><p></p><a href="https://habr.com/ru/articles/778990/?utm_campaign=778990&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Thu, 07 Dec 2023 06:27:35 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ wazuh ]]>
+      </category>
+      <category>
+        <![CDATA[ open-source ]]>
+      </category>
+      <category>
+        <![CDATA[ siem ]]>
+      </category>
+      <category>
+        <![CDATA[ логи ]]>
+      </category>
+      <category>
+        <![CDATA[ мониторинг ]]>
+      </category>
+      <category>
+        <![CDATA[ виртуальная инфраструктура ]]>
+      </category>
+      <category>
+        <![CDATA[ облако ]]>
+      </category>
+      <category>
+        <![CDATA[ ngcloud ]]>
+      </category>
+      <difficulty>3</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Достивисты и SYN-флуд: как началась эпидемия DDoS ]]>
+      </title>
+      <guid>https://habr.com/ru/companies/cloud_mts/articles/778866/</guid>
+      <link>https://habr.com/ru/companies/cloud_mts/articles/778866/?utm_campaign=778866&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>С проблемой DDoS так или иначе сталкивался всякий бизнес, имеющий корпоративный сайт или предоставляющий своим клиентам веб-сервисы. Поэтому мы в CloudMTS <a href="https://cloud.mts.ru/services/ddos-protection/?utm_source=habr.com&amp;utm_medium=owned_media_dosdec&amp;utm_content=article&amp;utm_term=dosdec"><u>предлагаем защиту</u></a> онлайн-сервисов в разных локациях: в нашем облаке или в чужом, на вашей инфраструктуре или в другом дата-центре.</p><p>DDoS-кампании становятся изощреннее с каждым днём. Только в октябре этого года был установлен очередной рекорд — в ходе атаки количество запросов ботнета достигло 398 млн в секунду, что в 7,5 раз превышает предыдущие пиковые показатели.&nbsp;</p><p>Превзойти достижение предшественников атакующие смогли за счет использования нового метода на основе быстрого сброса потоков HTTP/2 (HTTP/2 Rapid Reset). Также сегодня злоумышленники все чаще применяют машинное обучение, чтобы маскировать вредный трафик и обходить защиту. Вместе с этим они активнее наращивают численность ботнетов за счет эксплуатации уязвимостей популярных IoT-гаджетов.</p><p>Первые шаги в истории DDoS были не менее разнообразными, хотя и намного более примитивными. Рассказываем, когда происходили такие атаки.</p><p></p><a href="https://habr.com/ru/articles/778866/?utm_campaign=778866&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Wed, 06 Dec 2023 13:54:18 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ DDoS ]]>
+      </category>
+      <category>
+        <![CDATA[ ИБ ]]>
+      </category>
+      <category>
+        <![CDATA[ информационная безопасность ]]>
+      </category>
+      <difficulty>2</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ ЕС внедряет правительственные веб-сертификаты — почему инициатива вызывает опасения в ИТ-сообществе ]]>
+      </title>
+      <guid>https://habr.com/ru/companies/vasexperts/articles/778622/</guid>
+      <link>https://habr.com/ru/companies/vasexperts/articles/778622/?utm_campaign=778622&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>Мы регулярно обсуждаем инициативы, связанные с <a href="https://habr.com/ru/companies/vasexperts/articles/726658/">ограничением</a> работы приложений, шифрованием и <a href="https://habr.com/ru/companies/vasexperts/articles/553640/">end-to-end</a>. Сегодня мы поговорим о том, что происходит в Европе с одним из новых законопроектов в данной области.</p><p></p><a href="https://habr.com/ru/articles/778622/?utm_campaign=778622&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Wed, 06 Dec 2023 12:09:05 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ vas experts ]]>
+      </category>
+      <category>
+        <![CDATA[ веб-сертификаты ]]>
+      </category>
+      <category>
+        <![CDATA[ eIDAS ]]>
+      </category>
+      <category>
+        <![CDATA[ информационная безопасность ]]>
+      </category>
+      <category>
+        <![CDATA[ браузеры ]]>
+      </category>
+      <difficulty>2</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Человек-подделка: какие бывают дипфейки лиц и как их детектировать ]]>
+      </title>
+      <guid>https://habr.com/ru/companies/ru_mts/articles/778824/</guid>
+      <link>https://habr.com/ru/companies/ru_mts/articles/778824/?utm_campaign=778824&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>Привет, Хабр! Меня зовут Александр Паркин, я руководитель исследовательских проектов в Vision Labs. Сегодня хочу рассказать, какие бывают дипфейки лиц и как их детектировать. Фальшивых лиц становится всё больше и они выглядят всё убедительнее, поэтому без надежных инструментов для их обнаружения сейчас никуда. О том, как определить, что перед вами не настоящий человек и том, как предотвратить манипуляции с вашими фотографиями (да, так тоже можно) — под катом.</p><p></p><a href="https://habr.com/ru/articles/778824/?utm_campaign=778824&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Wed, 06 Dec 2023 11:19:21 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ искусственный интеллект ]]>
+      </category>
+      <category>
+        <![CDATA[ будущее здесь ]]>
+      </category>
+      <category>
+        <![CDATA[ информационная безопасность ]]>
+      </category>
+      <category>
+        <![CDATA[ технологии ]]>
+      </category>
+      <category>
+        <![CDATA[ технологии будущего ]]>
+      </category>
+      <category>
+        <![CDATA[ дипфейк ]]>
+      </category>
+      <difficulty>2</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Умная рыбалка: как мы учим ML работать с фишингом ]]>
+      </title>
+      <guid>https://habr.com/ru/companies/vk/articles/778428/</guid>
+      <link>https://habr.com/ru/companies/vk/articles/778428/?utm_campaign=778428&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>Всем привет! Меня зовут Мария Анисимова, я программист-исследователь команды машинного обучения Антиспама Почты Mail.ru&nbsp; В этой статье я хочу рассказать вам о фишинге. И о том, как мы с ним боремся.&nbsp;</p><p>Фишинговые атаки стали популярны с момента появления электронной почты. Это один из самых распространённых способов, которые хакеры используют для вторжения в учётные записи и социальные сети своих жертв. Только за октябрь 2023 года системы Антиспама Почты Mail.ru заблокировали 2 140 000 фишинговых писем, при том что три года назад за месяц их насчитывалось 1 140 000. Не только количество, но и качество фишинговых писем ежедневно улучшается, растёт и количество потенциальных жертв. </p><p></p><a href="https://habr.com/ru/articles/778428/?utm_campaign=778428&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Wed, 06 Dec 2023 10:13:57 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ ml ]]>
+      </category>
+      <category>
+        <![CDATA[ antifraud ]]>
+      </category>
+      <category>
+        <![CDATA[ фишинг ]]>
+      </category>
+      <category>
+        <![CDATA[ антифишинг ]]>
+      </category>
+      <category>
+        <![CDATA[ антиспам ]]>
+      </category>
+      <category>
+        <![CDATA[ automl ]]>
+      </category>
+      <category>
+        <![CDATA[ машинное обучениe ]]>
+      </category>
+      <difficulty>3</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Топ самых интересных CVE за ноябрь 2023 года ]]>
+      </title>
+      <guid>https://habr.com/ru/companies/tomhunter/articles/777192/</guid>
+      <link>https://habr.com/ru/companies/tomhunter/articles/777192/?utm_campaign=777192&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>В этой подборке представлены самые интересные уязвимости за ноябрь 2023 года.<br>Подведем вместе итоги последнего месяца осени, поехали!</p><p></p><a href="https://habr.com/ru/articles/777192/?utm_campaign=777192&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Wed, 06 Dec 2023 07:20:07 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ пентест ]]>
+      </category>
+      <category>
+        <![CDATA[ cve ]]>
+      </category>
+      <category>
+        <![CDATA[ информационная безопасность ]]>
+      </category>
+      <category>
+        <![CDATA[ анализ защищенности ]]>
+      </category>
+      <category>
+        <![CDATA[ уязвимости ]]>
+      </category>
+      <category>
+        <![CDATA[ vulnerability ]]>
+      </category>
+      <category>
+        <![CDATA[ vulnerability assessment ]]>
+      </category>
+      <category>
+        <![CDATA[ vulnerability scanning ]]>
+      </category>
+      <category>
+        <![CDATA[ vulnerability research ]]>
+      </category>
+      <difficulty>3</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ [Перевод] О троице, которая хакнула настоящий поезд. Даже целых 30 поездов ]]>
+      </title>
+      <guid>https://habr.com/ru/articles/778716/</guid>
+      <link>https://habr.com/ru/articles/778716/?utm_campaign=778716&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>Поезд, сделанный польской компанией, внезапно сломался во время техобслуживания. Специалисты были беспомощны — поезд был в порядке, только никак не хотел ехать. Доведённые до отчаяния, они вызвали на помощь команду Dragon Sector, члены которой нашли такие чудеса, о которых машинисты даже и не мечтали.</p><p>В этой истории мы отправимся в необычное путешествие. Путешествие, полное неожиданных открытий и событий, путешествие под давлением времени и больших денег, а также необычных технологий. Путешествие, в котором поезд играет самую важную роль — хотя, к сожалению, он не едет, а должен был бы. Пристегнитесь — или, по крайней мере, сядьте поудобнее, потому что дальше будут крутые повороты.</p><p></p><a href="https://habr.com/ru/articles/778716/?utm_campaign=778716&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Tue, 05 Dec 2023 21:17:47 GMT</pubDate>
+      <creator></creator>
+      <category>поезда</category>
+      <category>iot</category>
+      <category>ccc</category>
+      <category>reverse-engineering</category>
+      <category>hack</category>
+      <category>промышленная автоматизация</category>
+      <difficulty>2</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Квантовое распределение ключей в оптических транспортных сетях ]]>
+      </title>
+      <guid>https://habr.com/ru/companies/quanttelecom/articles/778640/</guid>
+      <link>https://habr.com/ru/companies/quanttelecom/articles/778640/?utm_campaign=778640&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p><strong><em><u>Особенности мультиплексирования квантовых и информационных каналов оптической транспортной сети</u></em></strong></p><p>В современном мире, где информация стала самым ценным ресурсом, безопасность передачи данных приобретает критическое значение. Ассиметричные методы криптографии, на которых основана большая часть современных систем безопасности, смогут быть подвержены новым угрозам, связанным с развитием квантовых компьютеров. В это время на сцену выходит квантовая криптография, обещающая революцию в области защиты информации. Квантовая криптография использует законы квантовой физики для создания абсолютно защищенных способов передачи информации. </p><p>В центре этой технологии находится процесс, известный как квантовое распределение ключей (КРК). Этот процесс позволяет двум сторонам формировать у себя коррелированные битовые последовательности, которые в дальнейшем могут быть использованы сторонами как симметричные криптографические ключи. При этом никакой злоумышленник не сможет перехватить или скопировать этот ключ без обнаружения благодаря уникальным свойствам квантовых частиц, таких как фотоны, которые изменяют свое состояние при попытке измерения или копирования, тем самым сигнализируя о попытке вмешательства. </p><p>Таким образом, квантовое распределение ключей предлагает решение, устойчивое к атакам даже с использованием квантовых компьютеров. При этом даже в случае, если полноценный квантовый компьютер никогда не появится, технология принесет пользу в части автоматизации процесса выработки и распределения симметричных ключей, тем самым исключая из него человеческий фактор.</p><p></p><a href="https://habr.com/ru/articles/778640/?utm_campaign=778640&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Tue, 05 Dec 2023 13:58:43 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ распределение ключей ]]>
+      </category>
+      <category>
+        <![CDATA[ транспортная сеть ]]>
+      </category>
+      <category>
+        <![CDATA[ информационные каналы ]]>
+      </category>
+      <category>
+        <![CDATA[ усилитель ]]>
+      </category>
+      <category>
+        <![CDATA[ системы ]]>
+      </category>
+      <category>
+        <![CDATA[ фотоны ]]>
+      </category>
+      <category>
+        <![CDATA[ диапазон ]]>
+      </category>
+      <category>
+        <![CDATA[ каналы ]]>
+      </category>
+      <category>
+        <![CDATA[ сигналы ]]>
+      </category>
+      <category>
+        <![CDATA[ процесс ]]>
+      </category>
+      <difficulty>3</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Самые громкие события инфобеза за ноябрь 2023 года ]]>
+      </title>
+      <guid>https://habr.com/ru/companies/tomhunter/articles/778614/</guid>
+      <link>https://habr.com/ru/companies/tomhunter/articles/778614/?utm_campaign=778614&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>Всем привет! По следам ушедшего ноября разбираем самые громкие события инфобеза последнего осеннего месяца. Так, был официально запущен CVSS 4.0, а неловкая история с промышленным шпионажем от NVIDIA получила промежуточное судебное решение. Биткоин-кошельки в период с 2011-го по 2015-й год оказались уязвимы для брутфорса, Binance получил крупный штраф и лишился гендиректора, а любимец криптостахановцев из Lazarus, криптомиксер Sinbad, был перехвачен ФБР. Кроме того, на Украине Интерпол нанёс финальный удар по операторам рансомвари LockerGoga, а на наших родных просторах ноябрь оказался богат на занятные ИБ-инициативы от Минцифры и компании. Об этом и других новостях прошлого месяца читайте под катом!</p><p></p><a href="https://habr.com/ru/articles/778614/?utm_campaign=778614&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Tue, 05 Dec 2023 12:06:37 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ информационная безопасность ]]>
+      </category>
+      <category>
+        <![CDATA[ дайджест новостей иб ]]>
+      </category>
+      <difficulty>2</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Сеть как за кирпичной стеной: как защитить серверы с помощью облачного файрвола Seleсtel ]]>
+      </title>
+      <guid>https://habr.com/ru/companies/selectel/articles/778560/</guid>
+      <link>https://habr.com/ru/companies/selectel/articles/778560/?utm_campaign=778560&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <div style="text-align:center;"><img src="https://habrastorage.org/webt/m2/yq/r4/m2yqr4ewbmug2jpbx8yqwnagdqw.png"></div><br><br> Статистика в сфере информационной безопасности остается неутешительной. Так, DDoS-Guard зафиксировала в России 384,8 тыс DDoS–атак — и это только в первом квартале 2023 года. А по данным «РТК-Солар», количество кибератак в этот период выросло до 290 тыс. Это в полтора раза больше, чем в первом полугодии 2022 года.<br><br> Чтобы не пополнить статистику и защитить свою инфраструктуру, важно заранее позаботиться о <a href="https://slc.tl/dnpx0" rel="nofollow noopener noreferrer">безопасности серверов</a>. Есть разные способы защиты, например, можно использовать файрвол или iptables. Они фильтруют входящий и исходящий трафик и отсекают нелегитимные подключения. <br><br> В этой статье мы подробнее расскажем о нашем решении — облачном файрволе Selectel. Покажем, как настроить правила трафика и установить защиту за пару кликов. Подробности под катом.<br><a href="https://habr.com/ru/articles/778560/?utm_campaign=778560&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать дальше &rarr;</a> ]]>
+      </description>
+      <pubDate>Tue, 05 Dec 2023 12:00:04 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ selectel ]]>
+      </category>
+      <category>
+        <![CDATA[ облачная платформа ]]>
+      </category>
+      <category>
+        <![CDATA[ файрвол ]]>
+      </category>
+      <category>
+        <![CDATA[ облачные сервисы ]]>
+      </category>
+      <category>
+        <![CDATA[ безопасность данных ]]>
+      </category>
+      <category>
+        <![CDATA[ брандмауэр ]]>
+      </category>
+      <difficulty>2</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Как вредоносы распространялись через поддельный менеджер паролей KeePass: AsyncRAT, BATLoader ]]>
+      </title>
+      <guid>https://habr.com/ru/companies/first/articles/778488/</guid>
+      <link>https://habr.com/ru/companies/first/articles/778488/?utm_campaign=778488&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>Приветствую, и снова я начну с вопроса. И достаточно непростого. Пользуетесь ли вы менеджерами паролей и считаете ли вы их полностью безопасными? Скорее всего, мнения читателей на этом моменте разделятся. Кто-то ответит, мол, пользуется блокнотом и ручкой, а кто-то ответит утвердительным «‎да»‎. А к чему этот вопрос? Во-первых, замечу, что абсолютно ничто в нашем мире не может быть полностью безопасным: будь то программное обеспечение, какой-то ресурс или вовсе ваш телефон с тысячей защитных приложений. А во-вторых, менеджеры паролей в последнее время очень и очень часто стали подводить своих клиентов. Об одном таком инциденте и пойдет сегодня речь.&nbsp;</p><p><a href="https://xakep.ru/2023/10/20/keepass-punycode/"><u>Так совсем недавно специалистами из MalwareBytes была обнаружена целая схема фейковых ресурсов</u></a>, через которые распространялись инфицированные версии приложения KeePass. И совсем не удивительным является тот факт, что эта кампания продвигалась посредством использования GoogleAds (да, это та самая надоедливая реклама, которая появляется при посещении различных сайтов) и SEO Poisoning.&nbsp;&nbsp;</p><p>Казалось бы, удивительного здесь ничего нет, ведь это далеко не первый случай, когда вредонос распространяется подобным образом. Google, естественно, с этим борется, исправляет уязвимости, но пока что все без толку. Чего, кстати, не скажешь о человеческом факторе, ведь за последние несколько лет большинство пользователей сообразили, что поисковые системы не всегда выдают безопасные результаты из-за чего эффективность подобного метода атаки заметно поубавилась. Но в случае с KeePass произошло кое-что другое. Злоумышленники прибегли к использованию метода Punycode, чтобы сделать вредоносный домен практически идентичным оригинальному. В данном случае хакеры использовали Punycode «xn—eepass-vbb.info», что транслируется в адресной строке, как «ķeepass.info».</p><p></p><a href="https://habr.com/ru/articles/778488/?utm_campaign=778488&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Tue, 05 Dec 2023 10:23:27 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ keepass ]]>
+      </category>
+      <category>
+        <![CDATA[ AsyncRAT ]]>
+      </category>
+      <category>
+        <![CDATA[ batloader ]]>
+      </category>
+      <category>
+        <![CDATA[ вредоносы ]]>
+      </category>
+      <category>
+        <![CDATA[ анализ ]]>
+      </category>
+      <category>
+        <![CDATA[ дроппер ]]>
+      </category>
+      <difficulty>2</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ LAN-party для пентестеров: прорываемся к домен контроллеру через розетку ]]>
+      </title>
+      <guid>https://habr.com/ru/companies/bastion/articles/767706/</guid>
+      <link>https://habr.com/ru/companies/bastion/articles/767706/?utm_campaign=767706&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p><img src="https://habrastorage.org/webt/gg/sv/iz/ggsviz5nk7ppw3evxuijykbzjve.jpeg"></p><br><p>Сегодня расскажу про внутренний пентест, в ходе которого мы без учетной записи добрались до администратора домена.</p><br><p>В этом проекте использовались много разнообразных техник: от декомпиляции приложения и расшифровки извлеченных учетных данных, до повышения привилегий через базу данных на сервере и сбора информации от имени учетной записи компьютера. Под катом подробно разобрано, как они сложились в успешный вектор атаки.</p><a href="https://habr.com/ru/articles/767706/?utm_campaign=767706&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать дальше &rarr;</a> ]]>
+      </description>
+      <pubDate>Tue, 05 Dec 2023 10:18:07 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ информационная безопасность ]]>
+      </category>
+      <category>
+        <![CDATA[ DCSync ]]>
+      </category>
+      <category>
+        <![CDATA[ active directory ]]>
+      </category>
+      <category>
+        <![CDATA[ пентест ]]>
+      </category>
+      <category>
+        <![CDATA[ взлом корпоративной сети ]]>
+      </category>
+      <category>
+        <![CDATA[ dotNET ]]>
+      </category>
+      <category>
+        <![CDATA[ Rubeus ]]>
+      </category>
+      <category>
+        <![CDATA[ ntlm взлом ]]>
+      </category>
+      <difficulty>3</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Карьерные боли девопсов: какие они бывают и как специалисту их закрыть ]]>
+      </title>
+      <guid>https://habr.com/ru/specials/776092/</guid>
+      <link>https://habr.com/ru/specials/776092/?utm_campaign=776092&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>Без DevOps-инженера сейчас сложно представить качественную разработку крупного решения. Однако работа этого эксперта, при всей ее критичности для бизнеса, часто сопряжена с карьерными проблемами. Мы решили поближе присмотреться к DevOps-специалистам и разобраться, что мешает их развитию.</p><p>Это история про совершенно разных DevOps-инженеров. Про боли, которые возникают у них на пути: от устаревшего стека, до трудностей карьерного роста. И про то, как наши герои справляются с этими проблемами. Если вам интересно — заходите под кат.</p><a href="https://habr.com/ru/articles/776092/?utm_campaign=776092&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Tue, 05 Dec 2023 09:56:43 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ devops ]]>
+      </category>
+      <category>
+        <![CDATA[ карьера ит-специалиста ]]>
+      </category>
+      <category>
+        <![CDATA[ карьера в it ]]>
+      </category>
+      <category>
+        <![CDATA[ касперский ]]>
+      </category>
+      <category>
+        <![CDATA[ комикс ]]>
+      </category>
+      <category>
+        <![CDATA[ наём ]]>
+      </category>
+      <category>
+        <![CDATA[ карьера ]]>
+      </category>
+      <difficulty>1</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Детектируем горизонтальное перемещение с DCOMExec ]]>
+      </title>
+      <guid>https://habr.com/ru/companies/rvision/articles/749032/</guid>
+      <link>https://habr.com/ru/companies/rvision/articles/749032/?utm_campaign=749032&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>Привет, Хабр!</p><p>Меня зовут Валерия Мавлютова, я&nbsp;младший аналитик-исследователь киберугроз в&nbsp;компании R-Vision. Эта статья является продолжением серии материалов об&nbsp;инструментах для горизонтального перемещения и&nbsp;посвящена достаточно объемному с&nbsp;точки зрения используемых методов&nbsp;— инструменту DCOMExec. Ранее мы уже подробно разобрали такие инструменты, как <a href="https://habr.com/ru/companies/rvision/articles/728838/">PsExec</a>, <a href="https://habr.com/ru/companies/rvision/articles/738518/">SMBExec и AtExec</a>.</p><p>Как обычно, сегодня мы посмотрим, на чем строится работа данного инструмента, проанализируем возможные источники полезной информации для построения возможного способа детектирования и предложим свой вариант обнаружения его эксплуатации. </p><p></p><a href="https://habr.com/ru/articles/749032/?utm_campaign=749032&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Tue, 05 Dec 2023 09:46:45 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ аналитика ]]>
+      </category>
+      <category>
+        <![CDATA[ lateral movement ]]>
+      </category>
+      <category>
+        <![CDATA[ боковое перемещение ]]>
+      </category>
+      <category>
+        <![CDATA[ продвижение по сети ]]>
+      </category>
+      <category>
+        <![CDATA[ детектирование ]]>
+      </category>
+      <category>
+        <![CDATA[ выявление атак ]]>
+      </category>
+      <category>
+        <![CDATA[ обнаружение атак ]]>
+      </category>
+      <difficulty>3</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ DORA для DevSecOps: как оценить эффективность процессов ИБ ]]>
+      </title>
+      <guid>https://habr.com/ru/companies/swordfish_security/articles/778568/</guid>
+      <link>https://habr.com/ru/companies/swordfish_security/articles/778568/?utm_campaign=778568&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>Всем привет! Меня зовут Анастасия Арсеньева, я аналитик данных в Swordfish Security. Наша команда разрабатывает модуль визуализации метрик DevSecOps в рамках развития платформы AppSec.Hub. В предыдущих статьях мы рассказывали вам о том, как можно оценить <a href="https://habr.com/ru/companies/swordfish_security/articles/764824/">риски</a> ИБ, зрелость подхода <a href="https://habr.com/ru/companies/swordfish_security/articles/747638/">Shift Left</a> и эффективность <a href="https://habr.com/ru/companies/swordfish_security/articles/738678/">обработки</a> обнаруженных уязвимостей. Сегодня мы разберем еще один дашборд для оценки процессов безопасности в разработке и поговорим о проекции метрик DORA на DevSecOps.</p><p></p><a href="https://habr.com/ru/articles/778568/?utm_campaign=778568&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Tue, 05 Dec 2023 09:26:01 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ devops ]]>
+      </category>
+      <category>
+        <![CDATA[ dora ]]>
+      </category>
+      <category>
+        <![CDATA[ devsecops ]]>
+      </category>
+      <category>
+        <![CDATA[ метрики производительности ]]>
+      </category>
+      <category>
+        <![CDATA[ безопасная разработка ]]>
+      </category>
+      <category>
+        <![CDATA[ дашборд ]]>
+      </category>
+      <category>
+        <![CDATA[ информационная безопасность ]]>
+      </category>
+      <category>
+        <![CDATA[ appsec ]]>
+      </category>
+      <category>
+        <![CDATA[ аналитика ]]>
+      </category>
+      <difficulty>2</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Security Week 2349: кибермошенничество при бронировании отелей ]]>
+      </title>
+      <guid>https://habr.com/ru/companies/kaspersky/articles/778392/</guid>
+      <link>https://habr.com/ru/companies/kaspersky/articles/778392/?utm_campaign=778392&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ На прошлой неделе специалисты команды Secureworks <a href="https://www.bbc.com/news/technology-67583486" rel="nofollow noopener noreferrer">поделились</a> свежими приемами онлайн-мошенничества, связанного с турпоездками. Это и раньше была <a href="https://www.kaspersky.ru/blog/travel-scam-and-phishing-2023/35668/" rel="nofollow noopener noreferrer">благодатная тема</a> для разного рода кибератак, но речь шла скорее о прямых атаках на пользователей. Новая схема более сложная, она начинается со взлома учетной записи владельцев отелей на сервисе Booking.com. <br><br><div style="text-align:center;"><img src="https://habrastorage.org/webt/0h/bq/2o/0hbq2od4eborzvy9rwmi-u9qdqc.jpeg"></div><br><br> Исследователи обнаружили вредоносное ПО, которое направлено именно на поиск бизнес-учеток на Booking.com. Заражаются компьютеры гостиницы просто: на адрес отеля приходит письмо якобы от бывшего постояльца с просьбой поискать в номере забытый паспорт. К письму приложена ссылка на фотографию паспорта — по клику на ссылку и загружается вредоносная программа. Через некоторое время после того, как злоумышленник получает доступ к учетке на сервисе бронирования, всем, кто имеет бронь в отеле рассылаются сообщения с просьбой оплатить проживание заранее. Важным моментом является то, что общение с жертвами происходит через сервис Booking.com и выглядит максимально правдоподобно.<br><a href="https://habr.com/ru/articles/778392/?utm_campaign=778392&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать дальше &rarr;</a> ]]>
+      </description>
+      <pubDate>Tue, 05 Dec 2023 09:07:51 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ booking ]]>
+      </category>
+      <difficulty>1</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Рассматриваем мифический фреймворк C2 Mythic. Часть 1 ]]>
+      </title>
+      <guid>https://habr.com/ru/articles/778454/</guid>
+      <link>https://habr.com/ru/articles/778454/?utm_campaign=778454&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>Привет Хабр, на связи лаборатория кибербезопасности AP Security. В этой статье мы продолжим разбирать C2-фреймворки. На этот раз, мы будем изучать относительно новый фреймворк под названием <strong>Mythic</strong>. Приятного прочтения!</p><p></p><a href="https://habr.com/ru/articles/778454/?utm_campaign=778454&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Mon, 04 Dec 2023 17:47:27 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ pentest ]]>
+      </category>
+      <category>
+        <![CDATA[ redteam ]]>
+      </category>
+      <category>
+        <![CDATA[ tools ]]>
+      </category>
+      <category>
+        <![CDATA[ framework ]]>
+      </category>
+      <difficulty>3</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ SafeCode: новая конференция по безопасности приложений ]]>
+      </title>
+      <guid>https://habr.com/ru/companies/jugru/articles/778426/</guid>
+      <link>https://habr.com/ru/companies/jugru/articles/778426/?utm_campaign=778426&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>Привет! Мы решили запустить новую конференцию про безопасность приложений <strong><a href="https://safecodeconf.ru/?utm_source=habr&amp;utm_medium=778426"><u>SafeCode</u></a></strong>, которая пройдет весной 2024 года в онлайне. Она не только для ИБ-специалистов, но и для тех, кто так или иначе связан с безопасностью разработки: security-чемпионов, тестировщиков, пентестеров, разработчиков, хакеров, системных администраторов, DevOps- и SRE-инженеров.</p><p>Почему мы решили, что она нужна? Что там будет? Как там выступить самому?&nbsp; Отвечаем на эти и другие вопросы.</p><p></p><a href="https://habr.com/ru/articles/778426/?utm_campaign=778426&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Mon, 04 Dec 2023 15:35:27 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ appsec ]]>
+      </category>
+      <category>
+        <![CDATA[ application security ]]>
+      </category>
+      <category>
+        <![CDATA[ безопасность приложений ]]>
+      </category>
+      <category>
+        <![CDATA[ safecode ]]>
+      </category>
+      <difficulty>1</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Азия — рай для хакеров: тайна самого цифровизированного региона планеты ]]>
+      </title>
+      <guid>https://habr.com/ru/companies/pt/articles/776972/</guid>
+      <link>https://habr.com/ru/companies/pt/articles/776972/?utm_campaign=776972&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>Последние несколько десятилетий именно Азиатский регион ассоциируется с инновациями и технологическим прогрессом. Это одновременно и дар, и проклятье Азии — стремительное цифровое развитие повышает привлекательность региона для проведения хакерских атак. В 2022 году <a href="https://www.ibm.com/reports/threat-intelligence">около трети всех успешных атак</a> в мире пришлись на Азиатско-Тихоокеанский регион&nbsp;— больше, чем на какой-либо другой. Если местные правительства и организации не примут меры, ситуация может ухудшиться. </p><p>Как действуют злоумышленники в Азии, что им нужно и как с ними бороться — <a href="https://www.ptsecurity.com/ru-ru/research/analytics/asia-cybersecurity-threatscape-2022-2023/">в полной версии нашего исследования</a>, а в этом материале — немного про хакерский рай. </p><p></p><a href="https://habr.com/ru/articles/776972/?utm_campaign=776972&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Mon, 04 Dec 2023 09:08:16 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ азия ]]>
+      </category>
+      <category>
+        <![CDATA[ cybersecurity ]]>
+      </category>
+      <category>
+        <![CDATA[ дарквеб ]]>
+      </category>
+      <category>
+        <![CDATA[ мошенничество ]]>
+      </category>
+      <category>
+        <![CDATA[ кибершпионаж ]]>
+      </category>
+      <category>
+        <![CDATA[ хакеры ]]>
+      </category>
+      <category>
+        <![CDATA[ apt ]]>
+      </category>
+      <category>
+        <![CDATA[ кибербезопасность ]]>
+      </category>
+      <category>
+        <![CDATA[ информационная безопасность ]]>
+      </category>
+      <category>
+        <![CDATA[ теневые форумы ]]>
+      </category>
+      <difficulty>2</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Яндекс Браузер для организаций. Опыт QIWI ]]>
+      </title>
+      <guid>https://habr.com/ru/companies/qiwi/articles/778158/</guid>
+      <link>https://habr.com/ru/companies/qiwi/articles/778158/?utm_campaign=778158&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>Привет! Меня зовут Сергей, я ведущий системный администратор службы эксплуатации в QIWI. Так сложилось, что в нашей компании довольно большое число сотрудников, и часть из них работает в специфических системах.</p><p>Например, есть люди, которые в своей работе часто взаимодействуют с бухгалтерией, финансами, единой биометрической системой, Госуслугами, Контуром и прочим добром. Причём от того, насколько комфортно им это делать, на самом деле зависит выполнение их рабочих обязанностей. А вы знаете, что сейчас для многих (если не для большинства) окологосударственных сайтов нужны сертификаты. И чтобы сделать из дефолтного Chrome или Firefox подходящий инструмент для такого сотрудника, приходилось немного костылить — обвешиваться плагинами, настраивать их, потом по отдельности помогать каждому человеку, если что-то вдруг тупило. В общем, так себе история.</p><p>Но работать-то надо. И желательно — без заморочек, в централизованном формате «Включил — работаешь». Поэтому мы решили, что хватит это терпеть, и попробовали Яндекс Браузер для организаций.</p><p>Под катом я расскажу, что умеет Браузер на сегодня, как именно мы его внедряли, поделюсь нашим скриптом для быстрой миграции (вдруг вам тоже пригодится) и впечатлениями от работы. Вишенкой — о работе Браузера в закрытом контуре без внешней телеметрии.</p><p></p><a href="https://habr.com/ru/articles/778158/?utm_campaign=778158&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Mon, 04 Dec 2023 08:06:07 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ QIWI ]]>
+      </category>
+      <category>
+        <![CDATA[ браузер ]]>
+      </category>
+      <category>
+        <![CDATA[ сертификаты ]]>
+      </category>
+      <category>
+        <![CDATA[ Яндекс Браузер ]]>
+      </category>
+      <category>
+        <![CDATA[ информационная безопасность ]]>
+      </category>
+      <category>
+        <![CDATA[ Яндекс Браузер для организаций ]]>
+      </category>
+      <category>
+        <![CDATA[ скрипты ]]>
+      </category>
+      <category>
+        <![CDATA[ PowerShell App Deployment Toolkit ]]>
+      </category>
+      <category>
+        <![CDATA[ system center configuration manager ]]>
+      </category>
+      <category>
+        <![CDATA[ Microsoft MDT ]]>
+      </category>
+      <difficulty>1</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Машинное обучение в сфере информационной безопасности – это движение в правильном направлении? ]]>
+      </title>
+      <guid>https://habr.com/ru/companies/infotecs_official/articles/778220/</guid>
+      <link>https://habr.com/ru/companies/infotecs_official/articles/778220/?utm_campaign=778220&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>Привет, Хабр! Меня зовут Светлана, я руководитель продуктового направления компании «ИнфоТеКС». Сегодня поговорим о&nbsp;такой форме применения искусственного интеллекта (ИИ) как&nbsp;машинное обучение. Я поделюсь историей появления технологии в&nbsp;компании, её роли в&nbsp;современных средствах защиты информации (СЗИ), обозначу проблемы, с&nbsp;которыми приходится сталкиваться разработчикам, и векторы развития.</p><p></p><a href="https://habr.com/ru/articles/778220/?utm_campaign=778220&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Mon, 04 Dec 2023 07:25:00 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ информационная безопасность ]]>
+      </category>
+      <category>
+        <![CDATA[ машинное обучение ]]>
+      </category>
+      <category>
+        <![CDATA[ искуственный интеллект ]]>
+      </category>
+      <difficulty>2</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Способы атаки на ИИ (Claude &amp; ChatGPT): floating attention window attack ]]>
+      </title>
+      <guid>https://habr.com/ru/articles/778234/</guid>
+      <link>https://habr.com/ru/articles/778234/?utm_campaign=778234&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>Хакеры придумывают всё более изощренные способы атаки на&nbsp;искусственный интеллект. Один из&nbsp;наиболее интересных&nbsp;— это атака «плавающего окна внимания»: злоумышленники манипулируют контекстом диалога с&nbsp;ИИ, подталкивая его к&nbsp;опасным выводам и смещению фокуса. Чрезвычайно тонкий подход, позволяющий обходить защиту ИИ. Демонстрирую на&nbsp;примерах...</p><p></p><a href="https://habr.com/ru/articles/778234/?utm_campaign=778234&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Узнать подробности</a> ]]>
+      </description>
+      <pubDate>Mon, 04 Dec 2023 07:18:25 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ llm ]]>
+      </category>
+      <category>
+        <![CDATA[ nlp ]]>
+      </category>
+      <category>
+        <![CDATA[ claude ]]>
+      </category>
+      <category>
+        <![CDATA[ chatgpt ]]>
+      </category>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Padding Oracle Attack на Wallet.dat расшифровка пароля для популярного кошелька Bitcoin Core ]]>
+      </title>
+      <guid>https://habr.com/ru/articles/778200/</guid>
+      <link>https://habr.com/ru/articles/778200/?utm_campaign=778200&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>В этой статье мы воспользуемся классификацией распространенных шаблонов атак из ресурса кибербезопасности&nbsp;<a href="https://capec.mitre.org/data/definitions/463.html" rel="noopener noreferrer nofollow"><u>[CAPEC™]</u></a>. В первые об&nbsp;<a href="https://en.wikipedia.org/wiki/Padding_oracle_attack" rel="noopener noreferrer nofollow"><u>“Padding Oracle Attack”</u></a>&nbsp;на&nbsp;<a href="https://en.bitcoin.it/wiki/Wallet" rel="noopener noreferrer nofollow"><u>Wallet.dat</u></a>&nbsp;заговорили в далеком 2012 году&nbsp;<em>(на платформе по управления уязвимостями и анализа угроз&nbsp;</em><strong><a href="https://github.com/vuldb" rel="noopener noreferrer nofollow"><em><u>“VulDB”</u></em></a></strong><em>)</em>. Проблема самого популярного кошелька&nbsp;<strong><a href="https://github.com/bitcoin/bitcoin" rel="noopener noreferrer nofollow"><u>Bitcoin Core</u></a></strong>&nbsp;влияет на работу&nbsp;<code>AES Encryption Padding</code>&nbsp;в файле&nbsp;<code>Wallet.dat</code></p><p><strong>Технические подробности данной атаки известны:</strong></p><p><em>Злоумышленник может эффективно расшифровывать данные, не зная ключа расшифровки, если целевая система сливает данные о том, произошла ли ошибка заполнения при расшифровке зашифрованного текста.&nbsp;Целевая система, которая передает информацию такого типа, становится заполняющим оракулом, и злоумышленник может использовать этот оракул для эффективной расшифровки данных, не зная ключа дешифрования, выдавая в среднем&nbsp;</em><code>128*b</code><em>&nbsp;вызовов заполняющему оракулу (где&nbsp;</em><code>b</code><em>&nbsp;— это количество байт в блоке зашифрованного текста).&nbsp;Помимо выполнения расшифровки, злоумышленник также может создавать действительные зашифрованные тексты (т. е. выполнять шифрование) с помощью оракула заполнения, и все это без знания ключа шифрования.</em></p><p></p><a href="https://habr.com/ru/articles/778200/?utm_campaign=778200&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Sun, 03 Dec 2023 21:52:50 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ crypto ]]>
+      </category>
+      <category>
+        <![CDATA[ cryptocurrency ]]>
+      </category>
+      <category>
+        <![CDATA[ cryptography ]]>
+      </category>
+      <category>
+        <![CDATA[ криптовалюта ]]>
+      </category>
+      <category>
+        <![CDATA[ криптография ]]>
+      </category>
+      <category>
+        <![CDATA[ wallet ]]>
+      </category>
+      <category>
+        <![CDATA[ blockchain ]]>
+      </category>
+      <category>
+        <![CDATA[ блокчейн ]]>
+      </category>
+      <category>
+        <![CDATA[ биткоин ]]>
+      </category>
+      <category>
+        <![CDATA[ bitcoin ]]>
+      </category>
+      <difficulty>3</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Разбор crackme от timotei_ (assembler) ]]>
+      </title>
+      <guid>https://habr.com/ru/companies/otus/articles/774756/</guid>
+      <link>https://habr.com/ru/companies/otus/articles/774756/?utm_campaign=774756&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <img src="https://habrastorage.org/webt/5p/da/7-/5pda7-lrfecwzig391j23_qyzhg.jpeg"><br><br><h1 id="preduprezhdenie">Предупреждение</h1><br><p>Crackme (как, впрочем, следует из названия) это программы, созданные специально для того, чтобы их взломать (понять алгоритмы, заложенные разработчиком, и используемые для проверки введенных пользователем паролей, ключей, серийных номеров). Подходы и методики, использованные в статье, ни в коем случае не должны применяться к программному обеспечению, производителями которого подобные действия не одобрены явно (например, в лицензионных соглашениях, договорах, и т.д.). Материал опубликован исключительно в образовательных целях, и не предназначен для получения нелегального доступа к возможностям программного обеспечения в обход механизмов защиты, установленных производителем.</p><br><h1 id="vvedenie">Введение</h1><br><p>Исследуемая <a href="https://crackmes.one/crackme/649dbf9f33c5d460c17f1ec2" rel="nofollow noopener noreferrer">crackme</a> является оконным приложением, и написана на assembler. Наша задача состоит в том, чтобы понять алгоритм генерации ключа, найти валидный серийный номер (или номера), и написать кейген.</p><a href="https://habr.com/ru/articles/774756/?utm_campaign=774756&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать дальше &rarr;</a> ]]>
+      </description>
+      <pubDate>Sun, 03 Dec 2023 14:12:54 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ assembler ]]>
+      </category>
+      <category>
+        <![CDATA[ reverse engineering ]]>
+      </category>
+      <category>
+        <![CDATA[ ida ]]>
+      </category>
+      <difficulty>3</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Domain fronting для чайников, и как его использовать для обхода блокировок ]]>
+      </title>
+      <guid>https://habr.com/ru/articles/778134/</guid>
+      <link>https://habr.com/ru/articles/778134/?utm_campaign=778134&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>Давайте сразу вопрос на засыпку: может ли быть так, что клиент подключается, ну, например, к серверу <em>www.python.org</em> (самому настоящему, тому, к которому обращаются еще миллионы клиентов со всего мира), а потом использует его как прокси и гоняет через это подключение трафик до своего VPS для доступа в неподцензурный интернет? Если вы не уверены в ответе на этот вопрос или почему-то ответили "нет", то добро пожаловать в статью.</p><p>Я уже не раз рассказывал здесь о технологии XTLS-Reality (<a href="https://habr.com/ru/articles/727868/" rel="noopener noreferrer nofollow">1</a>, <a href="https://habr.com/ru/articles/731608/" rel="noopener noreferrer nofollow">2</a>, <a href="https://habr.com/ru/articles/735536/" rel="noopener noreferrer nofollow">3</a>) суть которой в том, что ваш прокси-сервер VPS может очень достоверно маскироваться под какой-нибудь популярный веб-сайт - принимать подключения, которые будут выглядит точно так же, как обращения к настоящему сайту, отвечать на них полностью аутентичным TLS-сертификатом, и в целом вести себя как тот настоящий сайт. Единственная проблема - сам IP-адрес. Немного подозрительно, когда к какому-нибудь якобы www.google.com постоянно обращается только один пользователь, а IP-адрес этого сервера на самом деле даже не относится к<abbr class="habraabbr" title="Поэтому, кстати, нередко советуют прикрываться не сверхпопулярными сайтами, а&nbsp; с помощью&nbsp; Reality-Scanner найти что-нибудь по соседству с вами в сети вашего VPS-хостера, я об этом писал в FAQ: https://habr.com/ru/articles/770400/" data-title="&lt;p&gt;Поэтому, кстати, нередко советуют прикрываться не сверхпопулярными сайтами, а&amp;nbsp; с помощью&amp;nbsp; Reality-Scanner найти что-нибудь по соседству с вами в сети вашего VPS-хостера, я об этом писал в FAQ:&amp;nbsp;&lt;a href=&quot;https://habr.com/ru/articles/770400/&quot;&gt;https://habr.com/ru/articles/770400/&lt;/a&gt;&lt;/p&gt;" data-abbr=" автономной сети Google."> автономной сети Google.</abbr></p><p>Еще я <a href="https://habr.com/ru/articles/761798/" rel="noopener noreferrer nofollow">рассказывал</a> о разных вариантах проксировать трафик посредством вебсокетов и простых HTTP-туннелей через различные <code>CDN</code>, такие как Cloudflare и Gcore. Вероятность того, что под блокировку попадет вся CDN гораздо ниже, чем что забанят какой-то один сервер или диапазон хостера, но та схема требовала регистрацию своего домена для работы через CDN.</p><p>И наверняка многим в голову приходила идея, а нельзя ли как-нибудь совместить эти два механизма? Проксироваться через CDN, но при этом "прикрываясь" каким-нибудь чужим доменом? Ответ: да, можно, и сейчас мы посмотрим, как именно.</p><p></p><a href="https://habr.com/ru/articles/778134/?utm_campaign=778134&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Sun, 03 Dec 2023 10:53:14 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ domain fronting ]]>
+      </category>
+      <category>
+        <![CDATA[ cdn ]]>
+      </category>
+      <category>
+        <![CDATA[ websocket ]]>
+      </category>
+      <category>
+        <![CDATA[ xtls ]]>
+      </category>
+      <category>
+        <![CDATA[ прокси ]]>
+      </category>
+      <category>
+        <![CDATA[ обход блокировок ]]>
+      </category>
+      <difficulty>1</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Как стать хакером для «самых маленьких» ]]>
+      </title>
+      <guid>https://habr.com/ru/articles/778094/</guid>
+      <link>https://habr.com/ru/articles/778094/?utm_campaign=778094&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>Добрый вечер ребята, листая хабр я заметил тенденцию к отсутствию качественного, авторского, и связанного с IT контента, поэтому расскажу о том кто такой хакер, опишу несколько приёмов читерства, и попробую дать представление об этом легендарном термине (разумеется в рамках моих способностей).</p><p></p><a href="https://habr.com/ru/articles/778094/?utm_campaign=778094&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Взломать пентагон</a> ]]>
+      </description>
+      <pubDate>Sun, 03 Dec 2023 01:04:17 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ хакинг ]]>
+      </category>
+      <category>
+        <![CDATA[ туториал ]]>
+      </category>
+      <category>
+        <![CDATA[ авторский контент ]]>
+      </category>
+      <category>
+        <![CDATA[ взлом ]]>
+      </category>
+      <category>
+        <![CDATA[ защита ]]>
+      </category>
+      <difficulty>1</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ GOST: швейцарский нож для туннелирования и обхода блокировок ]]>
+      </title>
+      <guid>https://habr.com/ru/articles/777656/</guid>
+      <link>https://habr.com/ru/articles/777656/?utm_campaign=777656&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>Начиная со вчера Роскмонадзор запрещает писать про инструменты для обхода блокировок, и это событие мы отметим очередной статьей про инструменты для обхода блокировок. Ибо не им указывать, на какие темы мне писать или не писать, пусть идут строем нафиг.</p><p>Сегодня я расскажу о замечательном инструменте под названием GOST. Не пугайтесь, он не имеет никакого отношения к ГОСТ-шифрованию или чему-то подобному, на самом деле это <strong>Go</strong><strong>S</strong>imple <strong>T</strong>unnel. Он действительно <em>simple</em> (простой) в использовании и настройке, но при этом невероятно мощный, поскольку поддерживает огромное количество протоколов и транспортов, из которых вы при желании сможете построить самые упоротые и бронебойные комбинации, а именно...</p><p></p><a href="https://habr.com/ru/articles/777656/?utm_campaign=777656&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Sat, 02 Dec 2023 11:59:46 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ gost ]]>
+      </category>
+      <category>
+        <![CDATA[ go simple tunnel ]]>
+      </category>
+      <category>
+        <![CDATA[ tls ]]>
+      </category>
+      <category>
+        <![CDATA[ proxy ]]>
+      </category>
+      <category>
+        <![CDATA[ туннель ]]>
+      </category>
+      <category>
+        <![CDATA[ websocket ]]>
+      </category>
+      <category>
+        <![CDATA[ vpn ]]>
+      </category>
+      <difficulty>2</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Bluetooth-жучки — за чем можно легально следить, а за чем нельзя ]]>
+      </title>
+      <guid>https://habr.com/ru/companies/globalsign/articles/777858/</guid>
+      <link>https://habr.com/ru/companies/globalsign/articles/777858/?utm_campaign=777858&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <img src="https://habrastorage.org/webt/dc/qj/b4/dcqjb4gig-oahq7qkbuzd7fhuks.png"><br><br> Мы вступаем в эпоху повсеместной слежки. И если раньше такие возможности были доступны только правоохранительным органам, то теперь они есть в каждом смартфоне: это диктофон и камера для записи видео и звука, GPS- и Bluetooth-трекеры для отслеживания координат? MAC-адрес и IMSI как уникальные идентификаторы устройства. Этого более чем достаточно для полного отслеживания всех активностей человека. Точно так же за своими пользователями следят <a href="https://habr.com/ru/companies/globalsign/articles/759860/">телевизоры и другие домашние гаджеты</a>, а также <a href="https://habr.com/ru/companies/globalsign/articles/769130/">автомобильный софт</a>. Они регистрируют все передвижения и активности человека в салоне. Затем данные отправляются автомобильной компании, которая впоследствии их продаёт.<br><br> Всё это известная история. Но сейчас индустрия выросла до такого уровня, что следящие гаджеты и трекеры может использовать любой желающий. «Шпионские приборы» и жучки, которые раньше встречались только в кино, поступили в открытую продажу. Вопрос в том, какие из них можно использовать легально, а какие нет.<br><a href="https://habr.com/ru/articles/777858/?utm_campaign=777858&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать дальше &rarr;</a> ]]>
+      </description>
+      <pubDate>Fri, 01 Dec 2023 11:54:35 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ Bluetooth ]]>
+      </category>
+      <category>
+        <![CDATA[ трекеры ]]>
+      </category>
+      <category>
+        <![CDATA[ скрытая слежка ]]>
+      </category>
+      <category>
+        <![CDATA[ Airtag ]]>
+      </category>
+      <category>
+        <![CDATA[ Tile ]]>
+      </category>
+      <category>
+        <![CDATA[ Rewind ]]>
+      </category>
+      <category>
+        <![CDATA[ кулон ]]>
+      </category>
+      <category>
+        <![CDATA[ подвеска ]]>
+      </category>
+      <category>
+        <![CDATA[ регистратор ]]>
+      </category>
+      <category>
+        <![CDATA[ Фонд электронных рубежей ]]>
+      </category>
+      <category>
+        <![CDATA[ EFF ]]>
+      </category>
+      <category>
+        <![CDATA[ DULT ]]>
+      </category>
+      <category>
+        <![CDATA[ жучки ]]>
+      </category>
+      <difficulty>1</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Отчёт о SOC‑Forum 2023 ]]>
+      </title>
+      <guid>https://habr.com/ru/articles/777848/</guid>
+      <link>https://habr.com/ru/articles/777848/?utm_campaign=777848&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>Информационная служба Хабра посетила конференцию SOC‑Forum 2023, проходившую 14–15&nbsp;ноября 2023&nbsp;года в&nbsp;Москве. SOC‑Forum&nbsp;— это ещё одно крупное ежегодное мероприятие в&nbsp;сфере информационной безопасности, наравне с&nbsp;Positive Hack Day и OFFZone. В&nbsp;отличие от&nbsp;двух последних мероприятий этот форум, на&nbsp;мой взгляд, более формализован, потому что&nbsp;организован ФСТЭК России и ФСБ России. На&nbsp;входе охранник даже спросил, не&nbsp;перепутал&nbsp;ли я мероприятия. По&nbsp;словам организаторов, мероприятие очно посетили 1,4&nbsp;тысячи организаций, людей&nbsp;было больше&nbsp;— 5,3&nbsp;тысячи, онлайн‑трансляцию форума смотрели 24&nbsp;тысячи человек.</p><p></p><a href="https://habr.com/ru/articles/777848/?utm_campaign=777848&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Fri, 01 Dec 2023 11:18:17 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ солар ]]>
+      </category>
+      <category>
+        <![CDATA[ soc-forum ]]>
+      </category>
+      <category>
+        <![CDATA[ soc-форум ]]>
+      </category>
+      <category>
+        <![CDATA[ кибербезопасность ]]>
+      </category>
+      <category>
+        <![CDATA[ репортаж ]]>
+      </category>
+      <category>
+        <![CDATA[ уязвимости ]]>
+      </category>
+      <category>
+        <![CDATA[ информационная безопасность ]]>
+      </category>
+      <category>
+        <![CDATA[ конференция ]]>
+      </category>
+      <difficulty>2</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Как научиться выстраивать килчейн ]]>
+      </title>
+      <guid>https://habr.com/ru/companies/securityvison/articles/777790/</guid>
+      <link>https://habr.com/ru/companies/securityvison/articles/777790/?utm_campaign=777790&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>Алексей Баландин, архитектор продукта Security Vision</p><p>Михаил Пименов, аналитик Security Vision</p><p>Впервые слово килчейн (точнее, несколько слов: The Cyber Kill Chain) как термин появилось в далеком 2011 году, когда американская компания Lockheed-Martin впервые предложила выстроить зафиксированные в инфраструктуре события в единую цепочку атаки. Цепочка была довольно проста и включала в себя всего 7 звеньев: разведка, вооружение, доставка, эксплуатация, инсталляция, управление, действие. По сути, это было ответом на усложнившиеся хакерские атаки, которые использовали всё более изощренный инструментарий и многоходовые тактики атаки.</p><p>Подход, делящий атаку на некие этапы, оказался очень востребован, но не был лишен недостатков. Например, килчейн от Lockheed-Martin совершенно не учитывал внутреннего злоумышленника, атакующего изнутри инфраструктуры. Соответственно, другие игроки постарались развить и улучшить это метод. Так, уже в 2013 MITRE предложила свой вариант, представив последовательность из 14-ти тактик. Позже экспертом в области кибербезопасности Полом Поллзом (Paul Polls) был предложен гибридный вариант, объединяющий и расширяющий методики от Lockheed-Martin и MITRE, известный как The Unified Kill Chain.</p><p>Давайте порассуждаем о плюсах, минусах и подводных камнях килчейна как такового, а также попробуем разобрать реальный пример построения цепочки атаки.</p><p></p><a href="https://habr.com/ru/articles/777790/?utm_campaign=777790&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Fri, 01 Dec 2023 08:45:09 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ security vision ]]>
+      </category>
+      <category>
+        <![CDATA[ SV ]]>
+      </category>
+      <category>
+        <![CDATA[ информацонная безопасность ]]>
+      </category>
+      <category>
+        <![CDATA[ инфобез ]]>
+      </category>
+      <category>
+        <![CDATA[ kill chain ]]>
+      </category>
+      <category>
+        <![CDATA[ килчейн ]]>
+      </category>
+      <category>
+        <![CDATA[ soar ]]>
+      </category>
+      <category>
+        <![CDATA[ irp ]]>
+      </category>
+      <category>
+        <![CDATA[ timeline ]]>
+      </category>
+      <category>
+        <![CDATA[ таймлайн ]]>
+      </category>
+      <difficulty>3</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Операция Lahat: новая группа Hellhounds атакует российские организации через системы на базе Linux ]]>
+      </title>
+      <guid>https://habr.com/ru/companies/pt/articles/777482/</guid>
+      <link>https://habr.com/ru/companies/pt/articles/777482/?utm_campaign=777482&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>В октябре 2023 года команда Positive Technologies по расследованию инцидентов PT CSIRT обнаружила компрометацию одной энергетической компании с использованием трояна Decoy Dog. Этот вредонос активно используется в атаках на российские компании и правительственные организации по меньшей мере с сентября 2022 года. Однако образец, обнаруженный нами на хосте жертвы, представлял собой новую модификацию троянского ПО, которую злоумышленники доработали, усложнив его обнаружение и анализ.</p><p>Анализ инструментов, тактик и техник не позволил связать данную активность ни c одной из ранее известных APT-групп. Новая группа, названная нами Hellhounds, прикладывает значительные усилия для сокрытия своей активности на хостах и в сети. В интересы группы входят компании и государственные организации исключительно на территории Российской Федерации. Злоумышленники могут преследовать разные цели, но достоверно известно об одном случае полного уничтожения инфраструктуры. </p><p></p><a href="https://habr.com/ru/articles/777482/?utm_campaign=777482&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Узнать больше о расследовании</a> ]]>
+      </description>
+      <pubDate>Thu, 30 Nov 2023 11:03:32 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ Decoy Dog ]]>
+      </category>
+      <category>
+        <![CDATA[ Hellhounds ]]>
+      </category>
+      <category>
+        <![CDATA[ Pupy RAT ]]>
+      </category>
+      <category>
+        <![CDATA[ троян ]]>
+      </category>
+      <category>
+        <![CDATA[ впо ]]>
+      </category>
+      <category>
+        <![CDATA[ телекомы ]]>
+      </category>
+      <category>
+        <![CDATA[ госсектор ]]>
+      </category>
+      <category>
+        <![CDATA[ it-компании ]]>
+      </category>
+      <category>
+        <![CDATA[ космическая отрасль ]]>
+      </category>
+      <category>
+        <![CDATA[ энергетика ]]>
+      </category>
+      <difficulty>3</difficulty>
+    </item>
+    <item>
+      <title>
+        <![CDATA[ Как мы вели переговоры с хакерами или сколько стоит беспечность для компании ]]>
+      </title>
+      <guid>https://habr.com/ru/companies/analyticum/articles/777480/</guid>
+      <link>https://habr.com/ru/companies/analyticum/articles/777480/?utm_campaign=777480&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description>
+        <![CDATA[ <p>Сегодня мы расскажем реальную историю из&nbsp;жизни собственников бизнеса. И хотя ее сюжет напоминает какой‑то голливудский фильм, произойти она может с&nbsp;каждым, кто заявляет: «Да у&nbsp;нас маленькая компания! Кому мы нужны?»</p><p>Есть у&nbsp;нас заказчик&nbsp;— выполняем работы по&nbsp;сопровождению сайта. Когда только начали сотрудничать, задали общие вопросы про&nbsp;инфраструктуру: что&nbsp;за&nbsp;железо, какой антивирус используют, как&nbsp;распределены права доступа и делаются&nbsp;ли бекапы. Получив не&nbsp;особо вразумительные ответы, мы предложили провести аудит информационной безопасности, на&nbsp;что&nbsp;заказчик ответил, что&nbsp;в&nbsp;штате есть системный администратор и все в&nbsp;порядке. Мы развели руками и забыли. </p><p>Спустя несколько месяцев от&nbsp;заказчика приходит сообщение: нас зашифровали и требуют выкуп. Что&nbsp;делать? </p><p>Оказалось, придя на&nbsp;работу, сотрудники вместо привычных docx, xlsx, pdf, jpg и&nbsp;т.&nbsp;д. на&nbsp;своих компьютерах обнаружили белые файлы с&nbsp;набором букв вместо расширения, а&nbsp;значит ни одна программа их не&nbsp;откроет. </p><p>Зато открывался документ с&nbsp;инструкциями. Взломщики обещали направить дешифратор за «скромную» сумму в 2000&nbsp;долларов (на тот момент около 200&nbsp;000&nbsp;рублей), переведенную на&nbsp;указанный счет.</p><p>Представители компании попытались связаться с&nbsp;хакерами, но&nbsp;ответа не&nbsp;поступало, поэтому обратились за&nbsp;помощью к&nbsp;нам.</p><p></p><a href="https://habr.com/ru/articles/777480/?utm_campaign=777480&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a> ]]>
+      </description>
+      <pubDate>Thu, 30 Nov 2023 10:16:11 GMT</pubDate>
+      <creator></creator>
+      <category>
+        <![CDATA[ информационная безопасность ]]>
+      </category>
+      <category>
+        <![CDATA[ шифрование ]]>
+      </category>
+      <category>
+        <![CDATA[ утечка данных ]]>
+      </category>
+      <category>
+        <![CDATA[ хакеры ]]>
+      </category>
+      <category>
+        <![CDATA[ системное администрирование ]]>
+      </category>
+      <category>
+        <![CDATA[ аутсорсинг ит ]]>
+      </category>
+      <category>
+        <![CDATA[ аудит безопасности ]]>
+      </category>
+      <difficulty>2</difficulty>
+    </item>
+  </channel>
+</rss>
