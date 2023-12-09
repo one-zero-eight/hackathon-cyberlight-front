@@ -109,10 +109,12 @@ function Level({ order, progress, current, rewards }: LevelProps) {
   return (
     <div
       className={clsx(
-        "relative min-h-[200px] overflow-hidden rounded-md border px-4 pb-[36px] pt-2",
+        "relative min-h-[200px] overflow-hidden rounded-md border px-4 pb-[36px] pt-2 shadow-md",
         finished
-          ? "border-blue-600 dark:border-blue-800"
-          : "border-gray-300 dark:border-gray-800",
+          ? "border-green-600 dark:border-green-900"
+          : current
+            ? "border-blue-600 dark:border-blue-900"
+            : "border-gray-300 dark:border-gray-800",
       )}
     >
       <h3 className="mb-4 text-center text-xl font-medium">Уровень {order}</h3>
@@ -124,7 +126,11 @@ function Level({ order, progress, current, rewards }: LevelProps) {
         )}
         {rewards.map((reward) => (
           <div key={reward.id} className="flex">
-            <span className="icon-[mdi--creation-outline] mr-3 mt-1 text-lg text-yellow-700"></span>
+            {finished ? (
+              <span className="icon-[mdi--check-circle-outline] mr-2 mt-1 text-lg text-green-700"></span>
+            ) : (
+              <span className="icon-[mdi--creation-outline] mr-2 mt-1 text-lg text-yellow-700"></span>
+            )}
             <span>{reward.name}</span>
           </div>
         ))}
@@ -132,7 +138,10 @@ function Level({ order, progress, current, rewards }: LevelProps) {
       <div className="absolute bottom-0 left-0 right-0 h-[24px] w-full bg-gray-200 dark:bg-gray-900">
         <div
           className={clsx(
-            "h-full bg-blue-600 dark:bg-blue-800",
+            "h-full",
+            finished
+              ? "bg-green-600 dark:bg-green-900"
+              : "bg-blue-600 dark:bg-blue-900",
             current
               ? "w-[calc(max(var(--progress),8px))]"
               : "w-[var(--progress)]",
