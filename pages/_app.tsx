@@ -5,13 +5,14 @@ import "@mantine/notifications/styles.css";
 import "@mantine/dates/styles.css";
 
 import "dayjs/locale/ru";
+
+import type { AppProps } from "next/app";
+import Head from "next/head";
 import { queryClient } from "@/lib/api";
 import { Container, createTheme, MantineProvider } from "@mantine/core";
 import { DatesProvider } from "@mantine/dates";
 import { Notifications } from "@mantine/notifications";
 import { QueryClientProvider } from "@tanstack/react-query";
-
-import type { AppProps } from "next/app";
 
 const theme = createTheme({
   primaryColor: "green",
@@ -199,6 +200,9 @@ export default function App({ Component, pageProps }: AppProps) {
     <QueryClientProvider client={queryClient}>
       <MantineProvider theme={theme}>
         <DatesProvider settings={{ locale: "ru" }}>
+          <Head>
+            <title>Кибер.База</title>
+          </Head>
           <Notifications />
           <Component {...pageProps} />
         </DatesProvider>
