@@ -1,3 +1,4 @@
+import CyberPassProgress from "@/components/CyberPassProgress";
 import { useSignOut } from "@/lib/auth";
 import { useUser } from "@/lib/user";
 import {
@@ -54,6 +55,7 @@ export default function Header() {
           </Link>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-4">
+          <CyberPassProgress />
           <ActionIcon
             component="button"
             variant="subtle"
@@ -96,6 +98,13 @@ export default function Header() {
                     leftSection={<span className="icon-[mdi--star]" />}
                   >
                     Достижения
+                  </Menu.Item>
+                </Link>
+                <Link href="/profile/cyber-pass">
+                  <Menu.Item
+                    leftSection={<span className="icon-[mdi--ticket]" />}
+                  >
+                    Кибер.Пропуск
                   </Menu.Item>
                 </Link>
                 {user.role === "admin" && (
