@@ -26,7 +26,7 @@ export default function Page() {
             <span className="icon-[mdi--medal-outline] align-middle text-[24px] text-[#c0c0c0]"></span>
           )}
           {i === 2 && (
-            <span className="text-m icon-[mdi--medal-outline] align-middle text-[24px] text-[#cd7fr2]"></span>
+            <span className="text-m icon-[mdi--medal-outline] align-middle text-[24px] text-[#cd7f32]"></span>
           )}
         </Table.Td>
         <Table.Td>{i + 1}</Table.Td>
