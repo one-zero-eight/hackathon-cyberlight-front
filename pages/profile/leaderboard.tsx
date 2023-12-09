@@ -22,7 +22,7 @@ export default function Page() {
             <div key={record.id} className="flex flex-row items-center gap-2">
               <span className="icon-[mdi--trophy] text-yellow-900" />
               <p>
-                {record.name} - {record.total_exp} xp
+                {record.name || "Аноним"} - {record.total_exp} xp
               </p>
             </div>
           ))}
