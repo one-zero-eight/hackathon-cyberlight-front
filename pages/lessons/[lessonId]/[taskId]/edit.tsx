@@ -167,7 +167,7 @@ export default function Page() {
     <Layout>
       <Container className="flex flex-col">
         <div className="flex flex-row justify-between">
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-2">
             <TextInput
               label="Название"
               placeholder="Введите заголовок урока"
