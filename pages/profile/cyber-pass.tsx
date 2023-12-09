@@ -22,8 +22,6 @@ export default function Page() {
     }
   }, [embla, currentLevelIdx]);
 
-  console.log("lvl", currentLevelIdx, currentLevel, currentLevelProgress);
-
   return (
     <Layout>
       <Container>
@@ -74,7 +72,6 @@ export type LevelProps = {
 };
 
 function Level({ order, progress, current }: LevelProps) {
-  console.log(order, progress, current);
   return (
     <Card p={0} shadow="sm" withBorder>
       <h3 className="mb-4 text-center text-xl font-medium">Уровень {order}</h3>
