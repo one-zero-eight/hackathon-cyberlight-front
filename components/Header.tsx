@@ -10,7 +10,10 @@ import {
 } from "@mantine/core";
 import { IconMoon, IconSun } from "@tabler/icons-react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/router";
+
+import cyberbaseImg from "@/assets/cyberbase.webp";
 
 export default function Header() {
   const router = useRouter();
@@ -22,8 +25,9 @@ export default function Header() {
     <Container component="header" className="w-full">
       <div className="mt-4 flex flex-col items-center justify-between gap-2 rounded-md border border-gray-200 p-4 dark:border-gray-900 lg:flex-row">
         <div className="flex flex-col items-center justify-start gap-2 sm:flex-row">
-          <Link href="/" className="text-lg font-bold lg:mr-4">
-            Кибер.База
+          <Link href="/" className="flex items-center gap-2">
+            <Image width={48} height={48} alt="Кибер.База" src={cyberbaseImg} />
+            <span className="text-lg font-bold lg:mr-4">Кибер.База</span>
           </Link>
           <Link href="/lessons">
             <Button
