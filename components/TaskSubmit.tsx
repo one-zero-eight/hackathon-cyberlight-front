@@ -2,7 +2,12 @@ import { API_URL } from "@/lib/api";
 import { Lesson, Task } from "@/lib/lesson";
 import { Reward } from "@/lib/rewards";
 import { Button, Modal, Radio, TextInput } from "@mantine/core";
-import { DefaultError, useMutation, useQuery } from "@tanstack/react-query";
+import {
+  DefaultError,
+  useMutation,
+  useQuery,
+  useQueryClient,
+} from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 
 type SolveResponse = {
@@ -13,14 +18,19 @@ type SolveResponse = {
 export default function TaskSubmit({
   lesson,
   task,
+  showSuccess = true,
+  onSubmit = undefined,
 }: {
   lesson: Lesson;
   task: Task;
+  showSuccess?: boolean;
+  onSubmit?: () => void;
 }) {
   const [textAnswer, setTextAnswer] = useState<string>("");
   const mutation = useMutation<SolveResponse, DefaultError, any>({});
   const [radioAnswer, setRadioAnswer] = useState<string>("-");
 
+  const queryClient = useQueryClient();
   const { data: rewards } = useQuery<Reward[]>({ queryKey: ["/rewards/"] });
   const [rewardsModalData, setRewardsModalData] = useState<number[]>([]);
   const currentRewardModal = rewards?.filter(
@@ -56,7 +66,14 @@ export default function TaskSubmit({
       },
       {
         onSuccess: (data) => {
-          setRewardsModalData((prev) => [...prev, ...data.rewards]);
+          queryClient.invalidateQueries({
+            queryKey: ["/personal_account/"],
+          });
+          if (onSubmit) {
+            onSubmit();
+          } else {
+            setRewardsModalData((prev) => [...prev, ...data.rewards]);
+          }
         },
       },
     );
@@ -98,15 +115,17 @@ export default function TaskSubmit({
           Отправить
         </Button>
       </div>
-      {mutation.data &&
-        mutation.variables.body.task_id === task.id &&
-        (mutation.data.success ? (
-          <>
-            <p>Верно!</p>
-          </>
-        ) : (
-          <p>Неверно!</p>
-        ))}
+      {showSuccess
+        ? mutation.data &&
+          mutation.variables.body.task_id === task.id &&
+          (mutation.data.success ? (
+            <>
+              <p>Верно!</p>
+            </>
+          ) : (
+            <p>Неверно!</p>
+          ))
+        : null}
       <Modal
         opened={currentRewardModal !== undefined}
         onClose={() => setRewardsModalData((prev) => prev.slice(1))}

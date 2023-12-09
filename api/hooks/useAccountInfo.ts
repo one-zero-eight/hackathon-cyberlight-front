@@ -1,10 +1,10 @@
+import { API_URL } from "@/lib/api";
 import { useQuery } from "@tanstack/react-query";
 import { AccountInfo } from "../types";
-import { API_URL } from "@/lib/api";
 
 export function useAccountInfo() {
   const { data, isLoading, error } = useQuery<AccountInfo>({
-    queryKey: ["/personal_account"],
+    queryKey: ["/personal_account/"],
   });
 
   const account: AccountInfo | undefined = data

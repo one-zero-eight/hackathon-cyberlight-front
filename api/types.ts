@@ -1,6 +1,8 @@
 export type AccountInfo = {
   user_id: number;
   achievements: Achievement[];
+  total_exp: number;
+  rewards: any[];
 };
 
 export type Achievement = {
