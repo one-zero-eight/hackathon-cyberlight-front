@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from "react";
-import clsx from "clsx";
 import Countdown from "@/components/Countdown";
 import Layout from "@/components/Layout";
 import Section from "@/components/Section";
+import { useRequireAuth } from "@/lib/auth";
 import { CyberPassReward, useCyberPass } from "@/lib/cyberPass";
-import { Card, Container, Divider, Loader } from "@mantine/core";
 import { Carousel, Embla } from "@mantine/carousel";
+import { Container, Divider, Loader } from "@mantine/core";
 import { notifications } from "@mantine/notifications";
+import clsx from "clsx";
+import React, { useEffect, useState } from "react";
 
 export default function Page() {
+  useRequireAuth();
   const {
     cyberPassError,
     cyberPassLoading,

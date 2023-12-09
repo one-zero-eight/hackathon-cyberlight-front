@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import Section from "@/components/Section";
-import { Container, Paper, Table, Title } from "@mantine/core";
+import { useRequireAuth } from "@/lib/auth";
+import { Container, Table } from "@mantine/core";
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 
@@ -11,6 +12,7 @@ export type LeaderboardRecord = {
 };
 
 export default function Page() {
+  useRequireAuth();
   const { data: leaders } = useQuery<LeaderboardRecord[]>({
     queryKey: ["/personal_account/leaderboard"],
   });

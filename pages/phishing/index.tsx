@@ -1,10 +1,12 @@
 import Layout from "@/components/Layout";
 import Section from "@/components/Section";
+import { useRequireAuth } from "@/lib/auth";
 import { Button, Card, Container, Text, TextInput } from "@mantine/core";
 import { useMutation } from "@tanstack/react-query";
 import React, { useState } from "react";
 
 export default function Page() {
+  useRequireAuth();
   const mutation = useMutation<any, any, any>({});
   const mutation2 = useMutation<any, any, any>({});
   const [textAnswer, setTextAnswer] = useState<string>("");

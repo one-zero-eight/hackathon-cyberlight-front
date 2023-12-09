@@ -5,7 +5,7 @@ import {
   useQueryClient,
 } from "@tanstack/react-query";
 import { useRouter } from "next/router";
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import { useLocalStorage } from "usehooks-ts";
 
 export const AUTH_TOKEN_KEY = "token";
@@ -76,4 +76,28 @@ export function useSignInByCredentials() {
   });
 
   return mutation;
+}
+
+export function useRequireAuth() {
+  const router = useRouter();
+  const [token] = useAuthToken();
+
+  useEffect(() => {
+    if (!getAuthToken()) {
+      router.replace("/login");
+    }
+  }, [token]);
+}
+
+export function useRequireAdmin() {
+  const router = useRouter();
+  const [token] = useAuthToken();
+
+  useEffect(() => {
+    if (!getAuthToken()) {
+      router.replace("/login");
+    } else {
+      router.replace("/");
+    }
+  }, [token]);
 }

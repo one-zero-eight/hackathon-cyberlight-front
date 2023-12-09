@@ -3,6 +3,7 @@ import Layout from "@/components/Layout";
 import LessonDifficulty from "@/components/LessonDifficulty";
 import TaskContentEditor from "@/components/TaskContentEditor";
 import TaskQuestionEditor from "@/components/TaskQuestionEditor";
+import { useRequireAdmin } from "@/lib/auth";
 import { Lesson } from "@/lib/lesson";
 import { truncate } from "@/pages/lessons/[lessonId]/[taskId]/index";
 import {
@@ -26,6 +27,7 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 
 export default function Page() {
+  useRequireAdmin();
   const router = useRouter();
   const lessonId =
     router.query.lessonId !== undefined

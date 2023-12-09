@@ -1,10 +1,12 @@
 import Layout from "@/components/Layout";
+import { useRequireAdmin } from "@/lib/auth";
 import { Button, Container, NumberInput, TextInput } from "@mantine/core";
 import { DefaultError, useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
 export default function Page() {
+  useRequireAdmin();
   const router = useRouter();
   const [title, setTitle] = useState("");
   const [difficulty, setDifficulty] = useState(5);

@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import { useRequireAuth } from "@/lib/auth";
 import { Lesson } from "@/lib/lesson";
 import { Container, Paper, Skeleton } from "@mantine/core";
 import { useQuery } from "@tanstack/react-query";
@@ -6,6 +7,7 @@ import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 
 export default function Page() {
+  useRequireAuth();
   const router = useRouter();
   const lessonId =
     router.query.lessonId !== undefined

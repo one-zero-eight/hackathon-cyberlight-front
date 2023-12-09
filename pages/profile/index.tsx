@@ -1,10 +1,12 @@
-import React from "react";
-import { Container } from "@mantine/core";
+import Achievements from "@/components/Achievements";
 import Layout from "@/components/Layout";
 import Section from "@/components/Section";
-import Achievements from "@/components/Achievements";
+import { useRequireAuth } from "@/lib/auth";
+import { Container } from "@mantine/core";
+import React from "react";
 
 export default function Page() {
+  useRequireAuth();
   return (
     <Layout>
       <Container>

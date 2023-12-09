@@ -2,7 +2,9 @@ import Layout from "@/components/Layout";
 import LessonDifficulty from "@/components/LessonDifficulty";
 import TaskContent from "@/components/TaskContent";
 import TaskSubmit from "@/components/TaskSubmit";
+import { useRequireAuth } from "@/lib/auth";
 import { Lesson } from "@/lib/lesson";
+import { useUser } from "@/lib/user";
 import { pluralizeRu } from "@/lib/utils/words";
 import { Button, Container, Divider, Paper, Skeleton } from "@mantine/core";
 import { IconEdit } from "@tabler/icons-react";
@@ -12,6 +14,7 @@ import { useRouter } from "next/router";
 import React from "react";
 
 export default function Page() {
+  useRequireAuth();
   const router = useRouter();
   const lessonId =
     router.query.lessonId !== undefined
@@ -28,6 +31,8 @@ export default function Page() {
     taskId !== undefined
       ? lesson?.tasks.filter((task) => task.id === taskId)[0]
       : undefined;
+
+  const { user } = useUser();
 
   return (
     <Layout>
@@ -67,15 +72,17 @@ export default function Page() {
               {lesson?.content}
             </p>
           </div>
-          <Link href={`/lessons/${lesson?.id}/${task?.id}/edit`}>
-            <Button
-              variant="subtle"
-              color="gray"
-              leftSection={<IconEdit size={14} />}
-            >
-              Изменить
-            </Button>
-          </Link>
+          {user?.role === "admin" && (
+            <Link href={`/lessons/${lesson?.id}/${task?.id}/edit`}>
+              <Button
+                variant="subtle"
+                color="gray"
+                leftSection={<IconEdit size={14} />}
+              >
+                Изменить
+              </Button>
+            </Link>
+          )}
         </div>
         <Divider className="mt-2" />
         <div className="flex">

@@ -1,12 +1,13 @@
 import Layout from "@/components/Layout";
 import { API_URL } from "@/lib/api";
-import { getAuthorizationHeader } from "@/lib/auth";
+import { getAuthorizationHeader, useRequireAdmin } from "@/lib/auth";
 import { Button, Container, Title } from "@mantine/core";
 import { DateInput } from "@mantine/dates";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 
 export default function Page() {
+  useRequireAdmin();
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
 
